@@ -1,0 +1,359 @@
+# Khmer translations for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-05 16:35+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: km\n"
+"Language-Team: km <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "A department with this name already exists"
+msgstr "មាននាយកដ្ឋានឈ្មោះនេះរួចហើយ"
+
+msgid "Allowances / Bonus"
+msgstr "ប្រាក់ឧបត្ថម្ភ / ប្រាក់រង្វាន់"
+
+#, python-brace-format
+msgid "Already checked in today at {time}"
+msgstr "បានចុះឈ្មោះចូលរួចហើយថ្ងៃនេះ នៅម៉ោង {time}"
+
+#, python-brace-format
+msgid "Already checked out today at {time}"
+msgstr "បានចុះឈ្មោះចេញរួចហើយថ្ងៃនេះ នៅម៉ោង {time}"
+
+msgid "Amount"
+msgstr "ចំនួនទឹកប្រាក់"
+
+msgid "Annual"
+msgstr "ប្រចាំឆ្នាំ"
+
+msgid "Another employee already uses this email"
+msgstr "អ៊ីមែលនេះត្រូវបានប្រើដោយបុគ្គលិកផ្សេងរួចហើយ"
+
+msgid "Attendance rate"
+msgstr "អត្រាវត្តមាន"
+
+msgid "Base Salary"
+msgstr "ប្រាក់ខែគោល"
+
+msgid "Built-in backup only supports SQLite. Use your database's own tools (e.g. pg_dump or mysqldump)."
+msgstr "ការបម្រុងទុកក្នុងប្រព័ន្ធគាំទ្រតែ SQLite ប៉ុណ្ណោះ។ សូមប្រើឧបករណ៍របស់មូលដ្ឋានទិន្នន័យ (ឧ. pg_dump ឬ mysqldump)។"
+
+msgid "Calculated"
+msgstr "បានគណនា"
+
+msgid "Casual"
+msgstr "ផ្ទាល់ខ្លួន"
+
+#, python-brace-format
+msgid "Check-in is only allowed between {open} and {close} (server time now {now}). Ask HR for a manual entry."
+msgstr "អាចចុះឈ្មោះចូលបានតែចន្លោះម៉ោង {open} ដល់ {close} ប៉ុណ្ណោះ (ម៉ោងម៉ាស៊ីនមេឥឡូវ {now})។ សូមស្នើធនធានមនុស្សបញ្ចូលដោយដៃ។"
+
+msgid "Check-in must open before it closes"
+msgstr "ម៉ោងបើកចុះឈ្មោះចូល ត្រូវតែមុនម៉ោងបិទ"
+
+#, python-brace-format
+msgid "Check-in/out is only allowed from the office network (this device: {ip}). Ask HR for a manual entry if you are working elsewhere."
+msgstr "អាចចុះឈ្មោះចូល/ចេញបានតែពីបណ្ដាញការិយាល័យប៉ុណ្ណោះ (ឧបករណ៍នេះ៖ {ip})។ បើអ្នកកំពុងធ្វើការនៅកន្លែងផ្សេង សូមស្នើធនធានមនុស្សបញ្ចូលដោយដៃ។"
+
+msgid "Check-out cannot be before check-in"
+msgstr "ម៉ោងចេញមិនអាចមុនម៉ោងចូលបានទេ"
+
+msgid "Dashboard Summary"
+msgstr "សេចក្ដីសង្ខេបផ្ទាំងគ្រប់គ្រង"
+
+msgid "Deductions"
+msgstr "ការកាត់កង"
+
+msgid "Department"
+msgstr "នាយកដ្ឋាន"
+
+msgid "Department not found"
+msgstr "រកមិនឃើញនាយកដ្ឋាន"
+
+msgid "Description"
+msgstr "ការពិពណ៌នា"
+
+msgid "Earnings"
+msgstr "ប្រាក់ចំណូល"
+
+msgid "Employee"
+msgstr "បុគ្គលិក"
+
+msgid "Employee ID"
+msgstr "លេខសម្គាល់បុគ្គលិក"
+
+msgid "Employee not found"
+msgstr "រកមិនឃើញបុគ្គលិក"
+
+msgid "End date must be on or after start date"
+msgstr "ថ្ងៃបញ្ចប់ត្រូវតែស្មើ ឬក្រោយថ្ងៃចាប់ផ្ដើម"
+
+msgid "Figure"
+msgstr "សូចនាករ"
+
+#, python-brace-format
+msgid "Generated {when} by {user}"
+msgstr "បង្កើតនៅ {when} ដោយ {user}"
+
+#, python-brace-format
+msgid "Generated {when} • Pay day: {day} of the month. This is a computer-generated document."
+msgstr "បង្កើតនៅ {when} • ថ្ងៃបើកប្រាក់៖ ថ្ងៃទី {day} នៃខែ។ នេះជាឯកសារដែលបង្កើតដោយកុំព្យូទ័រ។"
+
+msgid "Gross Earnings"
+msgstr "ប្រាក់ចំណូលសរុប"
+
+msgid "Headcount"
+msgstr "ចំនួនបុគ្គលិក"
+
+msgid "Headcount by Department"
+msgstr "ចំនួនបុគ្គលិកតាមនាយកដ្ឋាន"
+
+msgid "Health Insurance"
+msgstr "ធានារ៉ាប់រងសុខភាព"
+
+#, python-brace-format
+msgid "Income Tax ({rate}%)"
+msgstr "ពន្ធលើប្រាក់ចំណូល ({rate}%)"
+
+msgid "Invalid authentication code"
+msgstr "លេខកូដផ្ទៀងផ្ទាត់មិនត្រឹមត្រូវ"
+
+msgid "Invalid username or password"
+msgstr "ឈ្មោះអ្នកប្រើ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ"
+
+msgid "Job role not found"
+msgstr "រកមិនឃើញតួនាទីការងារ"
+
+msgid "Key Figures"
+msgstr "តួលេខសំខាន់ៗ"
+
+msgid "Late arrivals today"
+msgstr "មកយឺតថ្ងៃនេះ"
+
+msgid "Lead"
+msgstr "អ្នកដឹកនាំ"
+
+msgid "Leave request not found"
+msgstr "រកមិនឃើញសំណើច្បាប់"
+
+msgid "Maternity/Paternity"
+msgstr "លំហែមាតុភាព/បិតុភាព"
+
+msgid "Min salary cannot exceed max salary"
+msgstr "ប្រាក់ខែអប្បបរមាមិនអាចលើសប្រាក់ខែអតិបរមាបានទេ"
+
+msgid "Monthly Payslip"
+msgstr "បង្កាន់ដៃបើកប្រាក់ខែ"
+
+msgid "Monthly base payroll"
+msgstr "ប្រាក់ខែគោលប្រចាំខែ"
+
+msgid "Monthly payroll"
+msgstr "ប្រាក់ខែប្រចាំខែ"
+
+msgid "NET PAY"
+msgstr "ប្រាក់ខែសុទ្ធ"
+
+msgid "New hires this month"
+msgstr "បុគ្គលិកថ្មីខែនេះ"
+
+msgid "On leave today"
+msgstr "ឈប់សម្រាកថ្ងៃនេះ"
+
+msgid "Only an Admin can change system roles"
+msgstr "មានតែអ្នកគ្រប់គ្រងប្រព័ន្ធទេដែលអាចប្ដូរតួនាទីប្រព័ន្ធបាន"
+
+msgid "Only an Admin can create Admin accounts"
+msgstr "មានតែអ្នកគ្រប់គ្រងប្រព័ន្ធទេដែលអាចបង្កើតគណនីអ្នកគ្រប់គ្រងបាន"
+
+#, python-brace-format
+msgid "Only {remaining} {leave_type} day(s) remaining"
+msgstr "នៅសល់ច្បាប់{leave_type}តែ {remaining} ថ្ងៃប៉ុណ្ណោះ"
+
+#, python-brace-format
+msgid "Overlaps with existing request LV-{id}"
+msgstr "ត្រួតគ្នាជាមួយសំណើដែលមានស្រាប់ LV-{id}"
+
+msgid "Paid"
+msgstr "បានបើក"
+
+#, python-brace-format
+msgid "Pay period: {period}   •   Status: {status}"
+msgstr "រយៈពេលបើកប្រាក់៖ {period}   •   ស្ថានភាព៖ {status}"
+
+msgid "Payroll line not found"
+msgstr "រកមិនឃើញបញ្ជីប្រាក់ខែ"
+
+msgid "Pending"
+msgstr "កំពុងរង់ចាំ"
+
+msgid "Pending leave requests"
+msgstr "សំណើច្បាប់កំពុងរង់ចាំ"
+
+#, python-brace-format
+msgid "Pension ({rate}%)"
+msgstr "សោធននិវត្តន៍ ({rate}%)"
+
+msgid "Pick at least one working day (Mon-Sun)"
+msgstr "សូមជ្រើសរើសថ្ងៃធ្វើការយ៉ាងហោចណាស់មួយថ្ងៃ (ច័ន្ទ-អាទិត្យ)"
+
+msgid "Please provide a reason for the rejection"
+msgstr "សូមផ្ដល់មូលហេតុនៃការបដិសេធ"
+
+msgid "Position"
+msgstr "មុខតំណែង"
+
+msgid "Present today"
+msgstr "មានវត្តមានថ្ងៃនេះ"
+
+msgid "Reassign the employees in this role before deleting it"
+msgstr "សូមផ្ទេរបុគ្គលិកក្នុងតួនាទីនេះ មុនពេលលុបវា"
+
+msgid "Requisition not found"
+msgstr "រកមិនឃើញសំណើជ្រើសរើសបុគ្គលិក"
+
+#, python-brace-format
+msgid "Sending failed: {error}"
+msgstr "ការផ្ញើបរាជ័យ៖ {error}"
+
+msgid "Session expired, please sign in again"
+msgstr "វគ្គប្រើប្រាស់បានផុតកំណត់ សូមចូលម្ដងទៀត"
+
+msgid "Share"
+msgstr "ភាគរយ"
+
+msgid "Sick"
+msgstr "ឈឺ"
+
+msgid "Start the setup first"
+msgstr "សូមចាប់ផ្ដើមការរៀបចំជាមុនសិន"
+
+msgid "That code is not valid. Check the time on your phone and try the newest code."
+msgstr "លេខកូដនោះមិនត្រឹមត្រូវ។ សូមពិនិត្យម៉ោងនៅលើទូរស័ព្ទ ហើយសាកល្បងលេខកូដថ្មីបំផុត។"
+
+msgid "That job role does not belong to this department"
+msgstr "តួនាទីការងារនោះមិនមែនជារបស់នាយកដ្ឋាននេះទេ"
+
+msgid "The new password must be different from the current one"
+msgstr "ពាក្យសម្ងាត់ថ្មីត្រូវតែខុសពីពាក្យសម្ងាត់បច្ចុប្បន្ន"
+
+msgid "This request is already approved"
+msgstr "សំណើនេះត្រូវបានអនុម័តរួចហើយ"
+
+msgid "This request is already rejected"
+msgstr "សំណើនេះត្រូវបានបដិសេធរួចហើយ"
+
+msgid "This request was already reviewed"
+msgstr "សំណើនេះត្រូវបានពិនិត្យរួចហើយ"
+
+msgid "This requisition is already cancelled"
+msgstr "សំណើជ្រើសរើសនេះត្រូវបានលុបចោលរួចហើយ"
+
+msgid "This requisition is already filled"
+msgstr "សំណើជ្រើសរើសនេះបានបំពេញរួចហើយ"
+
+msgid "This requisition is closed"
+msgstr "សំណើជ្រើសរើសនេះត្រូវបានបិទ"
+
+#, python-brace-format
+msgid "Too many failed sign-in attempts. Try again in {minutes} minute(s) or ask an Admin to reset your password."
+msgstr "ការព្យាយាមចូលបរាជ័យច្រើនដងពេក។ សូមព្យាយាមម្ដងទៀតក្នុងរយៈពេល {minutes} នាទី ឬស្នើអ្នកគ្រប់គ្រងប្រព័ន្ធឱ្យកំណត់ពាក្យសម្ងាត់ឡើងវិញ។"
+
+msgid "Total Deductions"
+msgstr "ការកាត់កងសរុប"
+
+msgid "Total employees"
+msgstr "បុគ្គលិកសរុប"
+
+msgid "Turn on two-factor authentication for your own account first (user menu > Two-Factor Authentication)."
+msgstr "សូមបើកការផ្ទៀងផ្ទាត់ពីរជំហានសម្រាប់គណនីរបស់អ្នកជាមុនសិន (ម៉ឺនុយអ្នកប្រើ > ការផ្ទៀងផ្ទាត់ពីរជំហាន)។"
+
+msgid "Two-factor authentication is already on"
+msgstr "ការផ្ទៀងផ្ទាត់ពីរជំហានបានបើករួចហើយ"
+
+msgid "Two-factor authentication is required for your role"
+msgstr "តួនាទីរបស់អ្នកតម្រូវឱ្យប្រើការផ្ទៀងផ្ទាត់ពីរជំហាន"
+
+msgid "Unknown department"
+msgstr "មិនស្គាល់នាយកដ្ឋាន"
+
+msgid "Unknown employee"
+msgstr "មិនស្គាល់បុគ្គលិក"
+
+msgid "Unpaid"
+msgstr "គ្មានប្រាក់ឈ្នួល"
+
+msgid "Use both letters and numbers in the new password"
+msgstr "សូមប្រើទាំងអក្សរ និងលេខក្នុងពាក្យសម្ងាត់ថ្មី"
+
+msgid "User not found"
+msgstr "រកមិនឃើញអ្នកប្រើ"
+
+msgid "Value"
+msgstr "តម្លៃ"
+
+msgid "You are on approved leave today"
+msgstr "អ្នកកំពុងឈប់សម្រាកដែលបានអនុម័តនៅថ្ងៃនេះ"
+
+msgid "You can only access your own records"
+msgstr "អ្នកអាចមើលបានតែកំណត់ត្រារបស់ខ្លួនឯងប៉ុណ្ណោះ"
+
+msgid "You cannot delete your own record"
+msgstr "អ្នកមិនអាចលុបកំណត់ត្រារបស់ខ្លួនឯងបានទេ"
+
+msgid "You cannot review your own leave request"
+msgstr "អ្នកមិនអាចពិនិត្យសំណើច្បាប់របស់ខ្លួនឯងបានទេ"
+
+msgid "You do not have permission for this action"
+msgstr "អ្នកមិនមានសិទ្ធិធ្វើសកម្មភាពនេះទេ"
+
+msgid "You have not checked in today"
+msgstr "អ្នកមិនទាន់បានចុះឈ្មោះចូលថ្ងៃនេះទេ"
+
+msgid "You're all caught up"
+msgstr "គ្មានការជូនដំណឹងថ្មីទេ"
+
+msgid "Your account is not linked to an employee record"
+msgstr "គណនីរបស់អ្នកមិនបានភ្ជាប់ជាមួយកំណត់ត្រាបុគ្គលិកទេ"
+
+msgid "Your current password is incorrect"
+msgstr "ពាក្យសម្ងាត់បច្ចុប្បន្នរបស់អ្នកមិនត្រឹមត្រូវ"
+
+msgid "Your password is incorrect"
+msgstr "ពាក្យសម្ងាត់របស់អ្នកមិនត្រឹមត្រូវ"
+
+msgid "month must be YYYY-MM"
+msgstr "ខែត្រូវតែជាទម្រង់ YYYY-MM"
+
+#, python-brace-format
+msgid "{count} employee(s) are on probation"
+msgstr "បុគ្គលិក {count} នាក់ កំពុងសាកល្បងការងារ"
+
+#, python-brace-format
+msgid "{count} leave request(s) are awaiting approval"
+msgstr "សំណើច្បាប់ {count} កំពុងរង់ចាំការអនុម័ត"
+
+#, python-brace-format
+msgid "{count} of your leave request(s) are pending"
+msgstr "សំណើច្បាប់របស់អ្នកចំនួន {count} កំពុងរង់ចាំ"
+
+#, python-brace-format
+msgid "{count} payroll line(s) for this month are not yet paid"
+msgstr "ប្រាក់ខែ {count} ជួរសម្រាប់ខែនេះ មិនទាន់បានបើក"
+
+#, python-brace-format
+msgid "{day} is not a working day. Ask HR for a manual entry if you worked today."
+msgstr "ថ្ងៃ{day} មិនមែនជាថ្ងៃធ្វើការទេ។ បើអ្នកបានធ្វើការថ្ងៃនេះ សូមស្នើធនធានមនុស្សបញ្ចូលដោយដៃ។"
+

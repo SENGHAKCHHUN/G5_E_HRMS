@@ -1,0 +1,358 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-05 16:35+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "A department with this name already exists"
+msgstr ""
+
+msgid "Allowances / Bonus"
+msgstr ""
+
+#, python-brace-format
+msgid "Already checked in today at {time}"
+msgstr ""
+
+#, python-brace-format
+msgid "Already checked out today at {time}"
+msgstr ""
+
+msgid "Amount"
+msgstr ""
+
+msgid "Annual"
+msgstr ""
+
+msgid "Another employee already uses this email"
+msgstr ""
+
+msgid "Attendance rate"
+msgstr ""
+
+msgid "Base Salary"
+msgstr ""
+
+msgid "Built-in backup only supports SQLite. Use your database's own tools (e.g. pg_dump or mysqldump)."
+msgstr ""
+
+msgid "Calculated"
+msgstr ""
+
+msgid "Casual"
+msgstr ""
+
+#, python-brace-format
+msgid "Check-in is only allowed between {open} and {close} (server time now {now}). Ask HR for a manual entry."
+msgstr ""
+
+msgid "Check-in must open before it closes"
+msgstr ""
+
+#, python-brace-format
+msgid "Check-in/out is only allowed from the office network (this device: {ip}). Ask HR for a manual entry if you are working elsewhere."
+msgstr ""
+
+msgid "Check-out cannot be before check-in"
+msgstr ""
+
+msgid "Dashboard Summary"
+msgstr ""
+
+msgid "Deductions"
+msgstr ""
+
+msgid "Department"
+msgstr ""
+
+msgid "Department not found"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Earnings"
+msgstr ""
+
+msgid "Employee"
+msgstr ""
+
+msgid "Employee ID"
+msgstr ""
+
+msgid "Employee not found"
+msgstr ""
+
+msgid "End date must be on or after start date"
+msgstr ""
+
+msgid "Figure"
+msgstr ""
+
+#, python-brace-format
+msgid "Generated {when} by {user}"
+msgstr ""
+
+#, python-brace-format
+msgid "Generated {when} • Pay day: {day} of the month. This is a computer-generated document."
+msgstr ""
+
+msgid "Gross Earnings"
+msgstr ""
+
+msgid "Headcount"
+msgstr ""
+
+msgid "Headcount by Department"
+msgstr ""
+
+msgid "Health Insurance"
+msgstr ""
+
+#, python-brace-format
+msgid "Income Tax ({rate}%)"
+msgstr ""
+
+msgid "Invalid authentication code"
+msgstr ""
+
+msgid "Invalid username or password"
+msgstr ""
+
+msgid "Job role not found"
+msgstr ""
+
+msgid "Key Figures"
+msgstr ""
+
+msgid "Late arrivals today"
+msgstr ""
+
+msgid "Lead"
+msgstr ""
+
+msgid "Leave request not found"
+msgstr ""
+
+msgid "Maternity/Paternity"
+msgstr ""
+
+msgid "Min salary cannot exceed max salary"
+msgstr ""
+
+msgid "Monthly Payslip"
+msgstr ""
+
+msgid "Monthly base payroll"
+msgstr ""
+
+msgid "Monthly payroll"
+msgstr ""
+
+msgid "NET PAY"
+msgstr ""
+
+msgid "New hires this month"
+msgstr ""
+
+msgid "On leave today"
+msgstr ""
+
+msgid "Only an Admin can change system roles"
+msgstr ""
+
+msgid "Only an Admin can create Admin accounts"
+msgstr ""
+
+#, python-brace-format
+msgid "Only {remaining} {leave_type} day(s) remaining"
+msgstr ""
+
+#, python-brace-format
+msgid "Overlaps with existing request LV-{id}"
+msgstr ""
+
+msgid "Paid"
+msgstr ""
+
+#, python-brace-format
+msgid "Pay period: {period}   •   Status: {status}"
+msgstr ""
+
+msgid "Payroll line not found"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Pending leave requests"
+msgstr ""
+
+#, python-brace-format
+msgid "Pension ({rate}%)"
+msgstr ""
+
+msgid "Pick at least one working day (Mon-Sun)"
+msgstr ""
+
+msgid "Please provide a reason for the rejection"
+msgstr ""
+
+msgid "Position"
+msgstr ""
+
+msgid "Present today"
+msgstr ""
+
+msgid "Reassign the employees in this role before deleting it"
+msgstr ""
+
+msgid "Requisition not found"
+msgstr ""
+
+#, python-brace-format
+msgid "Sending failed: {error}"
+msgstr ""
+
+msgid "Session expired, please sign in again"
+msgstr ""
+
+msgid "Share"
+msgstr ""
+
+msgid "Sick"
+msgstr ""
+
+msgid "Start the setup first"
+msgstr ""
+
+msgid "That code is not valid. Check the time on your phone and try the newest code."
+msgstr ""
+
+msgid "That job role does not belong to this department"
+msgstr ""
+
+msgid "The new password must be different from the current one"
+msgstr ""
+
+msgid "This request is already approved"
+msgstr ""
+
+msgid "This request is already rejected"
+msgstr ""
+
+msgid "This request was already reviewed"
+msgstr ""
+
+msgid "This requisition is already cancelled"
+msgstr ""
+
+msgid "This requisition is already filled"
+msgstr ""
+
+msgid "This requisition is closed"
+msgstr ""
+
+#, python-brace-format
+msgid "Too many failed sign-in attempts. Try again in {minutes} minute(s) or ask an Admin to reset your password."
+msgstr ""
+
+msgid "Total Deductions"
+msgstr ""
+
+msgid "Total employees"
+msgstr ""
+
+msgid "Turn on two-factor authentication for your own account first (user menu > Two-Factor Authentication)."
+msgstr ""
+
+msgid "Two-factor authentication is already on"
+msgstr ""
+
+msgid "Two-factor authentication is required for your role"
+msgstr ""
+
+msgid "Unknown department"
+msgstr ""
+
+msgid "Unknown employee"
+msgstr ""
+
+msgid "Unpaid"
+msgstr ""
+
+msgid "Use both letters and numbers in the new password"
+msgstr ""
+
+msgid "User not found"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "You are on approved leave today"
+msgstr ""
+
+msgid "You can only access your own records"
+msgstr ""
+
+msgid "You cannot delete your own record"
+msgstr ""
+
+msgid "You cannot review your own leave request"
+msgstr ""
+
+msgid "You do not have permission for this action"
+msgstr ""
+
+msgid "You have not checked in today"
+msgstr ""
+
+msgid "You're all caught up"
+msgstr ""
+
+msgid "Your account is not linked to an employee record"
+msgstr ""
+
+msgid "Your current password is incorrect"
+msgstr ""
+
+msgid "Your password is incorrect"
+msgstr ""
+
+msgid "month must be YYYY-MM"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} employee(s) are on probation"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} leave request(s) are awaiting approval"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} of your leave request(s) are pending"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} payroll line(s) for this month are not yet paid"
+msgstr ""
+
+#, python-brace-format
+msgid "{day} is not a working day. Ask HR for a manual entry if you worked today."
+msgstr ""
+

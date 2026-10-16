@@ -1,0 +1,2070 @@
+# Khmer translations for HRMS.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the HRMS project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: HRMS VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-05 16:56+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: km\n"
+"Language-Team: km <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "(late)"
+msgstr "(យឺត)"
+
+#, python-brace-format
+msgid "({count} people)"
+msgstr "({count} នាក់)"
+
+#, python-brace-format
+msgid "+{count} hired"
+msgstr "+{count} នាក់បានជ្រើសរើស"
+
+#, python-brace-format
+msgid "+{minutes}m"
+msgstr "+{minutes}នាទី"
+
+#, python-brace-format
+msgid "/ {allowance} days remaining"
+msgstr "/ {allowance} ថ្ងៃនៅសល់"
+
+#, python-brace-format
+msgid "/ {days} days left"
+msgstr "/ {days} ថ្ងៃនៅសល់"
+
+#, python-brace-format
+msgid ""
+"1.  Install Google Authenticator or Microsoft Authenticator on your phone.\n"
+"2.  In the app choose  Add account  >  Enter a setup key.\n"
+"3.  Account name: {username}   ·   Type: Time based\n"
+"4.  Type the key below, then enter the 6-digit code the app shows."
+msgstr ""
+"1.  ដំឡើង Google Authenticator ឬ Microsoft Authenticator នៅលើទូរស័ព្ទរបស់អ្នក។\n"
+"2.  នៅក្នុងកម្មវិធី ជ្រើសរើស  Add account  >  Enter a setup key។\n"
+"3.  ឈ្មោះគណនី៖ {username}   ·   ប្រភេទ៖ Time based\n"
+"4.  វាយលេខកូដខាងក្រោម រួចបញ្ចូលលេខកូដ 6 ខ្ទង់ដែលកម្មវិធីបង្ហាញ។"
+
+msgid "2FA is on for your account."
+msgstr "ការផ្ទៀងផ្ទាត់ពីរជំហានបានបើកសម្រាប់គណនីរបស់អ្នក។"
+
+#, python-brace-format
+msgid "2FA reset for {user}"
+msgstr "បានកំណត់ការផ្ទៀងផ្ទាត់ពីរជំហានឡើងវិញសម្រាប់ {user}"
+
+msgid "6-digit code"
+msgstr "លេខកូដ 6 ខ្ទង់"
+
+msgid "6-digit code from the app"
+msgstr "លេខកូដ 6 ខ្ទង់ពីកម្មវិធី"
+
+#, python-brace-format
+msgid "API Status: {message}"
+msgstr "ស្ថានភាព API៖ {message}"
+
+msgid "Absent"
+msgstr "អវត្តមាន"
+
+msgid "Accent colour"
+msgstr "ពណ៌សំខាន់"
+
+msgid "Action"
+msgstr "សកម្មភាព"
+
+msgid "Actions"
+msgstr "សកម្មភាព"
+
+msgid "Active"
+msgstr "សកម្ម"
+
+msgid "Active Elapsed"
+msgstr "រយៈពេលធ្វើការ"
+
+msgid "Add Department"
+msgstr "បន្ថែមនាយកដ្ឋាន"
+
+msgid "Add Employee"
+msgstr "បន្ថែមបុគ្គលិក"
+
+msgid "Add Job Role"
+msgstr "បន្ថែមតួនាទីការងារ"
+
+msgid "Add Role"
+msgstr "បន្ថែមតួនាទី"
+
+msgid "Admin"
+msgstr "អ្នកគ្រប់គ្រងប្រព័ន្ធ"
+
+msgid "Admin & HR must use an authenticator app"
+msgstr "អ្នកគ្រប់គ្រងប្រព័ន្ធ និងធនធានមនុស្ស ត្រូវប្រើកម្មវិធីផ្ទៀងផ្ទាត់"
+
+msgid "All"
+msgstr "ទាំងអស់"
+
+#, python-brace-format
+msgid "All ({count})"
+msgstr "ទាំងអស់ ({count})"
+
+msgid "All Departments"
+msgstr "នាយកដ្ឋានទាំងអស់"
+
+msgid "All Roles"
+msgstr "តួនាទីទាំងអស់"
+
+msgid "All Statuses"
+msgstr "ស្ថានភាពទាំងអស់"
+
+msgid "Allowances / Bonus"
+msgstr "ប្រាក់ឧបត្ថម្ភ / ប្រាក់រង្វាន់"
+
+msgid "Annual"
+msgstr "ប្រចាំឆ្នាំ"
+
+msgid "Annual Leave"
+msgstr "ច្បាប់ប្រចាំឆ្នាំ"
+
+msgid "Annual Vacation"
+msgstr "ច្បាប់ឈប់សម្រាកប្រចាំឆ្នាំ"
+
+msgid "Appearance & Theme"
+msgstr "រូបរាង និងស្បែក"
+
+msgid "Appearance & Theme Preferences"
+msgstr "ការកំណត់រូបរាង និងស្បែក"
+
+msgid "Apply Leave"
+msgstr "ស្នើសុំច្បាប់"
+
+msgid "Approve"
+msgstr "អនុម័ត"
+
+msgid "Approve / Log"
+msgstr "អនុម័ត / កត់ត្រា"
+
+msgid "Approved"
+msgstr "បានអនុម័ត"
+
+msgid "Approved absences"
+msgstr "អវត្តមានដែលបានអនុម័ត"
+
+msgid ""
+"Ask an Admin to reset your password (Settings > Authentication & Users > User Accounts > Reset Password).\n"
+"\n"
+"You will get a one-time temporary password and choose your own password the next time you sign in."
+msgstr ""
+"សូមស្នើអ្នកគ្រប់គ្រងប្រព័ន្ធឱ្យកំណត់ពាក្យសម្ងាត់របស់អ្នកឡើងវិញ (ការកំណត់ > ការផ្ទៀងផ្ទាត់ និងអ្នកប្រើ > គណនីអ្នកប្រើ > កំណត់ពាក្យសម្ងាត់ឡើងវិញ)។\n"
+"\n"
+"អ្នកនឹងទទួលបានពាក្យសម្ងាត់បណ្ដោះអាសន្នប្រើបានតែម្ដង ហើយជ្រើសរើសពាក្យសម្ងាត់ផ្ទាល់ខ្លួននៅពេលចូលលើកក្រោយ។"
+
+msgid "Attendance"
+msgstr "វត្តមាន"
+
+msgid "Attendance & Policies"
+msgstr "វត្តមាន និងគោលការណ៍"
+
+msgid "Attendance & Time"
+msgstr "វត្តមាន និងម៉ោង"
+
+msgid "Attendance & Time Tracking"
+msgstr "ការតាមដានវត្តមាន និងម៉ោង"
+
+msgid "Attendance Policies"
+msgstr "គោលការណ៍វត្តមាន"
+
+msgid "Attendance Rate"
+msgstr "អត្រាវត្តមាន"
+
+msgid "Attendance Record"
+msgstr "កំណត់ត្រាវត្តមាន"
+
+msgid "Attendance Status"
+msgstr "ស្ថានភាពវត្តមាន"
+
+msgid "Audit & Security Logs"
+msgstr "កំណត់ហេតុសវនកម្ម និងសុវត្ថិភាព"
+
+msgid "Authentication & Users"
+msgstr "ការផ្ទៀងផ្ទាត់ និងអ្នកប្រើ"
+
+msgid "Authentication code (from your authenticator app)"
+msgstr "លេខកូដផ្ទៀងផ្ទាត់ (ពីកម្មវិធីផ្ទៀងផ្ទាត់របស់អ្នក)"
+
+#, python-brace-format
+msgid "Average {amount}"
+msgstr "មធ្យម {amount}"
+
+msgid "Avg Work Hours"
+msgstr "ម៉ោងធ្វើការមធ្យម"
+
+msgid "Avg. Seniority"
+msgstr "អតីតភាពការងារមធ្យម"
+
+msgid "Awaiting check-in"
+msgstr "កំពុងរង់ចាំចុះឈ្មោះចូល"
+
+msgid "Backend"
+msgstr "ម៉ាស៊ីនមេ"
+
+msgid "Backend & Database"
+msgstr "ម៉ាស៊ីនមេ និងមូលដ្ឋានទិន្នន័យ"
+
+msgid "Backend & Local Database"
+msgstr "ម៉ាស៊ីនមេ និងមូលដ្ឋានទិន្នន័យក្នុងម៉ាស៊ីន"
+
+msgid "Backend API Endpoint URL"
+msgstr "អាសយដ្ឋាន URL របស់ API ម៉ាស៊ីនមេ"
+
+#, python-brace-format
+msgid "Backend offline at {url}"
+msgstr "ម៉ាស៊ីនមេមិនដំណើរការនៅ {url}"
+
+#, python-brace-format
+msgid "Backup saved ({size} MB)"
+msgstr "បានរក្សាទុកការបម្រុងទុក ({size} MB)"
+
+msgid "Base"
+msgstr "គោល"
+
+msgid "Base Range"
+msgstr "ចន្លោះប្រាក់ខែគោល"
+
+msgid "Base Salary"
+msgstr "ប្រាក់ខែគោល"
+
+msgid "Base Salary (per month) *"
+msgstr "ប្រាក់ខែគោល (ក្នុងមួយខែ) *"
+
+msgid "Bonus"
+msgstr "ប្រាក់រង្វាន់"
+
+msgid "Budget and target must be numbers."
+msgstr "ថវិកា និងគោលដៅត្រូវតែជាលេខ។"
+
+msgid "CLOCK IN"
+msgstr "ចុះឈ្មោះចូល"
+
+msgid "CLOCK OUT"
+msgstr "ចុះឈ្មោះចេញ"
+
+msgid "Calculate & Run"
+msgstr "គណនា និងដំណើរការ"
+
+msgid "Calculate net salary from base pay, allowances and deductions"
+msgstr "គណនាប្រាក់ខែសុទ្ធពីប្រាក់ខែគោល ប្រាក់ឧបត្ថម្ភ និងការកាត់កង"
+
+msgid "Calculated"
+msgstr "បានគណនា"
+
+#, python-brace-format
+msgid "Calculated duration: {count} day(s)"
+msgstr "រយៈពេលដែលបានគណនា៖ {count} ថ្ងៃ"
+
+msgid "Calculated from hire dates"
+msgstr "គណនាពីថ្ងៃចូលធ្វើការ"
+
+msgid "Cancel"
+msgstr "បោះបង់"
+
+msgid "Cancelled"
+msgstr "បានលុបចោល"
+
+#, python-brace-format
+msgid "Cannot reach the HRMS server at {url}. Is the backend running?"
+msgstr "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេ HRMS នៅ {url} បានទេ។ តើម៉ាស៊ីនមេកំពុងដំណើរការឬទេ?"
+
+msgid "Casual"
+msgstr "ផ្ទាល់ខ្លួន"
+
+msgid "Change Password"
+msgstr "ប្ដូរពាក្យសម្ងាត់"
+
+msgid "Check In"
+msgstr "ចុះឈ្មោះចូល"
+
+msgid "Check In (HH:MM)"
+msgstr "ចុះឈ្មោះចូល (HH:MM)"
+
+msgid "Check Out"
+msgstr "ចុះឈ្មោះចេញ"
+
+msgid "Check Out (HH:MM)"
+msgstr "ចុះឈ្មោះចេញ (HH:MM)"
+
+msgid "Check-In Rules"
+msgstr "ច្បាប់ចុះឈ្មោះចូល"
+
+msgid "Check-in Closes (HH:MM)"
+msgstr "ម៉ោងបិទចុះឈ្មោះចូល (HH:MM)"
+
+msgid "Check-in Opens (HH:MM)"
+msgstr "ម៉ោងបើកចុះឈ្មោះចូល (HH:MM)"
+
+msgid "Check-in is closed right now."
+msgstr "ការចុះឈ្មោះចូលត្រូវបានបិទនៅពេលនេះ។"
+
+#, python-brace-format
+msgid "Check-in {open}–{close} (server time)"
+msgstr "ចុះឈ្មោះចូល {open}–{close} (ម៉ោងម៉ាស៊ីនមេ)"
+
+msgid "Check-out cannot be before check-in."
+msgstr "ម៉ោងចេញមិនអាចមុនម៉ោងចូលបានទេ។"
+
+msgid "Checking the server..."
+msgstr "កំពុងពិនិត្យម៉ាស៊ីនមេ..."
+
+msgid "Checking..."
+msgstr "កំពុងពិនិត្យ..."
+
+msgid "Clock In / Out"
+msgstr "ចុះឈ្មោះចូល / ចេញ"
+
+msgid "Clock in/out only from the networks below"
+msgstr "ចុះឈ្មោះចូល/ចេញ បានតែពីបណ្ដាញខាងក្រោមប៉ុណ្ណោះ"
+
+#, python-brace-format
+msgid "Clocked In at {time}"
+msgstr "បានចុះឈ្មោះចូលនៅម៉ោង {time}"
+
+#, python-brace-format
+msgid "Clocked Out at {time}"
+msgstr "បានចុះឈ្មោះចេញនៅម៉ោង {time}"
+
+#, python-brace-format
+msgid "Clocked in at {time}"
+msgstr "បានចុះឈ្មោះចូលនៅម៉ោង {time}"
+
+msgid "Clocked in today"
+msgstr "បានចុះឈ្មោះចូលថ្ងៃនេះ"
+
+#, python-brace-format
+msgid "Clocked out at {time}"
+msgstr "បានចុះឈ្មោះចេញនៅម៉ោង {time}"
+
+msgid "Close"
+msgstr "បិទ"
+
+msgid "Company & Workplace Profile"
+msgstr "ព័ត៌មានក្រុមហ៊ុន និងកន្លែងធ្វើការ"
+
+msgid "Company Domain"
+msgstr "ដែនក្រុមហ៊ុន"
+
+msgid "Company Name"
+msgstr "ឈ្មោះក្រុមហ៊ុន"
+
+msgid "Company preferences, security policy, email and the local database"
+msgstr "ការកំណត់ក្រុមហ៊ុន គោលការណ៍សុវត្ថិភាព អ៊ីមែល និងមូលដ្ឋានទិន្នន័យក្នុងម៉ាស៊ីន"
+
+msgid "Configuration Domains"
+msgstr "ផ្នែកនៃការកំណត់"
+
+msgid "Configured"
+msgstr "បានកំណត់រួច"
+
+msgid "Confirm"
+msgstr "បញ្ជាក់"
+
+msgid "Confirm new password"
+msgstr "បញ្ជាក់ពាក្យសម្ងាត់ថ្មី"
+
+msgid "Confirm with your password to turn 2FA off"
+msgstr "បញ្ជាក់ដោយពាក្យសម្ងាត់របស់អ្នក ដើម្បីបិទការផ្ទៀងផ្ទាត់ពីរជំហាន"
+
+#, python-brace-format
+msgid "Connected to {url} (v{version})"
+msgstr "បានភ្ជាប់ទៅ {url} (v{version})"
+
+msgid "Contractor"
+msgstr "អ្នកម៉ៅការ"
+
+msgid "Copied"
+msgstr "បានចម្លង"
+
+msgid "Copy"
+msgstr "ចម្លង"
+
+msgid "Create"
+msgstr "បង្កើត"
+
+msgid "Create Requisition"
+msgstr "បង្កើតសំណើជ្រើសរើសបុគ្គលិក"
+
+#, python-brace-format
+msgid ""
+"Create a one-time temporary password for '{user}'?\n"
+"Their current password stops working and they must choose a new one at next sign-in."
+msgstr ""
+"បង្កើតពាក្យសម្ងាត់បណ្ដោះអាសន្នប្រើបានតែម្ដងសម្រាប់ '{user}'?\n"
+"ពាក្យសម្ងាត់បច្ចុប្បន្នរបស់ពួកគេនឹងឈប់ដំណើរការ ហើយពួកគេត្រូវជ្រើសរើសពាក្យសម្ងាត់ថ្មីនៅពេលចូលលើកក្រោយ។"
+
+msgid "Create the profile and login"
+msgstr "បង្កើតប្រវត្តិរូប និងគណនីចូល"
+
+msgid "Currency"
+msgstr "រូបិយប័ណ្ណ"
+
+msgid "Current password"
+msgstr "ពាក្យសម្ងាត់បច្ចុប្បន្ន"
+
+msgid "Current password (the temporary one you were given)"
+msgstr "ពាក្យសម្ងាត់បច្ចុប្បន្ន (ពាក្យសម្ងាត់បណ្ដោះអាសន្នដែលអ្នកបានទទួល)"
+
+msgid "Dark"
+msgstr "ងងឹត"
+
+msgid "Dark Mode"
+msgstr "របៀបងងឹត"
+
+msgid "Dashboard"
+msgstr "ផ្ទាំងគ្រប់គ្រង"
+
+msgid "Dashboard Overview"
+msgstr "ទិដ្ឋភាពទូទៅនៃផ្ទាំងគ្រប់គ្រង"
+
+msgid "Dashboard summary saved as PDF"
+msgstr "បានរក្សាទុកសេចក្ដីសង្ខេបផ្ទាំងគ្រប់គ្រងជា PDF"
+
+msgid "Database Contents"
+msgstr "ខ្លឹមសារមូលដ្ឋានទិន្នន័យ"
+
+msgid "Database Engine"
+msgstr "ម៉ាស៊ីនមូលដ្ឋានទិន្នន័យ"
+
+msgid "Date"
+msgstr "កាលបរិច្ឆេទ"
+
+msgid "Date * (YYYY-MM-DD)"
+msgstr "កាលបរិច្ឆេទ * (YYYY-MM-DD)"
+
+msgid "Dates must be in YYYY-MM-DD format."
+msgstr "កាលបរិច្ឆេទត្រូវតែជាទម្រង់ YYYY-MM-DD។"
+
+msgid "Days Worked"
+msgstr "ថ្ងៃធ្វើការ"
+
+msgid "Deductions"
+msgstr "ការកាត់កង"
+
+msgid "Delete"
+msgstr "លុប"
+
+msgid "Delete Employee"
+msgstr "លុបបុគ្គលិក"
+
+msgid "Delete Job Role"
+msgstr "លុបតួនាទីការងារ"
+
+#, python-brace-format
+msgid "Delete the role '{title}'?"
+msgstr "លុបតួនាទី '{title}'?"
+
+msgid "Demo account"
+msgstr "គណនីសាកល្បង"
+
+msgid "Department"
+msgstr "នាយកដ្ឋាន"
+
+#, python-brace-format
+msgid "Department '{name}' saved"
+msgstr "បានរក្សាទុកនាយកដ្ឋាន '{name}'"
+
+msgid "Department *"
+msgstr "នាយកដ្ឋាន *"
+
+msgid "Department Lead"
+msgstr "ប្រធាននាយកដ្ឋាន"
+
+msgid "Department Name *"
+msgstr "ឈ្មោះនាយកដ្ឋាន *"
+
+msgid "Department name is required."
+msgstr "ត្រូវការឈ្មោះនាយកដ្ឋាន។"
+
+msgid "Department profile and staffing target"
+msgstr "ព័ត៌មាននាយកដ្ឋាន និងគោលដៅបុគ្គលិក"
+
+msgid "Departmental Spread"
+msgstr "ការបែងចែកតាមនាយកដ្ឋាន"
+
+msgid "Departments & Positions"
+msgstr "នាយកដ្ឋាន និងមុខតំណែង"
+
+msgid "Description"
+msgstr "ការពិពណ៌នា"
+
+msgid "Desktop Runtime"
+msgstr "កម្មវិធីលើកុំព្យូទ័រ"
+
+msgid "Detail"
+msgstr "ព័ត៌មានលម្អិត"
+
+msgid "Details"
+msgstr "ព័ត៌មានលម្អិត"
+
+msgid "Discard"
+msgstr "បោះបង់ការផ្លាស់ប្ដូរ"
+
+msgid "Done"
+msgstr "រួចរាល់"
+
+msgid "Download Backup"
+msgstr "ទាញយកការបម្រុងទុក"
+
+msgid "Duration"
+msgstr "រយៈពេល"
+
+msgid "Earnings"
+msgstr "ប្រាក់ចំណូល"
+
+msgid "Edit Department"
+msgstr "កែប្រែនាយកដ្ឋាន"
+
+msgid "Edit Employee"
+msgstr "កែប្រែបុគ្គលិក"
+
+msgid "Edit Job Role"
+msgstr "កែប្រែតួនាទីការងារ"
+
+msgid "Edit Profile"
+msgstr "កែប្រែប្រវត្តិរូប"
+
+msgid "Email (SMTP)"
+msgstr "អ៊ីមែល (SMTP)"
+
+msgid "Email employees when leave is approved/rejected"
+msgstr "ផ្ញើអ៊ីមែលទៅបុគ្គលិក នៅពេលច្បាប់ត្រូវបានអនុម័ត/បដិសេធ"
+
+msgid "Email to Employee"
+msgstr "ផ្ញើអ៊ីមែលទៅបុគ្គលិក"
+
+msgid "Emp ID"
+msgstr "លេខបុគ្គលិក"
+
+msgid "Employee"
+msgstr "បុគ្គលិក"
+
+msgid "Employee & Department"
+msgstr "បុគ្គលិក និងនាយកដ្ឋាន"
+
+msgid "Employee Added"
+msgstr "បានបន្ថែមបុគ្គលិក"
+
+msgid "Employee Directory"
+msgstr "បញ្ជីបុគ្គលិក"
+
+msgid "Employee ID"
+msgstr "លេខសម្គាល់បុគ្គលិក"
+
+msgid "Employee ID *"
+msgstr "លេខសម្គាល់បុគ្គលិក *"
+
+msgid "Employee Name"
+msgstr "ឈ្មោះបុគ្គលិក"
+
+#, python-brace-format
+msgid "Employee: {name} ({department})"
+msgstr "បុគ្គលិក៖ {name} ({department})"
+
+msgid "Employees"
+msgstr "បុគ្គលិក"
+
+msgid "Employees and monthly base salaries"
+msgstr "បុគ្គលិក និងប្រាក់ខែគោលប្រចាំខែ"
+
+msgid "Employees with status 'On Leave'"
+msgstr "បុគ្គលិកដែលមានស្ថានភាព 'ឈប់សម្រាក'"
+
+msgid "Employment"
+msgstr "ប្រភេទការងារ"
+
+msgid "Encrypt the connection (port 587)"
+msgstr "អ៊ិនគ្រីបការតភ្ជាប់ (ច្រក 587)"
+
+msgid "End Date (YYYY-MM-DD)"
+msgstr "ថ្ងៃបញ្ចប់ (YYYY-MM-DD)"
+
+msgid "End date is before start date"
+msgstr "ថ្ងៃបញ្ចប់នៅមុនថ្ងៃចាប់ផ្ដើម"
+
+msgid "Enforce 2FA for staff"
+msgstr "តម្រូវការផ្ទៀងផ្ទាត់ពីរជំហានសម្រាប់បុគ្គលិកគ្រប់គ្រង"
+
+msgid "Enforced by the server, using the server's clock"
+msgstr "អនុវត្តដោយម៉ាស៊ីនមេ ដោយប្រើនាឡិការបស់ម៉ាស៊ីនមេ"
+
+msgid "Enter the 6-digit code from the app."
+msgstr "បញ្ចូលលេខកូដ 6 ខ្ទង់ពីកម្មវិធី។"
+
+msgid "Enter the code from your authenticator app."
+msgstr "បញ្ចូលលេខកូដពីកម្មវិធីផ្ទៀងផ្ទាត់របស់អ្នក។"
+
+msgid "Example: 192.168.1.0/24, 10.0.0.0/8. Forgotten or off-site punches are fixed by HR with Manual Log Entry."
+msgstr "ឧទាហរណ៍៖ 192.168.1.0/24, 10.0.0.0/8។ ការចុះឈ្មោះដែលភ្លេច ឬនៅក្រៅការិយាល័យ ត្រូវបានកែដោយធនធានមនុស្សតាមរយៈការកត់ត្រាដោយដៃ។"
+
+msgid "Export CSV"
+msgstr "នាំចេញ CSV"
+
+msgid "Export PDF Summary"
+msgstr "នាំចេញសេចក្ដីសង្ខេប PDF"
+
+#, python-brace-format
+msgid "Exported {count} attendance records"
+msgstr "បាននាំចេញកំណត់ត្រាវត្តមាន {count}"
+
+#, python-brace-format
+msgid "Exported {count} employees to CSV"
+msgstr "បាននាំចេញបុគ្គលិក {count} នាក់ទៅ CSV"
+
+#, python-brace-format
+msgid "Exported {count} payroll lines"
+msgstr "បាននាំចេញបញ្ជីប្រាក់ខែ {count}"
+
+msgid "FastAPI service and SQLAlchemy storage"
+msgstr "សេវា FastAPI និងការផ្ទុក SQLAlchemy"
+
+msgid "Female"
+msgstr "ស្រី"
+
+msgid "Fields marked * are required"
+msgstr "ប្រអប់ដែលមានសញ្ញា * ត្រូវតែបំពេញ"
+
+msgid "Filled"
+msgstr "បានបំពេញ"
+
+msgid "Filter by ID or employee..."
+msgstr "ត្រងតាមលេខសម្គាល់ ឬបុគ្គលិក..."
+
+msgid "Filter by employee name or ID..."
+msgstr "ត្រងតាមឈ្មោះ ឬលេខសម្គាល់បុគ្គលិក..."
+
+msgid "First Name *"
+msgstr "នាមខ្លួន *"
+
+#, python-brace-format
+msgid "For {user}"
+msgstr "សម្រាប់ {user}"
+
+msgid "Forgot Password"
+msgstr "ភ្លេចពាក្យសម្ងាត់"
+
+msgid "Forgot Password?"
+msgstr "ភ្លេចពាក្យសម្ងាត់?"
+
+msgid "Framework"
+msgstr "ក្របខ័ណ្ឌ"
+
+msgid "Fri"
+msgstr "សុក្រ"
+
+msgid "Full"
+msgstr "ពេញលេញ"
+
+msgid "Full (Override)"
+msgstr "ពេញលេញ (កែប្រែបាន)"
+
+msgid "Full (Pay)"
+msgstr "ពេញលេញ (បើកប្រាក់)"
+
+msgid "Full (Read/Write)"
+msgstr "ពេញលេញ (អាន/សរសេរ)"
+
+msgid "Full Name"
+msgstr "ឈ្មោះពេញ"
+
+msgid "Full name"
+msgstr "ឈ្មោះពេញ"
+
+msgid "Full-time"
+msgstr "ពេញម៉ោង"
+
+msgid "Gender"
+msgstr "ភេទ"
+
+msgid "General & Company Info"
+msgstr "ទូទៅ និងព័ត៌មានក្រុមហ៊ុន"
+
+msgid "Give this password to the user. It works once; they will be asked to set their own password when they sign in."
+msgstr "ផ្ដល់ពាក្យសម្ងាត់នេះទៅអ្នកប្រើ។ វាប្រើបានតែម្ដង ហើយពួកគេនឹងត្រូវកំណត់ពាក្យសម្ងាត់ផ្ទាល់ខ្លួននៅពេលចូល។"
+
+#, python-brace-format
+msgid "Grace period {minutes}m"
+msgstr "រយៈពេលអនុគ្រោះ {minutes}នាទី"
+
+#, python-brace-format
+msgid "Grade {grade}"
+msgstr "កម្រិត {grade}"
+
+msgid "Gross Earnings"
+msgstr "ប្រាក់ចំណូលសរុប"
+
+msgid "HQ Onsite"
+msgstr "នៅការិយាល័យកណ្ដាល"
+
+msgid "HR Management System"
+msgstr "ប្រព័ន្ធគ្រប់គ្រងធនធានមនុស្ស"
+
+msgid "HR Manager"
+msgstr "អ្នកគ្រប់គ្រងធនធានមនុស្ស"
+
+msgid "Half Day"
+msgstr "កន្លះថ្ងៃ"
+
+msgid "Headcount"
+msgstr "ចំនួនបុគ្គលិក"
+
+msgid "Headcount Target"
+msgstr "គោលដៅចំនួនបុគ្គលិក"
+
+msgid "Headcount by Department"
+msgstr "ចំនួនបុគ្គលិកតាមនាយកដ្ឋាន"
+
+msgid "Health Insurance"
+msgstr "ធានារ៉ាប់រងសុខភាព"
+
+msgid "Hire Date"
+msgstr "ថ្ងៃចូលធ្វើការ"
+
+msgid "Hire Date * (YYYY-MM-DD)"
+msgstr "ថ្ងៃចូលធ្វើការ * (YYYY-MM-DD)"
+
+msgid "Hire date must be YYYY-MM-DD and salary a number."
+msgstr "ថ្ងៃចូលធ្វើការត្រូវតែជា YYYY-MM-DD ហើយប្រាក់ខែត្រូវតែជាលេខ។"
+
+msgid "Hours"
+msgstr "ម៉ោង"
+
+msgid "Hybrid"
+msgstr "ចម្រុះ"
+
+msgid "In Progress"
+msgstr "កំពុងធ្វើការ"
+
+#, python-brace-format
+msgid "Income Tax ({rate}%)"
+msgstr "ពន្ធលើប្រាក់ចំណូល ({rate}%)"
+
+msgid "Income Tax Rate (%)"
+msgstr "អត្រាពន្ធលើប្រាក់ចំណូល (%)"
+
+msgid "Income tax"
+msgstr "ពន្ធលើប្រាក់ចំណូល"
+
+msgid "Interpreter"
+msgstr "កម្មវិធីដំណើរការ"
+
+msgid "Job Role *"
+msgstr "តួនាទីការងារ *"
+
+msgid "Job Roles"
+msgstr "តួនាទីការងារ"
+
+#, python-brace-format
+msgid "Job role '{title}' saved"
+msgstr "បានរក្សាទុកតួនាទីការងារ '{title}'"
+
+msgid "Job role deleted"
+msgstr "បានលុបតួនាទីការងារ"
+
+msgid "Key Skills"
+msgstr "ជំនាញសំខាន់ៗ"
+
+#, python-brace-format
+msgid "LV-{id} approved for {name}"
+msgstr "LV-{id} ត្រូវបានអនុម័តសម្រាប់ {name}"
+
+#, python-brace-format
+msgid "LV-{id} rejected"
+msgstr "LV-{id} ត្រូវបានបដិសេធ"
+
+msgid "Language"
+msgstr "ភាសា"
+
+msgid "Last Name *"
+msgstr "នាមត្រកូល *"
+
+msgid "Late"
+msgstr "យឺត"
+
+#, python-brace-format
+msgid "Late ({minutes}m)"
+msgstr "យឺត ({minutes}នាទី)"
+
+msgid "Late Arrivals"
+msgstr "មកយឺត"
+
+msgid "Late Grace Period (minutes)"
+msgstr "រយៈពេលអនុគ្រោះពេលមកយឺត (នាទី)"
+
+msgid "Latest Net Pay"
+msgstr "ប្រាក់ខែសុទ្ធចុងក្រោយ"
+
+#, python-brace-format
+msgid "Lead: {lead}   •   Location: {location}"
+msgstr "អ្នកដឹកនាំ៖ {lead}   •   ទីតាំង៖ {location}"
+
+#, python-brace-format
+msgid "Lead: {name}"
+msgstr "អ្នកដឹកនាំ៖ {name}"
+
+msgid "Leave Approval Queue"
+msgstr "ជួរអនុម័តច្បាប់"
+
+msgid "Leave Management"
+msgstr "ការគ្រប់គ្រងច្បាប់"
+
+#, python-brace-format
+msgid "Leave Request LV-{id}"
+msgstr "សំណើច្បាប់ LV-{id}"
+
+msgid "Leave Type"
+msgstr "ប្រភេទច្បាប់"
+
+msgid "Leave notifications"
+msgstr "ការជូនដំណឹងអំពីច្បាប់"
+
+#, python-brace-format
+msgid "Leave request LV-{id} submitted to HR"
+msgstr "សំណើច្បាប់ LV-{id} ត្រូវបានផ្ញើទៅធនធានមនុស្ស"
+
+msgid "Leave requests awaiting review"
+msgstr "សំណើច្បាប់កំពុងរង់ចាំការពិនិត្យ"
+
+msgid "Light"
+msgstr "ភ្លឺ"
+
+msgid "Linked Employee"
+msgstr "បុគ្គលិកដែលភ្ជាប់"
+
+msgid "Loading..."
+msgstr "កំពុងផ្ទុក..."
+
+msgid "Location"
+msgstr "ទីតាំង"
+
+#, python-brace-format
+msgid "Log entry saved for {name}"
+msgstr "បានរក្សាទុកកំណត់ត្រាសម្រាប់ {name}"
+
+msgid "Logout"
+msgstr "ចាកចេញ"
+
+msgid "Male"
+msgstr "ប្រុស"
+
+msgid "Manage employee profiles, departments and system roles."
+msgstr "គ្រប់គ្រងប្រវត្តិរូបបុគ្គលិក នាយកដ្ឋាន និងតួនាទីប្រព័ន្ធ។"
+
+msgid "Manual Log Entry"
+msgstr "កត់ត្រាដោយដៃ"
+
+msgid "Mark Filled"
+msgstr "សម្គាល់ថាបានបំពេញ"
+
+msgid "Maternity/Paternity"
+msgstr "លំហែមាតុភាព/បិតុភាព"
+
+msgid "Max Salary (per month) *"
+msgstr "ប្រាក់ខែអតិបរមា (ក្នុងមួយខែ) *"
+
+msgid "Min Salary (per month) *"
+msgstr "ប្រាក់ខែអប្បបរមា (ក្នុងមួយខែ) *"
+
+msgid "Min salary cannot exceed max salary."
+msgstr "ប្រាក់ខែអប្បបរមាមិនអាចលើសប្រាក់ខែអតិបរមាបានទេ។"
+
+msgid "Mon"
+msgstr "ច័ន្ទ"
+
+msgid "Monthly Budget"
+msgstr "ថវិកាប្រចាំខែ"
+
+msgid "Monthly Pay Day"
+msgstr "ថ្ងៃបើកប្រាក់ខែប្រចាំខែ"
+
+msgid "Monthly Payslip"
+msgstr "បង្កាន់ដៃបើកប្រាក់ខែ"
+
+msgid "Monthly Rate"
+msgstr "អត្រាប្រចាំខែ"
+
+msgid "Monthly Salaries"
+msgstr "ប្រាក់ខែប្រចាំខែ"
+
+#, python-brace-format
+msgid "Monthly base payroll: {amount}"
+msgstr "ប្រាក់ខែគោលប្រចាំខែ៖ {amount}"
+
+msgid "Monthly salary statements and deductions"
+msgstr "របាយការណ៍ប្រាក់ខែប្រចាំខែ និងការកាត់កង"
+
+#, python-brace-format
+msgid "Most unfilled planned seats: {title}"
+msgstr "កន្លែងទំនេរច្រើនជាងគេ៖ {title}"
+
+msgid "My Leave Requests"
+msgstr "សំណើច្បាប់របស់ខ្ញុំ"
+
+msgid "My Overview"
+msgstr "ទិដ្ឋភាពទូទៅរបស់ខ្ញុំ"
+
+msgid "My Payslips"
+msgstr "បង្កាន់ដៃប្រាក់ខែរបស់ខ្ញុំ"
+
+msgid "My Profile"
+msgstr "ប្រវត្តិរូបរបស់ខ្ញុំ"
+
+msgid "My Recent Attendance"
+msgstr "វត្តមានថ្មីៗរបស់ខ្ញុំ"
+
+msgid "NET PAY"
+msgstr "ប្រាក់ខែសុទ្ធ"
+
+msgid "Net Disbursement"
+msgstr "ប្រាក់បើកសុទ្ធ"
+
+msgid "Net Salary"
+msgstr "ប្រាក់ខែសុទ្ធ"
+
+msgid "New Department"
+msgstr "នាយកដ្ឋានថ្មី"
+
+msgid "New Job Role"
+msgstr "តួនាទីការងារថ្មី"
+
+msgid "New Requisition"
+msgstr "សំណើជ្រើសរើសថ្មី"
+
+msgid "New hires still on probation"
+msgstr "បុគ្គលិកថ្មីដែលនៅសាកល្បងការងារ"
+
+msgid "New password"
+msgstr "ពាក្យសម្ងាត់ថ្មី"
+
+msgid "Next"
+msgstr "បន្ទាប់"
+
+msgid "No attendance records for this filter"
+msgstr "គ្មានកំណត់ត្រាវត្តមានសម្រាប់តម្រងនេះទេ"
+
+msgid "No audit entries yet"
+msgstr "មិនទាន់មានកំណត់ហេតុសវនកម្មនៅឡើយទេ"
+
+msgid "No check-ins recorded yet today."
+msgstr "ថ្ងៃនេះមិនទាន់មានការចុះឈ្មោះចូលនៅឡើយទេ។"
+
+msgid "No department selected"
+msgstr "មិនទាន់បានជ្រើសរើសនាយកដ្ឋាន"
+
+msgid "No employees assigned to this role yet."
+msgstr "មិនទាន់មានបុគ្គលិកក្នុងតួនាទីនេះនៅឡើយទេ។"
+
+msgid "No employees match your filters"
+msgstr "គ្មានបុគ្គលិកត្រូវនឹងតម្រងរបស់អ្នកទេ"
+
+msgid "No job roles defined yet"
+msgstr "មិនទាន់មានតួនាទីការងារនៅឡើយទេ"
+
+msgid "No leave requests in this view"
+msgstr "គ្មានសំណើច្បាប់ក្នុងទិដ្ឋភាពនេះទេ"
+
+msgid "No leave requests yet."
+msgstr "មិនទាន់មានសំណើច្បាប់នៅឡើយទេ។"
+
+msgid "No open hiring requests for this department."
+msgstr "គ្មានសំណើជ្រើសរើសបុគ្គលិកដែលកំពុងបើកសម្រាប់នាយកដ្ឋាននេះទេ។"
+
+msgid "No payroll records"
+msgstr "គ្មានកំណត់ត្រាប្រាក់ខែ"
+
+msgid "No records found"
+msgstr "រកមិនឃើញកំណត់ត្រា"
+
+msgid "None"
+msgstr "គ្មាន"
+
+msgid "Not Clocked In"
+msgstr "មិនទាន់ចុះឈ្មោះចូល"
+
+msgid "Note for recruitment"
+msgstr "កំណត់សម្គាល់សម្រាប់ការជ្រើសរើស"
+
+msgid "OT"
+msgstr "ម៉ោងបន្ថែម"
+
+msgid "Off"
+msgstr "បិទ"
+
+msgid "Office Networks (IP addresses or ranges, comma-separated)"
+msgstr "បណ្ដាញការិយាល័យ (អាសយដ្ឋាន IP ឬជួរ បំបែកដោយក្បៀស)"
+
+#, python-brace-format
+msgid "Office network ({ip})."
+msgstr "បណ្ដាញការិយាល័យ ({ip})។"
+
+msgid "Office network only"
+msgstr "តែបណ្ដាញការិយាល័យប៉ុណ្ណោះ"
+
+msgid "On"
+msgstr "បើក"
+
+msgid "On Approved Leave"
+msgstr "កំពុងឈប់សម្រាកដែលបានអនុម័ត"
+
+msgid "On Leave"
+msgstr "ឈប់សម្រាក"
+
+msgid "On Leave Today"
+msgstr "ឈប់សម្រាកថ្ងៃនេះ"
+
+msgid "On Time"
+msgstr "ទាន់ពេល"
+
+#, python-brace-format
+msgid "On probation: {count}"
+msgstr "កំពុងសាកល្បងការងារ៖ {count}"
+
+#, python-brace-format
+msgid "Only {remaining} day(s) of {leave_type} leave remaining."
+msgstr "នៅសល់ច្បាប់{leave_type}តែ {remaining} ថ្ងៃប៉ុណ្ណោះ។"
+
+msgid "Open"
+msgstr "បើក"
+
+msgid "Open Attendance"
+msgstr "បើកវត្តមាន"
+
+msgid "Open Leave Management"
+msgstr "បើកការគ្រប់គ្រងច្បាប់"
+
+msgid "Open Requisitions"
+msgstr "សំណើជ្រើសរើសដែលកំពុងបើក"
+
+#, python-brace-format
+msgid "Opened {date} by {user}"
+msgstr "បានបើកនៅ {date} ដោយ {user}"
+
+msgid "Openings *"
+msgstr "ចំនួនកន្លែងទំនេរ *"
+
+msgid "Openings must be a number."
+msgstr "ចំនួនកន្លែងទំនេរត្រូវតែជាលេខ។"
+
+msgid "Operational Timezone"
+msgstr "ល្វែងម៉ោងប្រតិបត្តិការ"
+
+msgid "Organization Structure"
+msgstr "រចនាសម្ព័ន្ធស្ថាប័ន"
+
+msgid "Other"
+msgstr "ផ្សេងទៀត"
+
+msgid "Others"
+msgstr "ផ្សេងៗ"
+
+msgid "Overtime"
+msgstr "ម៉ោងបន្ថែម"
+
+msgid "Overtime Counted After (HH:MM)"
+msgstr "រាប់ម៉ោងបន្ថែមក្រោយម៉ោង (HH:MM)"
+
+msgid "Overview"
+msgstr "ទិដ្ឋភាពទូទៅ"
+
+msgid "Own clock in/out"
+msgstr "ចុះឈ្មោះចូល/ចេញផ្ទាល់ខ្លួន"
+
+msgid "Own payslips"
+msgstr "បង្កាន់ដៃប្រាក់ខែផ្ទាល់ខ្លួន"
+
+msgid "Own profile"
+msgstr "ប្រវត្តិរូបផ្ទាល់ខ្លួន"
+
+#, python-brace-format
+msgid "Page {page} of {pages}"
+msgstr "ទំព័រ {page} នៃ {pages}"
+
+msgid "Paid"
+msgstr "បានបើក"
+
+msgid "Part-time"
+msgstr "ក្រៅម៉ោង"
+
+msgid "Password"
+msgstr "ពាក្យសម្ងាត់"
+
+msgid "Password (saved - leave blank to keep)"
+msgstr "ពាក្យសម្ងាត់ (បានរក្សាទុក - ទុកទទេដើម្បីរក្សាដដែល)"
+
+msgid "Password changed"
+msgstr "បានប្ដូរពាក្យសម្ងាត់"
+
+msgid "Pay Grade"
+msgstr "កម្រិតប្រាក់ខែ"
+
+msgid "Pay Grade *"
+msgstr "កម្រិតប្រាក់ខែ *"
+
+msgid "Pay Period"
+msgstr "រយៈពេលបើកប្រាក់"
+
+#, python-brace-format
+msgid "Pay day {day}"
+msgstr "ថ្ងៃបើកប្រាក់ {day}"
+
+msgid "Payroll"
+msgstr "ប្រាក់ខែ"
+
+msgid "Payroll & Payslips"
+msgstr "ប្រាក់ខែ និងបង្កាន់ដៃប្រាក់ខែ"
+
+msgid "Payroll & Salary Processing"
+msgstr "ការដំណើរការប្រាក់ខែ"
+
+msgid "Payroll & Tax Config"
+msgstr "ការកំណត់ប្រាក់ខែ និងពន្ធ"
+
+msgid "Payroll & Tax Configuration"
+msgstr "ការកំណត់ប្រាក់ខែ និងពន្ធ"
+
+#, python-brace-format
+msgid "Payroll batch complete: {count} payslips paid"
+msgstr "ការដំណើរការប្រាក់ខែបានបញ្ចប់៖ បានបើកប្រាក់ {count} បង្កាន់ដៃ"
+
+#, python-brace-format
+msgid "Payroll for {month} is already fully paid"
+msgstr "ប្រាក់ខែសម្រាប់ {month} ត្រូវបានបើកគ្រប់ចំនួនរួចហើយ"
+
+msgid "Payslip"
+msgstr "បង្កាន់ដៃប្រាក់ខែ"
+
+#, python-brace-format
+msgid "Payslip emailed to {to}"
+msgstr "បានផ្ញើបង្កាន់ដៃប្រាក់ខែតាមអ៊ីមែលទៅ {to}"
+
+msgid "Payslip saved as PDF"
+msgstr "បានរក្សាទុកបង្កាន់ដៃប្រាក់ខែជា PDF"
+
+msgid "Pending"
+msgstr "កំពុងរង់ចាំ"
+
+msgid "Pending Approvals"
+msgstr "កំពុងរង់ចាំការអនុម័ត"
+
+#, python-brace-format
+msgid "Pension ({rate}%)"
+msgstr "សោធននិវត្តន៍ ({rate}%)"
+
+msgid "Pension Contribution (%)"
+msgstr "ភាគទានសោធននិវត្តន៍ (%)"
+
+msgid "Period"
+msgstr "រយៈពេល"
+
+#, python-brace-format
+msgid "Period: {period} ({count} day(s))"
+msgstr "រយៈពេល៖ {period} ({count} ថ្ងៃ)"
+
+#, python-brace-format
+msgid ""
+"Permanently remove {name} ({code}) from the directory?\n"
+"Attendance, leave and payroll history will no longer be shown."
+msgstr ""
+"លុប {name} ({code}) ចេញពីបញ្ជីជាអចិន្ត្រៃយ៍?\n"
+"ប្រវត្តិវត្តមាន ច្បាប់ និងប្រាក់ខែ នឹងលែងបង្ហាញទៀតហើយ។"
+
+msgid "Personal / Casual"
+msgstr "ផ្ទាល់ខ្លួន / ធម្មតា"
+
+msgid "Phone"
+msgstr "ទូរស័ព្ទ"
+
+msgid "Planned Headcount"
+msgstr "ចំនួនបុគ្គលិកតាមផែនការ"
+
+msgid "Platform"
+msgstr "ប្រព័ន្ធប្រតិបត្តិការ"
+
+msgid "Please enter a valid email address."
+msgstr "សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលត្រឹមត្រូវ។"
+
+msgid "Please enter your username and password."
+msgstr "សូមបញ្ចូលឈ្មោះអ្នកប្រើ និងពាក្យសម្ងាត់របស់អ្នក។"
+
+msgid "Please fill in all required fields."
+msgstr "សូមបំពេញប្រអប់ដែលត្រូវការទាំងអស់។"
+
+msgid "Please provide a reason"
+msgstr "សូមផ្ដល់មូលហេតុ"
+
+msgid "Port (587 = STARTTLS, 465 = SSL)"
+msgstr "ច្រក (587 = STARTTLS, 465 = SSL)"
+
+msgid "Position *"
+msgstr "មុខតំណែង *"
+
+msgid "Position / Role"
+msgstr "មុខតំណែង / តួនាទី"
+
+msgid "Position Title"
+msgstr "ឈ្មោះមុខតំណែង"
+
+msgid "Position Title *"
+msgstr "ឈ្មោះមុខតំណែង *"
+
+msgid "Position title, pay grade and range"
+msgstr "ឈ្មោះមុខតំណែង កម្រិតប្រាក់ខែ និងចន្លោះប្រាក់ខែ"
+
+msgid "Present Today"
+msgstr "មានវត្តមានថ្ងៃនេះ"
+
+msgid "Previous"
+msgstr "មុន"
+
+msgid "Privileged actions recorded by the backend"
+msgstr "សកម្មភាពសំខាន់ៗដែលម៉ាស៊ីនមេបានកត់ត្រា"
+
+msgid "Probation"
+msgstr "សាកល្បងការងារ"
+
+msgid "Protect your account with codes from an authenticator app."
+msgstr "ការពារគណនីរបស់អ្នកដោយលេខកូដពីកម្មវិធីផ្ទៀងផ្ទាត់។"
+
+msgid "Punctuality (Month)"
+msgstr "ភាពទៀងទាត់ (ខែ)"
+
+msgid "Quick Actions"
+msgstr "សកម្មភាពរហ័ស"
+
+msgid "RBAC Enforced"
+msgstr "បានអនុវត្តការគ្រប់គ្រងសិទ្ធិតាមតួនាទី"
+
+msgid "Rates applied when payroll is generated"
+msgstr "អត្រាដែលអនុវត្តនៅពេលបង្កើតប្រាក់ខែ"
+
+#, python-brace-format
+msgid "Reachable ({ms} ms)"
+msgstr "អាចភ្ជាប់បាន ({ms} ms)"
+
+msgid "Reason"
+msgstr "មូលហេតុ"
+
+msgid "Reason / Note"
+msgstr "មូលហេតុ / កំណត់សម្គាល់"
+
+msgid "Reason for rejection *"
+msgstr "មូលហេតុនៃការបដិសេធ *"
+
+#, python-brace-format
+msgid "Reason: {reason}"
+msgstr "មូលហេតុ៖ {reason}"
+
+#, python-brace-format
+msgid "Reassign the {count} employees in this role before deleting it"
+msgstr "សូមផ្ទេរបុគ្គលិក {count} នាក់ក្នុងតួនាទីនេះ មុនពេលលុបវា"
+
+msgid "Record a missed punch on behalf of an employee"
+msgstr "កត់ត្រាការចុះឈ្មោះដែលខកខានជំនួសបុគ្គលិក"
+
+msgid "Refresh Data"
+msgstr "ផ្ទុកទិន្នន័យឡើងវិញ"
+
+msgid "Reject"
+msgstr "បដិសេធ"
+
+#, python-brace-format
+msgid "Reject LV-{id}"
+msgstr "បដិសេធ LV-{id}"
+
+msgid "Reject Request"
+msgstr "បដិសេធសំណើ"
+
+msgid "Rejected"
+msgstr "បានបដិសេធ"
+
+msgid "Remember me"
+msgstr "ចងចាំខ្ញុំ"
+
+msgid "Remote"
+msgstr "ពីចម្ងាយ"
+
+msgid "Remote Shift"
+msgstr "វេនពីចម្ងាយ"
+
+msgid "Remote employee: you may clock in from anywhere."
+msgstr "បុគ្គលិកធ្វើការពីចម្ងាយ៖ អ្នកអាចចុះឈ្មោះចូលពីគ្រប់ទីកន្លែង។"
+
+msgid "Remote staff exempt"
+msgstr "លើកលែងបុគ្គលិកធ្វើការពីចម្ងាយ"
+
+msgid "Request ID"
+msgstr "លេខសំណើ"
+
+msgid "Request Leave"
+msgstr "ស្នើសុំច្បាប់"
+
+msgid "Request time off and track your leave balances"
+msgstr "ស្នើសុំឈប់សម្រាក និងតាមដានសមតុល្យច្បាប់របស់អ្នក"
+
+#, python-brace-format
+msgid "Request to hire for {department}"
+msgstr "សំណើជ្រើសរើសបុគ្គលិកសម្រាប់ {department}"
+
+msgid "Reset"
+msgstr "កំណត់ឡើងវិញ"
+
+msgid "Reset 2FA"
+msgstr "កំណត់ការផ្ទៀងផ្ទាត់ពីរជំហានឡើងវិញ"
+
+msgid "Reset Password"
+msgstr "កំណត់ពាក្យសម្ងាត់ឡើងវិញ"
+
+msgid "Reset Two-Factor Authentication"
+msgstr "កំណត់ការផ្ទៀងផ្ទាត់ពីរជំហានឡើងវិញ"
+
+msgid "Reset a forgotten password or a lost authenticator"
+msgstr "កំណត់ពាក្យសម្ងាត់ដែលភ្លេច ឬកម្មវិធីផ្ទៀងផ្ទាត់ដែលបាត់ឡើងវិញ"
+
+msgid "Review Leave Requests"
+msgstr "ពិនិត្យសំណើច្បាប់"
+
+msgid "Review, approve and track time-off across the organization"
+msgstr "ពិនិត្យ អនុម័ត និងតាមដានការឈប់សម្រាកទូទាំងស្ថាប័ន"
+
+#, python-brace-format
+msgid "Reviewer note: {note}"
+msgstr "កំណត់សម្គាល់របស់អ្នកពិនិត្យ៖ {note}"
+
+msgid "Role"
+msgstr "តួនាទី"
+
+msgid "Role Permissions Overview"
+msgstr "ទិដ្ឋភាពទូទៅនៃសិទ្ធិតាមតួនាទី"
+
+msgid "Role-based access control and session length"
+msgstr "ការគ្រប់គ្រងសិទ្ធិតាមតួនាទី និងរយៈពេលវគ្គប្រើប្រាស់"
+
+msgid "Run Batch"
+msgstr "ដំណើរការ"
+
+msgid "Run Payroll"
+msgstr "ដំណើរការប្រាក់ខែ"
+
+msgid "Run Payroll Batch"
+msgstr "ដំណើរការប្រាក់ខែ"
+
+msgid "SIGN IN"
+msgstr "ចូល"
+
+msgid "SMTP Server (e.g. smtp.gmail.com)"
+msgstr "ម៉ាស៊ីនមេ SMTP (ឧ. smtp.gmail.com)"
+
+msgid "Salary cannot be negative."
+msgstr "ប្រាក់ខែមិនអាចអវិជ្ជមានបានទេ។"
+
+msgid "Salary range and headcount must be numbers."
+msgstr "ចន្លោះប្រាក់ខែ និងចំនួនបុគ្គលិកត្រូវតែជាលេខ។"
+
+msgid "Sat"
+msgstr "សៅរ៍"
+
+msgid "Save & Send Test"
+msgstr "រក្សាទុក និងផ្ញើសាកល្បង"
+
+msgid "Save Changes"
+msgstr "រក្សាទុកការផ្លាស់ប្ដូរ"
+
+msgid "Save Department"
+msgstr "រក្សាទុកនាយកដ្ឋាន"
+
+msgid "Save Employee"
+msgstr "រក្សាទុកបុគ្គលិក"
+
+msgid "Save Entry"
+msgstr "រក្សាទុកកំណត់ត្រា"
+
+msgid "Save PDF"
+msgstr "រក្សាទុក PDF"
+
+msgid "Save Password"
+msgstr "រក្សាទុកពាក្យសម្ងាត់"
+
+msgid "Save Role"
+msgstr "រក្សាទុកតួនាទី"
+
+msgid "Saved on this computer"
+msgstr "បានរក្សាទុកនៅលើកុំព្យូទ័រនេះ"
+
+msgid "Search by employee name, ID, or work email..."
+msgstr "ស្វែងរកតាមឈ្មោះបុគ្គលិក លេខសម្គាល់ ឬអ៊ីមែលការងារ..."
+
+msgid "Search departments or heads..."
+msgstr "ស្វែងរកនាយកដ្ឋាន ឬប្រធាន..."
+
+msgid "Search employee, department..."
+msgstr "ស្វែងរកបុគ្គលិក នាយកដ្ឋាន..."
+
+msgid "Search..."
+msgstr "ស្វែងរក..."
+
+msgid "Security"
+msgstr "សុវត្ថិភាព"
+
+msgid "Security & Session Policy"
+msgstr "គោលការណ៍សុវត្ថិភាព និងវគ្គប្រើប្រាស់"
+
+msgid "Send a test email to:"
+msgstr "ផ្ញើអ៊ីមែលសាកល្បងទៅ៖"
+
+msgid "Sender Address (From)"
+msgstr "អាសយដ្ឋានអ្នកផ្ញើ (From)"
+
+msgid "Server Enforced"
+msgstr "អនុវត្តដោយម៉ាស៊ីនមេ"
+
+#, python-brace-format
+msgid "Server at {url} cannot reach its database"
+msgstr "ម៉ាស៊ីនមេនៅ {url} មិនអាចភ្ជាប់ទៅមូលដ្ឋានទិន្នន័យរបស់វាបានទេ"
+
+#, python-brace-format
+msgid "Server error ({code})"
+msgstr "កំហុសម៉ាស៊ីនមេ ({code})"
+
+msgid "Session Expiry (hours)"
+msgstr "រយៈពេលវគ្គប្រើប្រាស់ (ម៉ោង)"
+
+msgid "Set HRMS_DATABASE_URL to switch to PostgreSQL / MySQL."
+msgstr "កំណត់ HRMS_DATABASE_URL ដើម្បីប្ដូរទៅ PostgreSQL / MySQL។"
+
+msgid "Set a New Password"
+msgstr "កំណត់ពាក្យសម្ងាត់ថ្មី"
+
+msgid "Settings"
+msgstr "ការកំណត់"
+
+msgid "Settings & System Configuration"
+msgstr "ការកំណត់ និងការរៀបចំប្រព័ន្ធ"
+
+msgid "Settings saved"
+msgstr "បានរក្សាទុកការកំណត់"
+
+msgid "Setup key copied"
+msgstr "បានចម្លងលេខកូដរៀបចំ"
+
+msgid "Shift"
+msgstr "វេន"
+
+msgid "Shift A"
+msgstr "វេន A"
+
+msgid "Shift End (HH:MM)"
+msgstr "ម៉ោងបញ្ចប់វេន (HH:MM)"
+
+msgid "Shift Start (HH:MM)"
+msgstr "ម៉ោងចាប់ផ្ដើមវេន (HH:MM)"
+
+msgid "Shift schedule, grace period and overtime rules"
+msgstr "កាលវិភាគវេន រយៈពេលអនុគ្រោះ និងច្បាប់ម៉ោងបន្ថែម"
+
+#, python-brace-format
+msgid "Shift starts {time}"
+msgstr "វេនចាប់ផ្ដើម {time}"
+
+msgid "Shifts, punches and attendance for the whole team"
+msgstr "វេន ការចុះឈ្មោះ និងវត្តមានសម្រាប់ក្រុមទាំងមូល"
+
+#, python-brace-format
+msgid "Showing {start}-{end} of {total} employees"
+msgstr "បង្ហាញ {start}-{end} នៃបុគ្គលិក {total} នាក់"
+
+#, python-brace-format
+msgid "Showing {start}-{end} of {total} records"
+msgstr "បង្ហាញ {start}-{end} នៃកំណត់ត្រា {total}"
+
+msgid "Sick"
+msgstr "ឈឺ"
+
+msgid "Sick & Medical"
+msgstr "ឈឺ និងព្យាបាល"
+
+msgid "Sign Out"
+msgstr "ចាកចេញ"
+
+msgid "Sign in to access your enterprise portal"
+msgstr "ចូលដើម្បីប្រើប្រាស់ផតថលរបស់ស្ថាប័ន"
+
+msgid "Signing in..."
+msgstr "កំពុងចូល..."
+
+msgid "Start Date (YYYY-MM-DD)"
+msgstr "ថ្ងៃចាប់ផ្ដើម (YYYY-MM-DD)"
+
+msgid "Status"
+msgstr "ស្ថានភាព"
+
+msgid "Status Filter"
+msgstr "តម្រងស្ថានភាព"
+
+#, python-brace-format
+msgid "Status: {status}"
+msgstr "ស្ថានភាព៖ {status}"
+
+msgid "Still loading, please try again in a moment."
+msgstr "នៅកំពុងផ្ទុក សូមព្យាយាមម្ដងទៀតបន្តិចទៀត។"
+
+msgid "Submit Leave Request"
+msgstr "ដាក់សំណើច្បាប់"
+
+msgid "Submit to HR"
+msgstr "ផ្ញើទៅធនធានមនុស្ស"
+
+msgid "Sun"
+msgstr "អាទិត្យ"
+
+msgid "System"
+msgstr "តាមប្រព័ន្ធ"
+
+msgid "System Master Clock"
+msgstr "នាឡិកាមេនៃប្រព័ន្ធ"
+
+msgid "System Role"
+msgstr "តួនាទីប្រព័ន្ធ"
+
+#, python-brace-format
+msgid "Target {count}"
+msgstr "គោលដៅ {count}"
+
+msgid "Tax Withholding"
+msgstr "ពន្ធកាត់ទុក"
+
+msgid "Temp"
+msgstr "បណ្ដោះអាសន្ន"
+
+msgid "Temporary Password"
+msgstr "ពាក្យសម្ងាត់បណ្ដោះអាសន្ន"
+
+msgid "Terminated"
+msgstr "បានបញ្ចប់ការងារ"
+
+msgid "Test Ping"
+msgstr "សាកល្បងការតភ្ជាប់"
+
+#, python-brace-format
+msgid "Test email sent to {to}"
+msgstr "បានផ្ញើអ៊ីមែលសាកល្បងទៅ {to}"
+
+msgid "The HRMS server took too long to respond"
+msgstr "ម៉ាស៊ីនមេ HRMS ឆ្លើយតបយូរពេក"
+
+msgid "The latest employees to clock in"
+msgstr "បុគ្គលិកដែលបានចុះឈ្មោះចូលចុងក្រោយ"
+
+msgid "The new passwords do not match."
+msgstr "ពាក្យសម្ងាត់ថ្មីមិនដូចគ្នាទេ។"
+
+msgid "Theme Mode"
+msgstr "របៀបស្បែក"
+
+msgid "Theme, scaling and accent colour on this computer"
+msgstr "ស្បែក ទំហំ និងពណ៌សំខាន់នៅលើកុំព្យូទ័រនេះ"
+
+#, python-brace-format
+msgid "This device ({ip}) is not on the office network, so clock in/out is disabled. Ask HR for a manual entry if you are working elsewhere."
+msgstr "ឧបករណ៍នេះ ({ip}) មិនស្ថិតនៅលើបណ្ដាញការិយាល័យទេ ដូច្នេះការចុះឈ្មោះចូល/ចេញត្រូវបានបិទ។ សូមស្នើធនធានមនុស្សឱ្យកត់ត្រាដោយដៃ ប្រសិនបើអ្នកកំពុងធ្វើការនៅកន្លែងផ្សេង។"
+
+msgid "This month"
+msgstr "ខែនេះ"
+
+msgid "Thu"
+msgstr "ព្រហស្បតិ៍"
+
+msgid "Times are recorded by the server."
+msgstr "ម៉ោងត្រូវបានកត់ត្រាដោយម៉ាស៊ីនមេ។"
+
+msgid "Timestamp"
+msgstr "ពេលវេលា"
+
+msgid "Title and pay grade are required."
+msgstr "ត្រូវការឈ្មោះមុខតំណែង និងកម្រិតប្រាក់ខែ។"
+
+msgid "To correct your details, contact HR."
+msgstr "ដើម្បីកែព័ត៌មានរបស់អ្នក សូមទាក់ទងធនធានមនុស្ស។"
+
+msgid "Today"
+msgstr "ថ្ងៃនេះ"
+
+msgid "Today is not a working day."
+msgstr "ថ្ងៃនេះមិនមែនជាថ្ងៃធ្វើការទេ។"
+
+msgid "Today's Check-Ins"
+msgstr "ការចុះឈ្មោះចូលថ្ងៃនេះ"
+
+msgid "Today's staffing, attendance and approvals"
+msgstr "បុគ្គលិក វត្តមាន និងការអនុម័តថ្ងៃនេះ"
+
+msgid "Today:"
+msgstr "ថ្ងៃនេះ៖"
+
+msgid "Toggle dark mode"
+msgstr "ប្ដូររបៀបងងឹត"
+
+msgid "Total Deductions"
+msgstr "ការកាត់កងសរុប"
+
+msgid "Total Employees"
+msgstr "បុគ្គលិកសរុប"
+
+msgid "Total Hours"
+msgstr "ម៉ោងសរុប"
+
+msgid "Total Net Received"
+msgstr "ប្រាក់សុទ្ធដែលបានទទួលសរុប"
+
+msgid "Total Payroll Outflow"
+msgstr "ចំណាយប្រាក់ខែសរុប"
+
+msgid "Total Tax Withheld"
+msgstr "ពន្ធកាត់ទុកសរុប"
+
+#, python-brace-format
+msgid "Total budget: {amount}/mo"
+msgstr "ថវិកាសរុប៖ {amount}/ខែ"
+
+msgid "Tue"
+msgstr "អង្គារ"
+
+msgid "Turn Off 2FA"
+msgstr "បិទការផ្ទៀងផ្ទាត់ពីរជំហាន"
+
+msgid "Turn On"
+msgstr "បើក"
+
+#, python-brace-format
+msgid "Turn off 2FA for '{user}' (for example after losing their phone)? They can set it up again from their user menu."
+msgstr "បិទការផ្ទៀងផ្ទាត់ពីរជំហានសម្រាប់ '{user}' (ឧទាហរណ៍ បន្ទាប់ពីបាត់ទូរស័ព្ទ)? ពួកគេអាចរៀបចំវាម្ដងទៀតពីម៉ឺនុយអ្នកប្រើរបស់ពួកគេ។"
+
+msgid "Two-Factor Auth"
+msgstr "ផ្ទៀងផ្ទាត់ពីរជំហាន"
+
+msgid "Two-Factor Authentication"
+msgstr "ការផ្ទៀងផ្ទាត់ពីរជំហាន"
+
+#, python-brace-format
+msgid "Two-Factor Authentication: {status}"
+msgstr "ការផ្ទៀងផ្ទាត់ពីរជំហាន៖ {status}"
+
+msgid "Two-factor authentication is on"
+msgstr "ការផ្ទៀងផ្ទាត់ពីរជំហានបានបើក"
+
+msgid "Two-factor authentication turned off"
+msgstr "ការផ្ទៀងផ្ទាត់ពីរជំហានត្រូវបានបិទ"
+
+#, python-brace-format
+msgid "Type: {type}"
+msgstr "ប្រភេទ៖ {type}"
+
+msgid "UI Scaling"
+msgstr "ទំហំផ្ទាំងបង្ហាញ"
+
+msgid "Unknown employee ID."
+msgstr "មិនស្គាល់លេខសម្គាល់បុគ្គលិក។"
+
+msgid "Unpaid"
+msgstr "គ្មានប្រាក់ឈ្នួល"
+
+msgid "Unreachable - is the backend running?"
+msgstr "មិនអាចភ្ជាប់បាន - តើម៉ាស៊ីនមេកំពុងដំណើរការឬទេ?"
+
+msgid "Unsaved changes discarded"
+msgstr "បានបោះបង់ការផ្លាស់ប្ដូរដែលមិនទាន់រក្សាទុក"
+
+msgid "Use STARTTLS"
+msgstr "ប្រើ STARTTLS"
+
+msgid "Use YYYY-MM-DD for the date and HH:MM for times."
+msgstr "ប្រើ YYYY-MM-DD សម្រាប់កាលបរិច្ឆេទ និង HH:MM សម្រាប់ម៉ោង។"
+
+msgid "Use at least 8 characters with letters and numbers."
+msgstr "ប្រើយ៉ាងហោចណាស់ 8 តួ ដែលមានទាំងអក្សរ និងលេខ។"
+
+msgid "Use at least 8 characters."
+msgstr "ប្រើយ៉ាងហោចណាស់ 8 តួ។"
+
+msgid "Use both letters and numbers."
+msgstr "ប្រើទាំងអក្សរ និងលេខ។"
+
+msgid "Used on payslip headers, reports and email"
+msgstr "ប្រើនៅលើក្បាលបង្កាន់ដៃប្រាក់ខែ របាយការណ៍ និងអ៊ីមែល"
+
+msgid "Used to email payslips and leave decisions"
+msgstr "ប្រើដើម្បីផ្ញើបង្កាន់ដៃប្រាក់ខែ និងការសម្រេចលើច្បាប់តាមអ៊ីមែល"
+
+msgid "User"
+msgstr "អ្នកប្រើ"
+
+msgid "User Accounts"
+msgstr "គណនីអ្នកប្រើ"
+
+msgid "Username"
+msgstr "ឈ្មោះអ្នកប្រើ"
+
+msgid "Username (leave blank if not required)"
+msgstr "ឈ្មោះអ្នកប្រើ (ទុកទទេប្រសិនបើមិនត្រូវការ)"
+
+msgid "Username / Work Email"
+msgstr "ឈ្មោះអ្នកប្រើ / អ៊ីមែលការងារ"
+
+msgid "Username or work email"
+msgstr "ឈ្មោះអ្នកប្រើ ឬអ៊ីមែលការងារ"
+
+msgid "View All Attendance"
+msgstr "មើលវត្តមានទាំងអស់"
+
+msgid "View Note"
+msgstr "មើលកំណត់សម្គាល់"
+
+msgid "View Reason"
+msgstr "មើលមូលហេតុ"
+
+msgid "View Request"
+msgstr "មើលសំណើ"
+
+msgid "View Staff"
+msgstr "មើលបុគ្គលិក"
+
+msgid "View departments"
+msgstr "មើលនាយកដ្ឋាន"
+
+msgid "Wed"
+msgstr "ពុធ"
+
+#, python-brace-format
+msgid "Welcome back, {name}"
+msgstr "សូមស្វាគមន៍ការត្រឡប់មកវិញ {name}"
+
+msgid "Within grace period"
+msgstr "ក្នុងរយៈពេលអនុគ្រោះ"
+
+msgid "Work Email"
+msgstr "អ៊ីមែលការងារ"
+
+msgid "Work Email *"
+msgstr "អ៊ីមែលការងារ *"
+
+msgid "Work Mode"
+msgstr "របៀបធ្វើការ"
+
+msgid "Work Week"
+msgstr "សប្ដាហ៍ធ្វើការ"
+
+msgid "Work mode 'Remote' may clock in from anywhere"
+msgstr "របៀបធ្វើការ 'ពីចម្ងាយ' អាចចុះឈ្មោះចូលពីគ្រប់ទីកន្លែង"
+
+msgid "HRMS"
+msgstr "HRMS"
+
+msgid "You do not have access to that module"
+msgstr "អ្នកមិនមានសិទ្ធិចូលប្រើផ្នែកនោះទេ"
+
+msgid "You're all caught up"
+msgstr "គ្មានការជូនដំណឹងថ្មីទេ"
+
+msgid "Your account is not linked to an employee record"
+msgstr "គណនីរបស់អ្នកមិនបានភ្ជាប់ជាមួយកំណត់ត្រាបុគ្គលិកទេ"
+
+msgid "Your daily punches and monthly attendance history"
+msgstr "ការចុះឈ្មោះប្រចាំថ្ងៃ និងប្រវត្តិវត្តមានប្រចាំខែរបស់អ្នក"
+
+msgid "Your latest requests"
+msgstr "សំណើថ្មីៗរបស់អ្នក"
+
+msgid "Your password is temporary. Choose your own password to continue."
+msgstr "ពាក្យសម្ងាត់របស់អ្នកជាពាក្យសម្ងាត់បណ្ដោះអាសន្ន។ សូមជ្រើសរើសពាក្យសម្ងាត់ផ្ទាល់ខ្លួនដើម្បីបន្ត។"
+
+msgid "Your request will be sent to HR for approval"
+msgstr "សំណើរបស់អ្នកនឹងត្រូវផ្ញើទៅធនធានមនុស្សដើម្បីអនុម័ត"
+
+msgid "Your role requires two-factor authentication, so it cannot be turned off. If you lost your phone, ask an Admin to reset 2FA for your account."
+msgstr "តួនាទីរបស់អ្នកតម្រូវឱ្យមានការផ្ទៀងផ្ទាត់ពីរជំហាន ដូច្នេះមិនអាចបិទបានទេ។ ប្រសិនបើអ្នកបាត់ទូរស័ព្ទ សូមស្នើអ្នកគ្រប់គ្រងប្រព័ន្ធឱ្យកំណត់វាឡើងវិញសម្រាប់គណនីរបស់អ្នក។"
+
+msgid "Your role requires two-factor authentication. Set it up to continue."
+msgstr "តួនាទីរបស់អ្នកតម្រូវឱ្យមានការផ្ទៀងផ្ទាត់ពីរជំហាន។ សូមរៀបចំវាដើម្បីបន្ត។"
+
+msgid "Your session has expired. Please sign in again."
+msgstr "វគ្គប្រើប្រាស់របស់អ្នកបានផុតកំណត់។ សូមចូលម្ដងទៀត។"
+
+#, python-brace-format
+msgid "below {target}%"
+msgstr "ក្រោម {target}%"
+
+msgid "clocked in"
+msgstr "បានចុះឈ្មោះចូល"
+
+msgid "clocked in today"
+msgstr "បានចុះឈ្មោះចូលថ្ងៃនេះ"
+
+msgid "days"
+msgstr "ថ្ងៃ"
+
+msgid "e.g. 12"
+msgstr "ឧ. 12"
+
+msgid "e.g. 120000"
+msgstr "ឧ. 120000"
+
+msgid "e.g. 4"
+msgstr "ឧ. 4"
+
+msgid "e.g. 4000"
+msgstr "ឧ. 4000"
+
+msgid "e.g. 4500"
+msgstr "ឧ. 4500"
+
+msgid "e.g. 5500"
+msgstr "ឧ. 5500"
+
+msgid "e.g. Customer Success"
+msgstr "ឧ. សេវាអតិថិជន"
+
+msgid "e.g. Data Engineer"
+msgstr "ឧ. វិស្វករទិន្នន័យ"
+
+msgid "e.g. Doe"
+msgstr "ឧ. សុខ"
+
+msgid "e.g. E-3"
+msgstr "ឧ. E-3"
+
+msgid "e.g. EMP-012"
+msgstr "ឧ. EMP-012"
+
+msgid "e.g. HQ Floor 2"
+msgstr "ឧ. ការិយាល័យកណ្ដាល ជាន់ទី 2"
+
+msgid "e.g. Jane"
+msgstr "ឧ. ដារា"
+
+msgid "e.g. Python, SQL, Airflow"
+msgstr "ឧ. Python, SQL, Airflow"
+
+msgid "employees"
+msgstr "បុគ្គលិក"
+
+msgid "name@example.com"
+msgstr "name@example.com"
+
+msgid "not clocked in"
+msgstr "មិនទាន់ចុះឈ្មោះចូល"
+
+msgid "on time"
+msgstr "ទាន់ពេល"
+
+msgid "on track"
+msgstr "តាមគោលដៅ"
+
+msgid "people"
+msgstr "នាក់"
+
+msgid "per day"
+msgstr "ក្នុងមួយថ្ងៃ"
+
+msgid "requests"
+msgstr "សំណើ"
+
+msgid "staff"
+msgstr "បុគ្គលិក"
+
+msgid "this month"
+msgstr "ខែនេះ"
+
+msgid "today"
+msgstr "ថ្ងៃនេះ"
+
+#, python-brace-format
+msgid "{amount} / month"
+msgstr "{amount} / ខែ"
+
+#, python-brace-format
+msgid "{amount}/mo"
+msgstr "{amount}/ខែ"
+
+#, python-brace-format
+msgid "{code} marked {status}"
+msgstr "{code} ត្រូវបានសម្គាល់ថា {status}"
+
+#, python-brace-format
+msgid "{code} opened: {count} × {title}"
+msgstr "បានបើក {code}៖ {count} × {title}"
+
+#, python-brace-format
+msgid "{count} Active Members"
+msgstr "សមាជិកសកម្ម {count} នាក់"
+
+#, python-brace-format
+msgid "{count} Members"
+msgstr "{count} នាក់"
+
+#, python-brace-format
+msgid "{count} On Leave"
+msgstr "ឈប់សម្រាក {count} នាក់"
+
+#, python-brace-format
+msgid "{count} On Probation"
+msgstr "សាកល្បងការងារ {count} នាក់"
+
+#, python-brace-format
+msgid "{count} Roles"
+msgstr "តួនាទី {count}"
+
+#, python-brace-format
+msgid "{count} below the headcount target"
+msgstr "ខ្វះ {count} នាក់ពីគោលដៅចំនួនបុគ្គលិក"
+
+#, python-brace-format
+msgid "{count} completed shifts"
+msgstr "វេនដែលបានបញ្ចប់ {count}"
+
+#, python-brace-format
+msgid "{count} day(s)"
+msgstr "{count} ថ្ងៃ"
+
+#, python-brace-format
+msgid "{count} days worked"
+msgstr "ធ្វើការ {count} ថ្ងៃ"
+
+#, python-brace-format
+msgid "{count} employees"
+msgstr "បុគ្គលិក {count} នាក់"
+
+#, python-brace-format
+msgid "{count} employees • Grade {grade}"
+msgstr "បុគ្គលិក {count} នាក់ • កម្រិត {grade}"
+
+#, python-brace-format
+msgid "{count} on time"
+msgstr "ទាន់ពេល {count} នាក់"
+
+#, python-brace-format
+msgid "{count} openings"
+msgstr "កន្លែងទំនេរ {count}"
+
+#, python-brace-format
+msgid "{count} payslips"
+msgstr "បង្កាន់ដៃប្រាក់ខែ {count}"
+
+#, python-brace-format
+msgid "{count} pending"
+msgstr "កំពុងរង់ចាំ {count}"
+
+#, python-brace-format
+msgid "{count} roles"
+msgstr "តួនាទី {count}"
+
+#, python-brace-format
+msgid "{count} staff"
+msgstr "បុគ្គលិក {count} នាក់"
+
+#, python-brace-format
+msgid "{count} used"
+msgstr "បានប្រើ {count}"
+
+#, python-brace-format
+msgid "{count} waiting for a decision"
+msgstr "{count} កំពុងរង់ចាំការសម្រេច"
+
+#, python-brace-format
+msgid "{departments} departments  ·  {roles} job roles"
+msgstr "នាយកដ្ឋាន {departments}  ·  តួនាទីការងារ {roles}"
+
+#, python-brace-format
+msgid "{employees} employees · {attendance} attendance rows · {payroll} payroll lines"
+msgstr "បុគ្គលិក {employees} នាក់ · កំណត់ត្រាវត្តមាន {attendance} · បញ្ជីប្រាក់ខែ {payroll}"
+
+#, python-brace-format
+msgid "{hours:g} scheduled hours per week"
+msgstr "{hours:g} ម៉ោងតាមកាលវិភាគក្នុងមួយសប្ដាហ៍"
+
+#, python-brace-format
+msgid "{low} - {high} /mo"
+msgstr "{low} - {high} /ខែ"
+
+#, python-brace-format
+msgid ""
+"{month}\n"
+"\n"
+"• Calculate {pending} pending line(s)\n"
+"• Mark {total} line(s) as paid\n"
+"\n"
+"Continue?"
+msgstr ""
+"{month}\n"
+"\n"
+"• គណនាបញ្ជីកំពុងរង់ចាំ {pending}\n"
+"• សម្គាល់បញ្ជី {total} ថាបានបើកប្រាក់\n"
+"\n"
+"បន្តឬ?"
+
+#, python-brace-format
+msgid "{month} • {count} employees"
+msgstr "{month} • បុគ្គលិក {count} នាក់"
+
+#, python-brace-format
+msgid "{name} saved"
+msgstr "បានរក្សាទុក {name}"
+
+#, python-brace-format
+msgid ""
+"{name} was added.\n"
+"\n"
+"Login username:  {username}\n"
+"Initial password:  {password}\n"
+"\n"
+"Share these with the employee and ask them to change the password."
+msgstr ""
+"បានបន្ថែម {name}។\n"
+"\n"
+"ឈ្មោះអ្នកប្រើសម្រាប់ចូល៖  {username}\n"
+"ពាក្យសម្ងាត់ដំបូង៖  {password}\n"
+"\n"
+"សូមចែករំលែកព័ត៌មាននេះជាមួយបុគ្គលិក ហើយស្នើឱ្យពួកគេប្ដូរពាក្យសម្ងាត់។"
+
+#, python-brace-format
+msgid "{name} was removed"
+msgstr "បានលុប {name}"
+
+#, python-brace-format, python-format
+msgid "{percent}% calculated"
+msgstr "បានគណនា {percent}%"
+
+#, python-brace-format, python-format
+msgid "{percent}% left"
+msgstr "នៅសល់ {percent}%"
+
+#, python-brace-format, python-format
+msgid "{percent}% staffed"
+msgstr "មានបុគ្គលិក {percent}%"
+
+#, python-brace-format, python-format
+msgid "{rate}% rate"
+msgstr "អត្រា {rate}%"
+
+#, python-brace-format
+msgid "{roles} roles  ·  {people} people"
+msgstr "តួនាទី {roles}  ·  {people} នាក់"
+
+#, python-brace-format
+msgid "{type} leave • {days} day(s)"
+msgstr "ច្បាប់{type} • {days} ថ្ងៃ"
+
+#, python-brace-format
+msgid "{years} years"
+msgstr "{years} ឆ្នាំ"
+

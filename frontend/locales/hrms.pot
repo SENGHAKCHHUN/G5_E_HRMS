@@ -1,0 +1,2062 @@
+# Translations template for HRMS.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the HRMS project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: HRMS VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-05 16:56+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "(late)"
+msgstr ""
+
+#, python-brace-format
+msgid "({count} people)"
+msgstr ""
+
+#, python-brace-format
+msgid "+{count} hired"
+msgstr ""
+
+#, python-brace-format
+msgid "+{minutes}m"
+msgstr ""
+
+#, python-brace-format
+msgid "/ {allowance} days remaining"
+msgstr ""
+
+#, python-brace-format
+msgid "/ {days} days left"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"1.  Install Google Authenticator or Microsoft Authenticator on your "
+"phone.\n"
+"2.  In the app choose  Add account  >  Enter a setup key.\n"
+"3.  Account name: {username}   ·   Type: Time based\n"
+"4.  Type the key below, then enter the 6-digit code the app shows."
+msgstr ""
+
+msgid "2FA is on for your account."
+msgstr ""
+
+#, python-brace-format
+msgid "2FA reset for {user}"
+msgstr ""
+
+msgid "6-digit code"
+msgstr ""
+
+msgid "6-digit code from the app"
+msgstr ""
+
+#, python-brace-format
+msgid "API Status: {message}"
+msgstr ""
+
+msgid "Absent"
+msgstr ""
+
+msgid "Accent colour"
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Active Elapsed"
+msgstr ""
+
+msgid "Add Department"
+msgstr ""
+
+msgid "Add Employee"
+msgstr ""
+
+msgid "Add Job Role"
+msgstr ""
+
+msgid "Add Role"
+msgstr ""
+
+msgid "Admin"
+msgstr ""
+
+msgid "Admin & HR must use an authenticator app"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+#, python-brace-format
+msgid "All ({count})"
+msgstr ""
+
+msgid "All Departments"
+msgstr ""
+
+msgid "All Roles"
+msgstr ""
+
+msgid "All Statuses"
+msgstr ""
+
+msgid "Allowances / Bonus"
+msgstr ""
+
+msgid "Annual"
+msgstr ""
+
+msgid "Annual Leave"
+msgstr ""
+
+msgid "Annual Vacation"
+msgstr ""
+
+msgid "Appearance & Theme"
+msgstr ""
+
+msgid "Appearance & Theme Preferences"
+msgstr ""
+
+msgid "Apply Leave"
+msgstr ""
+
+msgid "Approve"
+msgstr ""
+
+msgid "Approve / Log"
+msgstr ""
+
+msgid "Approved"
+msgstr ""
+
+msgid "Approved absences"
+msgstr ""
+
+msgid ""
+"Ask an Admin to reset your password (Settings > Authentication & Users > "
+"User Accounts > Reset Password).\n"
+"\n"
+"You will get a one-time temporary password and choose your own password "
+"the next time you sign in."
+msgstr ""
+
+msgid "Attendance"
+msgstr ""
+
+msgid "Attendance & Policies"
+msgstr ""
+
+msgid "Attendance & Time"
+msgstr ""
+
+msgid "Attendance & Time Tracking"
+msgstr ""
+
+msgid "Attendance Policies"
+msgstr ""
+
+msgid "Attendance Rate"
+msgstr ""
+
+msgid "Attendance Record"
+msgstr ""
+
+msgid "Attendance Status"
+msgstr ""
+
+msgid "Audit & Security Logs"
+msgstr ""
+
+msgid "Authentication & Users"
+msgstr ""
+
+msgid "Authentication code (from your authenticator app)"
+msgstr ""
+
+#, python-brace-format
+msgid "Average {amount}"
+msgstr ""
+
+msgid "Avg Work Hours"
+msgstr ""
+
+msgid "Avg. Seniority"
+msgstr ""
+
+msgid "Awaiting check-in"
+msgstr ""
+
+msgid "Backend"
+msgstr ""
+
+msgid "Backend & Database"
+msgstr ""
+
+msgid "Backend & Local Database"
+msgstr ""
+
+msgid "Backend API Endpoint URL"
+msgstr ""
+
+#, python-brace-format
+msgid "Backend offline at {url}"
+msgstr ""
+
+#, python-brace-format
+msgid "Backup saved ({size} MB)"
+msgstr ""
+
+msgid "Base"
+msgstr ""
+
+msgid "Base Range"
+msgstr ""
+
+msgid "Base Salary"
+msgstr ""
+
+msgid "Base Salary (per month) *"
+msgstr ""
+
+msgid "Bonus"
+msgstr ""
+
+msgid "Budget and target must be numbers."
+msgstr ""
+
+msgid "CLOCK IN"
+msgstr ""
+
+msgid "CLOCK OUT"
+msgstr ""
+
+msgid "Calculate & Run"
+msgstr ""
+
+msgid "Calculate net salary from base pay, allowances and deductions"
+msgstr ""
+
+msgid "Calculated"
+msgstr ""
+
+#, python-brace-format
+msgid "Calculated duration: {count} day(s)"
+msgstr ""
+
+msgid "Calculated from hire dates"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancelled"
+msgstr ""
+
+#, python-brace-format
+msgid "Cannot reach the HRMS server at {url}. Is the backend running?"
+msgstr ""
+
+msgid "Casual"
+msgstr ""
+
+msgid "Change Password"
+msgstr ""
+
+msgid "Check In"
+msgstr ""
+
+msgid "Check In (HH:MM)"
+msgstr ""
+
+msgid "Check Out"
+msgstr ""
+
+msgid "Check Out (HH:MM)"
+msgstr ""
+
+msgid "Check-In Rules"
+msgstr ""
+
+msgid "Check-in Closes (HH:MM)"
+msgstr ""
+
+msgid "Check-in Opens (HH:MM)"
+msgstr ""
+
+msgid "Check-in is closed right now."
+msgstr ""
+
+#, python-brace-format
+msgid "Check-in {open}–{close} (server time)"
+msgstr ""
+
+msgid "Check-out cannot be before check-in."
+msgstr ""
+
+msgid "Checking the server..."
+msgstr ""
+
+msgid "Checking..."
+msgstr ""
+
+msgid "Clock In / Out"
+msgstr ""
+
+msgid "Clock in/out only from the networks below"
+msgstr ""
+
+#, python-brace-format
+msgid "Clocked In at {time}"
+msgstr ""
+
+#, python-brace-format
+msgid "Clocked Out at {time}"
+msgstr ""
+
+#, python-brace-format
+msgid "Clocked in at {time}"
+msgstr ""
+
+msgid "Clocked in today"
+msgstr ""
+
+#, python-brace-format
+msgid "Clocked out at {time}"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Company & Workplace Profile"
+msgstr ""
+
+msgid "Company Domain"
+msgstr ""
+
+msgid "Company Name"
+msgstr ""
+
+msgid "Company preferences, security policy, email and the local database"
+msgstr ""
+
+msgid "Configuration Domains"
+msgstr ""
+
+msgid "Configured"
+msgstr ""
+
+msgid "Confirm"
+msgstr ""
+
+msgid "Confirm new password"
+msgstr ""
+
+msgid "Confirm with your password to turn 2FA off"
+msgstr ""
+
+#, python-brace-format
+msgid "Connected to {url} (v{version})"
+msgstr ""
+
+msgid "Contractor"
+msgstr ""
+
+msgid "Copied"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Create Requisition"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Create a one-time temporary password for '{user}'?\n"
+"Their current password stops working and they must choose a new one at "
+"next sign-in."
+msgstr ""
+
+msgid "Create the profile and login"
+msgstr ""
+
+msgid "Currency"
+msgstr ""
+
+msgid "Current password"
+msgstr ""
+
+msgid "Current password (the temporary one you were given)"
+msgstr ""
+
+msgid "Dark"
+msgstr ""
+
+msgid "Dark Mode"
+msgstr ""
+
+msgid "Dashboard"
+msgstr ""
+
+msgid "Dashboard Overview"
+msgstr ""
+
+msgid "Dashboard summary saved as PDF"
+msgstr ""
+
+msgid "Database Contents"
+msgstr ""
+
+msgid "Database Engine"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Date * (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Dates must be in YYYY-MM-DD format."
+msgstr ""
+
+msgid "Days Worked"
+msgstr ""
+
+msgid "Deductions"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete Employee"
+msgstr ""
+
+msgid "Delete Job Role"
+msgstr ""
+
+#, python-brace-format
+msgid "Delete the role '{title}'?"
+msgstr ""
+
+msgid "Demo account"
+msgstr ""
+
+msgid "Department"
+msgstr ""
+
+#, python-brace-format
+msgid "Department '{name}' saved"
+msgstr ""
+
+msgid "Department *"
+msgstr ""
+
+msgid "Department Lead"
+msgstr ""
+
+msgid "Department Name *"
+msgstr ""
+
+msgid "Department name is required."
+msgstr ""
+
+msgid "Department profile and staffing target"
+msgstr ""
+
+msgid "Departmental Spread"
+msgstr ""
+
+msgid "Departments & Positions"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Desktop Runtime"
+msgstr ""
+
+msgid "Detail"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+msgid "Discard"
+msgstr ""
+
+msgid "Done"
+msgstr ""
+
+msgid "Download Backup"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Earnings"
+msgstr ""
+
+msgid "Edit Department"
+msgstr ""
+
+msgid "Edit Employee"
+msgstr ""
+
+msgid "Edit Job Role"
+msgstr ""
+
+msgid "Edit Profile"
+msgstr ""
+
+msgid "Email (SMTP)"
+msgstr ""
+
+msgid "Email employees when leave is approved/rejected"
+msgstr ""
+
+msgid "Email to Employee"
+msgstr ""
+
+msgid "Emp ID"
+msgstr ""
+
+msgid "Employee"
+msgstr ""
+
+msgid "Employee & Department"
+msgstr ""
+
+msgid "Employee Added"
+msgstr ""
+
+msgid "Employee Directory"
+msgstr ""
+
+msgid "Employee ID"
+msgstr ""
+
+msgid "Employee ID *"
+msgstr ""
+
+msgid "Employee Name"
+msgstr ""
+
+#, python-brace-format
+msgid "Employee: {name} ({department})"
+msgstr ""
+
+msgid "Employees"
+msgstr ""
+
+msgid "Employees and monthly base salaries"
+msgstr ""
+
+msgid "Employees with status 'On Leave'"
+msgstr ""
+
+msgid "Employment"
+msgstr ""
+
+msgid "Encrypt the connection (port 587)"
+msgstr ""
+
+msgid "End Date (YYYY-MM-DD)"
+msgstr ""
+
+msgid "End date is before start date"
+msgstr ""
+
+msgid "Enforce 2FA for staff"
+msgstr ""
+
+msgid "Enforced by the server, using the server's clock"
+msgstr ""
+
+msgid "Enter the 6-digit code from the app."
+msgstr ""
+
+msgid "Enter the code from your authenticator app."
+msgstr ""
+
+msgid ""
+"Example: 192.168.1.0/24, 10.0.0.0/8. Forgotten or off-site punches are "
+"fixed by HR with Manual Log Entry."
+msgstr ""
+
+msgid "Export CSV"
+msgstr ""
+
+msgid "Export PDF Summary"
+msgstr ""
+
+#, python-brace-format
+msgid "Exported {count} attendance records"
+msgstr ""
+
+#, python-brace-format
+msgid "Exported {count} employees to CSV"
+msgstr ""
+
+#, python-brace-format
+msgid "Exported {count} payroll lines"
+msgstr ""
+
+msgid "FastAPI service and SQLAlchemy storage"
+msgstr ""
+
+msgid "Female"
+msgstr ""
+
+msgid "Fields marked * are required"
+msgstr ""
+
+msgid "Filled"
+msgstr ""
+
+msgid "Filter by ID or employee..."
+msgstr ""
+
+msgid "Filter by employee name or ID..."
+msgstr ""
+
+msgid "First Name *"
+msgstr ""
+
+#, python-brace-format
+msgid "For {user}"
+msgstr ""
+
+msgid "Forgot Password"
+msgstr ""
+
+msgid "Forgot Password?"
+msgstr ""
+
+msgid "Framework"
+msgstr ""
+
+msgid "Fri"
+msgstr ""
+
+msgid "Full"
+msgstr ""
+
+msgid "Full (Override)"
+msgstr ""
+
+msgid "Full (Pay)"
+msgstr ""
+
+msgid "Full (Read/Write)"
+msgstr ""
+
+msgid "Full Name"
+msgstr ""
+
+msgid "Full name"
+msgstr ""
+
+msgid "Full-time"
+msgstr ""
+
+msgid "Gender"
+msgstr ""
+
+msgid "General & Company Info"
+msgstr ""
+
+msgid ""
+"Give this password to the user. It works once; they will be asked to set "
+"their own password when they sign in."
+msgstr ""
+
+#, python-brace-format
+msgid "Grace period {minutes}m"
+msgstr ""
+
+#, python-brace-format
+msgid "Grade {grade}"
+msgstr ""
+
+msgid "Gross Earnings"
+msgstr ""
+
+msgid "HQ Onsite"
+msgstr ""
+
+msgid "HR Management System"
+msgstr ""
+
+msgid "HR Manager"
+msgstr ""
+
+msgid "Half Day"
+msgstr ""
+
+msgid "Headcount"
+msgstr ""
+
+msgid "Headcount Target"
+msgstr ""
+
+msgid "Headcount by Department"
+msgstr ""
+
+msgid "Health Insurance"
+msgstr ""
+
+msgid "Hire Date"
+msgstr ""
+
+msgid "Hire Date * (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Hire date must be YYYY-MM-DD and salary a number."
+msgstr ""
+
+msgid "Hours"
+msgstr ""
+
+msgid "Hybrid"
+msgstr ""
+
+msgid "In Progress"
+msgstr ""
+
+#, python-brace-format
+msgid "Income Tax ({rate}%)"
+msgstr ""
+
+msgid "Income Tax Rate (%)"
+msgstr ""
+
+msgid "Income tax"
+msgstr ""
+
+msgid "Interpreter"
+msgstr ""
+
+msgid "Job Role *"
+msgstr ""
+
+msgid "Job Roles"
+msgstr ""
+
+#, python-brace-format
+msgid "Job role '{title}' saved"
+msgstr ""
+
+msgid "Job role deleted"
+msgstr ""
+
+msgid "Key Skills"
+msgstr ""
+
+#, python-brace-format
+msgid "LV-{id} approved for {name}"
+msgstr ""
+
+#, python-brace-format
+msgid "LV-{id} rejected"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Last Name *"
+msgstr ""
+
+msgid "Late"
+msgstr ""
+
+#, python-brace-format
+msgid "Late ({minutes}m)"
+msgstr ""
+
+msgid "Late Arrivals"
+msgstr ""
+
+msgid "Late Grace Period (minutes)"
+msgstr ""
+
+msgid "Latest Net Pay"
+msgstr ""
+
+#, python-brace-format
+msgid "Lead: {lead}   •   Location: {location}"
+msgstr ""
+
+#, python-brace-format
+msgid "Lead: {name}"
+msgstr ""
+
+msgid "Leave Approval Queue"
+msgstr ""
+
+msgid "Leave Management"
+msgstr ""
+
+#, python-brace-format
+msgid "Leave Request LV-{id}"
+msgstr ""
+
+msgid "Leave Type"
+msgstr ""
+
+msgid "Leave notifications"
+msgstr ""
+
+#, python-brace-format
+msgid "Leave request LV-{id} submitted to HR"
+msgstr ""
+
+msgid "Leave requests awaiting review"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "Linked Employee"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+#, python-brace-format
+msgid "Log entry saved for {name}"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+
+msgid "Male"
+msgstr ""
+
+msgid "Manage employee profiles, departments and system roles."
+msgstr ""
+
+msgid "Manual Log Entry"
+msgstr ""
+
+msgid "Mark Filled"
+msgstr ""
+
+msgid "Maternity/Paternity"
+msgstr ""
+
+msgid "Max Salary (per month) *"
+msgstr ""
+
+msgid "Min Salary (per month) *"
+msgstr ""
+
+msgid "Min salary cannot exceed max salary."
+msgstr ""
+
+msgid "Mon"
+msgstr ""
+
+msgid "Monthly Budget"
+msgstr ""
+
+msgid "Monthly Pay Day"
+msgstr ""
+
+msgid "Monthly Payslip"
+msgstr ""
+
+msgid "Monthly Rate"
+msgstr ""
+
+msgid "Monthly Salaries"
+msgstr ""
+
+#, python-brace-format
+msgid "Monthly base payroll: {amount}"
+msgstr ""
+
+msgid "Monthly salary statements and deductions"
+msgstr ""
+
+#, python-brace-format
+msgid "Most unfilled planned seats: {title}"
+msgstr ""
+
+msgid "My Leave Requests"
+msgstr ""
+
+msgid "My Overview"
+msgstr ""
+
+msgid "My Payslips"
+msgstr ""
+
+msgid "My Profile"
+msgstr ""
+
+msgid "My Recent Attendance"
+msgstr ""
+
+msgid "NET PAY"
+msgstr ""
+
+msgid "Net Disbursement"
+msgstr ""
+
+msgid "Net Salary"
+msgstr ""
+
+msgid "New Department"
+msgstr ""
+
+msgid "New Job Role"
+msgstr ""
+
+msgid "New Requisition"
+msgstr ""
+
+msgid "New hires still on probation"
+msgstr ""
+
+msgid "New password"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "No attendance records for this filter"
+msgstr ""
+
+msgid "No audit entries yet"
+msgstr ""
+
+msgid "No check-ins recorded yet today."
+msgstr ""
+
+msgid "No department selected"
+msgstr ""
+
+msgid "No employees assigned to this role yet."
+msgstr ""
+
+msgid "No employees match your filters"
+msgstr ""
+
+msgid "No job roles defined yet"
+msgstr ""
+
+msgid "No leave requests in this view"
+msgstr ""
+
+msgid "No leave requests yet."
+msgstr ""
+
+msgid "No open hiring requests for this department."
+msgstr ""
+
+msgid "No payroll records"
+msgstr ""
+
+msgid "No records found"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Not Clocked In"
+msgstr ""
+
+msgid "Note for recruitment"
+msgstr ""
+
+msgid "OT"
+msgstr ""
+
+msgid "Off"
+msgstr ""
+
+msgid "Office Networks (IP addresses or ranges, comma-separated)"
+msgstr ""
+
+#, python-brace-format
+msgid "Office network ({ip})."
+msgstr ""
+
+msgid "Office network only"
+msgstr ""
+
+msgid "On"
+msgstr ""
+
+msgid "On Approved Leave"
+msgstr ""
+
+msgid "On Leave"
+msgstr ""
+
+msgid "On Leave Today"
+msgstr ""
+
+msgid "On Time"
+msgstr ""
+
+#, python-brace-format
+msgid "On probation: {count}"
+msgstr ""
+
+#, python-brace-format
+msgid "Only {remaining} day(s) of {leave_type} leave remaining."
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Open Attendance"
+msgstr ""
+
+msgid "Open Leave Management"
+msgstr ""
+
+msgid "Open Requisitions"
+msgstr ""
+
+#, python-brace-format
+msgid "Opened {date} by {user}"
+msgstr ""
+
+msgid "Openings *"
+msgstr ""
+
+msgid "Openings must be a number."
+msgstr ""
+
+msgid "Operational Timezone"
+msgstr ""
+
+msgid "Organization Structure"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Others"
+msgstr ""
+
+msgid "Overtime"
+msgstr ""
+
+msgid "Overtime Counted After (HH:MM)"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "Own clock in/out"
+msgstr ""
+
+msgid "Own payslips"
+msgstr ""
+
+msgid "Own profile"
+msgstr ""
+
+#, python-brace-format
+msgid "Page {page} of {pages}"
+msgstr ""
+
+msgid "Paid"
+msgstr ""
+
+msgid "Part-time"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Password (saved - leave blank to keep)"
+msgstr ""
+
+msgid "Password changed"
+msgstr ""
+
+msgid "Pay Grade"
+msgstr ""
+
+msgid "Pay Grade *"
+msgstr ""
+
+msgid "Pay Period"
+msgstr ""
+
+#, python-brace-format
+msgid "Pay day {day}"
+msgstr ""
+
+msgid "Payroll"
+msgstr ""
+
+msgid "Payroll & Payslips"
+msgstr ""
+
+msgid "Payroll & Salary Processing"
+msgstr ""
+
+msgid "Payroll & Tax Config"
+msgstr ""
+
+msgid "Payroll & Tax Configuration"
+msgstr ""
+
+#, python-brace-format
+msgid "Payroll batch complete: {count} payslips paid"
+msgstr ""
+
+#, python-brace-format
+msgid "Payroll for {month} is already fully paid"
+msgstr ""
+
+msgid "Payslip"
+msgstr ""
+
+#, python-brace-format
+msgid "Payslip emailed to {to}"
+msgstr ""
+
+msgid "Payslip saved as PDF"
+msgstr ""
+
+msgid "Pending"
+msgstr ""
+
+msgid "Pending Approvals"
+msgstr ""
+
+#, python-brace-format
+msgid "Pension ({rate}%)"
+msgstr ""
+
+msgid "Pension Contribution (%)"
+msgstr ""
+
+msgid "Period"
+msgstr ""
+
+#, python-brace-format
+msgid "Period: {period} ({count} day(s))"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Permanently remove {name} ({code}) from the directory?\n"
+"Attendance, leave and payroll history will no longer be shown."
+msgstr ""
+
+msgid "Personal / Casual"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Planned Headcount"
+msgstr ""
+
+msgid "Platform"
+msgstr ""
+
+msgid "Please enter a valid email address."
+msgstr ""
+
+msgid "Please enter your username and password."
+msgstr ""
+
+msgid "Please fill in all required fields."
+msgstr ""
+
+msgid "Please provide a reason"
+msgstr ""
+
+msgid "Port (587 = STARTTLS, 465 = SSL)"
+msgstr ""
+
+msgid "Position *"
+msgstr ""
+
+msgid "Position / Role"
+msgstr ""
+
+msgid "Position Title"
+msgstr ""
+
+msgid "Position Title *"
+msgstr ""
+
+msgid "Position title, pay grade and range"
+msgstr ""
+
+msgid "Present Today"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Privileged actions recorded by the backend"
+msgstr ""
+
+msgid "Probation"
+msgstr ""
+
+msgid "Protect your account with codes from an authenticator app."
+msgstr ""
+
+msgid "Punctuality (Month)"
+msgstr ""
+
+msgid "Quick Actions"
+msgstr ""
+
+msgid "RBAC Enforced"
+msgstr ""
+
+msgid "Rates applied when payroll is generated"
+msgstr ""
+
+#, python-brace-format
+msgid "Reachable ({ms} ms)"
+msgstr ""
+
+msgid "Reason"
+msgstr ""
+
+msgid "Reason / Note"
+msgstr ""
+
+msgid "Reason for rejection *"
+msgstr ""
+
+#, python-brace-format
+msgid "Reason: {reason}"
+msgstr ""
+
+#, python-brace-format
+msgid "Reassign the {count} employees in this role before deleting it"
+msgstr ""
+
+msgid "Record a missed punch on behalf of an employee"
+msgstr ""
+
+msgid "Refresh Data"
+msgstr ""
+
+msgid "Reject"
+msgstr ""
+
+#, python-brace-format
+msgid "Reject LV-{id}"
+msgstr ""
+
+msgid "Reject Request"
+msgstr ""
+
+msgid "Rejected"
+msgstr ""
+
+msgid "Remember me"
+msgstr ""
+
+msgid "Remote"
+msgstr ""
+
+msgid "Remote Shift"
+msgstr ""
+
+msgid "Remote employee: you may clock in from anywhere."
+msgstr ""
+
+msgid "Remote staff exempt"
+msgstr ""
+
+msgid "Request ID"
+msgstr ""
+
+msgid "Request Leave"
+msgstr ""
+
+msgid "Request time off and track your leave balances"
+msgstr ""
+
+#, python-brace-format
+msgid "Request to hire for {department}"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Reset 2FA"
+msgstr ""
+
+msgid "Reset Password"
+msgstr ""
+
+msgid "Reset Two-Factor Authentication"
+msgstr ""
+
+msgid "Reset a forgotten password or a lost authenticator"
+msgstr ""
+
+msgid "Review Leave Requests"
+msgstr ""
+
+msgid "Review, approve and track time-off across the organization"
+msgstr ""
+
+#, python-brace-format
+msgid "Reviewer note: {note}"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Role Permissions Overview"
+msgstr ""
+
+msgid "Role-based access control and session length"
+msgstr ""
+
+msgid "Run Batch"
+msgstr ""
+
+msgid "Run Payroll"
+msgstr ""
+
+msgid "Run Payroll Batch"
+msgstr ""
+
+msgid "SIGN IN"
+msgstr ""
+
+msgid "SMTP Server (e.g. smtp.gmail.com)"
+msgstr ""
+
+msgid "Salary cannot be negative."
+msgstr ""
+
+msgid "Salary range and headcount must be numbers."
+msgstr ""
+
+msgid "Sat"
+msgstr ""
+
+msgid "Save & Send Test"
+msgstr ""
+
+msgid "Save Changes"
+msgstr ""
+
+msgid "Save Department"
+msgstr ""
+
+msgid "Save Employee"
+msgstr ""
+
+msgid "Save Entry"
+msgstr ""
+
+msgid "Save PDF"
+msgstr ""
+
+msgid "Save Password"
+msgstr ""
+
+msgid "Save Role"
+msgstr ""
+
+msgid "Saved on this computer"
+msgstr ""
+
+msgid "Search by employee name, ID, or work email..."
+msgstr ""
+
+msgid "Search departments or heads..."
+msgstr ""
+
+msgid "Search employee, department..."
+msgstr ""
+
+msgid "Search..."
+msgstr ""
+
+msgid "Security"
+msgstr ""
+
+msgid "Security & Session Policy"
+msgstr ""
+
+msgid "Send a test email to:"
+msgstr ""
+
+msgid "Sender Address (From)"
+msgstr ""
+
+msgid "Server Enforced"
+msgstr ""
+
+#, python-brace-format
+msgid "Server at {url} cannot reach its database"
+msgstr ""
+
+#, python-brace-format
+msgid "Server error ({code})"
+msgstr ""
+
+msgid "Session Expiry (hours)"
+msgstr ""
+
+msgid "Set HRMS_DATABASE_URL to switch to PostgreSQL / MySQL."
+msgstr ""
+
+msgid "Set a New Password"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Settings & System Configuration"
+msgstr ""
+
+msgid "Settings saved"
+msgstr ""
+
+msgid "Setup key copied"
+msgstr ""
+
+msgid "Shift"
+msgstr ""
+
+msgid "Shift A"
+msgstr ""
+
+msgid "Shift End (HH:MM)"
+msgstr ""
+
+msgid "Shift Start (HH:MM)"
+msgstr ""
+
+msgid "Shift schedule, grace period and overtime rules"
+msgstr ""
+
+#, python-brace-format
+msgid "Shift starts {time}"
+msgstr ""
+
+msgid "Shifts, punches and attendance for the whole team"
+msgstr ""
+
+#, python-brace-format
+msgid "Showing {start}-{end} of {total} employees"
+msgstr ""
+
+#, python-brace-format
+msgid "Showing {start}-{end} of {total} records"
+msgstr ""
+
+msgid "Sick"
+msgstr ""
+
+msgid "Sick & Medical"
+msgstr ""
+
+msgid "Sign Out"
+msgstr ""
+
+msgid "Sign in to access your enterprise portal"
+msgstr ""
+
+msgid "Signing in..."
+msgstr ""
+
+msgid "Start Date (YYYY-MM-DD)"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Status Filter"
+msgstr ""
+
+#, python-brace-format
+msgid "Status: {status}"
+msgstr ""
+
+msgid "Still loading, please try again in a moment."
+msgstr ""
+
+msgid "Submit Leave Request"
+msgstr ""
+
+msgid "Submit to HR"
+msgstr ""
+
+msgid "Sun"
+msgstr ""
+
+msgid "System"
+msgstr ""
+
+msgid "System Master Clock"
+msgstr ""
+
+msgid "System Role"
+msgstr ""
+
+#, python-brace-format
+msgid "Target {count}"
+msgstr ""
+
+msgid "Tax Withholding"
+msgstr ""
+
+msgid "Temp"
+msgstr ""
+
+msgid "Temporary Password"
+msgstr ""
+
+msgid "Terminated"
+msgstr ""
+
+msgid "Test Ping"
+msgstr ""
+
+#, python-brace-format
+msgid "Test email sent to {to}"
+msgstr ""
+
+msgid "The HRMS server took too long to respond"
+msgstr ""
+
+msgid "The latest employees to clock in"
+msgstr ""
+
+msgid "The new passwords do not match."
+msgstr ""
+
+msgid "Theme Mode"
+msgstr ""
+
+msgid "Theme, scaling and accent colour on this computer"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"This device ({ip}) is not on the office network, so clock in/out is "
+"disabled. Ask HR for a manual entry if you are working elsewhere."
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "Thu"
+msgstr ""
+
+msgid "Times are recorded by the server."
+msgstr ""
+
+msgid "Timestamp"
+msgstr ""
+
+msgid "Title and pay grade are required."
+msgstr ""
+
+msgid "To correct your details, contact HR."
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Today is not a working day."
+msgstr ""
+
+msgid "Today's Check-Ins"
+msgstr ""
+
+msgid "Today's staffing, attendance and approvals"
+msgstr ""
+
+msgid "Today:"
+msgstr ""
+
+msgid "Toggle dark mode"
+msgstr ""
+
+msgid "Total Deductions"
+msgstr ""
+
+msgid "Total Employees"
+msgstr ""
+
+msgid "Total Hours"
+msgstr ""
+
+msgid "Total Net Received"
+msgstr ""
+
+msgid "Total Payroll Outflow"
+msgstr ""
+
+msgid "Total Tax Withheld"
+msgstr ""
+
+#, python-brace-format
+msgid "Total budget: {amount}/mo"
+msgstr ""
+
+msgid "Tue"
+msgstr ""
+
+msgid "Turn Off 2FA"
+msgstr ""
+
+msgid "Turn On"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"Turn off 2FA for '{user}' (for example after losing their phone)? They "
+"can set it up again from their user menu."
+msgstr ""
+
+msgid "Two-Factor Auth"
+msgstr ""
+
+msgid "Two-Factor Authentication"
+msgstr ""
+
+#, python-brace-format
+msgid "Two-Factor Authentication: {status}"
+msgstr ""
+
+msgid "Two-factor authentication is on"
+msgstr ""
+
+msgid "Two-factor authentication turned off"
+msgstr ""
+
+#, python-brace-format
+msgid "Type: {type}"
+msgstr ""
+
+msgid "UI Scaling"
+msgstr ""
+
+msgid "Unknown employee ID."
+msgstr ""
+
+msgid "Unpaid"
+msgstr ""
+
+msgid "Unreachable - is the backend running?"
+msgstr ""
+
+msgid "Unsaved changes discarded"
+msgstr ""
+
+msgid "Use STARTTLS"
+msgstr ""
+
+msgid "Use YYYY-MM-DD for the date and HH:MM for times."
+msgstr ""
+
+msgid "Use at least 8 characters with letters and numbers."
+msgstr ""
+
+msgid "Use at least 8 characters."
+msgstr ""
+
+msgid "Use both letters and numbers."
+msgstr ""
+
+msgid "Used on payslip headers, reports and email"
+msgstr ""
+
+msgid "Used to email payslips and leave decisions"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "User Accounts"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Username (leave blank if not required)"
+msgstr ""
+
+msgid "Username / Work Email"
+msgstr ""
+
+msgid "Username or work email"
+msgstr ""
+
+msgid "View All Attendance"
+msgstr ""
+
+msgid "View Note"
+msgstr ""
+
+msgid "View Reason"
+msgstr ""
+
+msgid "View Request"
+msgstr ""
+
+msgid "View Staff"
+msgstr ""
+
+msgid "View departments"
+msgstr ""
+
+msgid "Wed"
+msgstr ""
+
+#, python-brace-format
+msgid "Welcome back, {name}"
+msgstr ""
+
+msgid "Within grace period"
+msgstr ""
+
+msgid "Work Email"
+msgstr ""
+
+msgid "Work Email *"
+msgstr ""
+
+msgid "Work Mode"
+msgstr ""
+
+msgid "Work Week"
+msgstr ""
+
+msgid "Work mode 'Remote' may clock in from anywhere"
+msgstr ""
+
+msgid "HRMS"
+msgstr ""
+
+msgid "You do not have access to that module"
+msgstr ""
+
+msgid "You're all caught up"
+msgstr ""
+
+msgid "Your account is not linked to an employee record"
+msgstr ""
+
+msgid "Your daily punches and monthly attendance history"
+msgstr ""
+
+msgid "Your latest requests"
+msgstr ""
+
+msgid "Your password is temporary. Choose your own password to continue."
+msgstr ""
+
+msgid "Your request will be sent to HR for approval"
+msgstr ""
+
+msgid ""
+"Your role requires two-factor authentication, so it cannot be turned off."
+" If you lost your phone, ask an Admin to reset 2FA for your account."
+msgstr ""
+
+msgid "Your role requires two-factor authentication. Set it up to continue."
+msgstr ""
+
+msgid "Your session has expired. Please sign in again."
+msgstr ""
+
+#, python-brace-format
+msgid "below {target}%"
+msgstr ""
+
+msgid "clocked in"
+msgstr ""
+
+msgid "clocked in today"
+msgstr ""
+
+msgid "days"
+msgstr ""
+
+msgid "e.g. 12"
+msgstr ""
+
+msgid "e.g. 120000"
+msgstr ""
+
+msgid "e.g. 4"
+msgstr ""
+
+msgid "e.g. 4000"
+msgstr ""
+
+msgid "e.g. 4500"
+msgstr ""
+
+msgid "e.g. 5500"
+msgstr ""
+
+msgid "e.g. Customer Success"
+msgstr ""
+
+msgid "e.g. Data Engineer"
+msgstr ""
+
+msgid "e.g. Doe"
+msgstr ""
+
+msgid "e.g. E-3"
+msgstr ""
+
+msgid "e.g. EMP-012"
+msgstr ""
+
+msgid "e.g. HQ Floor 2"
+msgstr ""
+
+msgid "e.g. Jane"
+msgstr ""
+
+msgid "e.g. Python, SQL, Airflow"
+msgstr ""
+
+msgid "employees"
+msgstr ""
+
+msgid "name@example.com"
+msgstr ""
+
+msgid "not clocked in"
+msgstr ""
+
+msgid "on time"
+msgstr ""
+
+msgid "on track"
+msgstr ""
+
+msgid "people"
+msgstr ""
+
+msgid "per day"
+msgstr ""
+
+msgid "requests"
+msgstr ""
+
+msgid "staff"
+msgstr ""
+
+msgid "this month"
+msgstr ""
+
+msgid "today"
+msgstr ""
+
+#, python-brace-format
+msgid "{amount} / month"
+msgstr ""
+
+#, python-brace-format
+msgid "{amount}/mo"
+msgstr ""
+
+#, python-brace-format
+msgid "{code} marked {status}"
+msgstr ""
+
+#, python-brace-format
+msgid "{code} opened: {count} × {title}"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} Active Members"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} Members"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} On Leave"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} On Probation"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} Roles"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} below the headcount target"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} completed shifts"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} day(s)"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} days worked"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} employees"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} employees • Grade {grade}"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} on time"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} openings"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} payslips"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} pending"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} roles"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} staff"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} used"
+msgstr ""
+
+#, python-brace-format
+msgid "{count} waiting for a decision"
+msgstr ""
+
+#, python-brace-format
+msgid "{departments} departments  ·  {roles} job roles"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"{employees} employees · {attendance} attendance rows · {payroll} payroll "
+"lines"
+msgstr ""
+
+#, python-brace-format
+msgid "{hours:g} scheduled hours per week"
+msgstr ""
+
+#, python-brace-format
+msgid "{low} - {high} /mo"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"{month}\n"
+"\n"
+"• Calculate {pending} pending line(s)\n"
+"• Mark {total} line(s) as paid\n"
+"\n"
+"Continue?"
+msgstr ""
+
+#, python-brace-format
+msgid "{month} • {count} employees"
+msgstr ""
+
+#, python-brace-format
+msgid "{name} saved"
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"{name} was added.\n"
+"\n"
+"Login username:  {username}\n"
+"Initial password:  {password}\n"
+"\n"
+"Share these with the employee and ask them to change the password."
+msgstr ""
+
+#, python-brace-format
+msgid "{name} was removed"
+msgstr ""
+
+#, python-brace-format, python-format
+msgid "{percent}% calculated"
+msgstr ""
+
+#, python-brace-format, python-format
+msgid "{percent}% left"
+msgstr ""
+
+#, python-brace-format, python-format
+msgid "{percent}% staffed"
+msgstr ""
+
+#, python-brace-format, python-format
+msgid "{rate}% rate"
+msgstr ""
+
+#, python-brace-format
+msgid "{roles} roles  ·  {people} people"
+msgstr ""
+
+#, python-brace-format
+msgid "{type} leave • {days} day(s)"
+msgstr ""
+
+#, python-brace-format
+msgid "{years} years"
+msgstr ""
+

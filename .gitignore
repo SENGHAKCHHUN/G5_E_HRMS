@@ -1,0 +1,8 @@
+design
+frontend/__pycache__
+frontend/views/__pycache__
+__pycache__/
+venv/
+hr_system.db
+backend/.secret_key
+.env

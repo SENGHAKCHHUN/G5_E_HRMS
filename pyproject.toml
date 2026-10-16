@@ -1,0 +1,35 @@
+# Tool configuration only - the app is run from source (see README).
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["backend/migrations/versions"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",   # pycodestyle
+    "F",        # pyflakes
+    "I",        # import order
+    "B",        # likely bugs
+    "UP",       # modern syntax
+    "BLE",      # blind except
+    "ANN001",   # type hints on function arguments ...
+    "ANN201",   # ... and on public return values
+]
+ignore = [
+    "E701", "E702",   # short one-line statements are used in UI layout code
+    "B008",           # FastAPI's Depends(...) in argument defaults
+    "B904",           # raise ... from err: the API error is the message the user should see
+]
+
+[tool.ruff.lint.per-file-ignores]
+# UI callbacks, tests and scripts: hints add little there
+"frontend/views/**" = ["ANN"]
+"frontend/ui/**" = ["ANN"]
+"frontend/app.py" = ["ANN"]
+"tests/**" = ["ANN", "E402"]
+"scripts/**" = ["ANN"]
+"backend/routers/**" = ["ANN201"]   # FastAPI routes: the response_model is the contract
+
+[tool.ruff.lint.isort]
+known-first-party = ["backend", "core", "logic", "ui", "views", "app"]
