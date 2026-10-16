@@ -30,13 +30,13 @@ G5_E_HRMS/
 ├── frontend/
 │   ├── main.py              # entry point, starts on the login screen
 │   ├── app.py               # main window, sidebar, top bar, screen switching
-│   ├── assets/fonts/        # Noto Sans Khmer (SIL Open Font License)
+│   ├── assets/fonts/        # HRMS Sans: Noto Sans + Noto Sans Khmer in one font (OFL)
 │   ├── core/                # API client, background tasks, app state, i18n, preferences
 │   ├── logic/               # pure, unit-tested functions (formatting, validation, calculations)
 │   ├── ui/                  # theme, reusable widgets, icons
 │   ├── views/               # one file per screen
 │   └── locales/             # screen translations
-├── scripts/                 # fill_translations.py
+├── scripts/                 # fill_translations.py, build_fonts.py
 ├── tests/                   # backend and frontend tests
 ├── alembic.ini, pyproject.toml, pytest.ini, requirements.txt
 └── README.md
@@ -66,6 +66,9 @@ Router (HTTP)  →  Service (business rules)  →  Repository (queries)  →  Da
 - **Server-side paging and filters:** tables load one page at a time (`?limit=&offset=`, total
   from `X-Total-Count`), and KPI cards come from `/summary` endpoints, so totals cover the whole company.
 - **Logic separated from screens:** `frontend/logic/` is unit tested without opening a window.
+- **One font for both languages:** Tk draws each label with a single font, so the UI uses the bundled
+  *HRMS Sans* (Noto Sans and Noto Sans Khmer merged by `scripts/build_fonts.py`). English, Khmer and
+  mixed text (e.g. a Khmer name on an English screen) all render in matching styles.
 
 ## Database Design
 

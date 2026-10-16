@@ -1,4 +1,8 @@
+Copyright 2022 The Noto Project Authors (https://github.com/notofonts/latin-greek-cyrillic)
 Copyright 2022 The Noto Project Authors (https://github.com/notofonts/khmer)
+
+HRMS Sans (HRMSSans-*.ttf) is a modified version of Noto Sans and Noto Sans Khmer:
+the two fonts merged into one family by scripts/build_fonts.py.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:

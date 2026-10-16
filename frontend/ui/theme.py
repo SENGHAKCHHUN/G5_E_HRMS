@@ -113,12 +113,14 @@ def pick(color):
 
 
 # ------------------------------------------------------------------ fonts ---
-# Khmer text uses the bundled Noto Sans Khmer (SIL Open Font License, see assets/fonts/OFL.txt):
-# it stays clear at small UI sizes, where Windows' own "Khmer UI" looks cramped.
+# The UI uses the bundled "HRMS Sans" in both languages: Noto Sans (Latin) and Noto Sans Khmer merged
+# into one family (scripts/build_fonts.py, SIL Open Font License, see assets/fonts/OFL.txt). Tk draws a
+# label with one font, so a Latin-only or Khmer-only font would leave the other script to whatever
+# font Windows substitutes, in a mismatched style.
 FONT_DIR = Path(__file__).resolve().parent.parent / "assets" / "fonts"
-KHMER = "Noto Sans Khmer"
-KHMER_SEMIBOLD = "Noto Sans Khmer SemiBold"
-KHMER_FALLBACK = "Khmer UI"  # ships with Windows
+UI_FONT = "HRMS Sans"
+UI_SEMIBOLD = "HRMS Sans SemiBold"
+KHMER_FALLBACK = "Khmer UI"  # ships with Windows; used only if the bundled fonts could not be loaded
 
 
 def load_bundled_fonts() -> None:
@@ -136,21 +138,23 @@ def _families():
 
 
 def khmer_family() -> str:
-    return KHMER if KHMER in _families() else KHMER_FALLBACK
+    """A family that can show Khmer (e.g. the language names in a menu)."""
+    return UI_FONT if UI_FONT in _families() else KHMER_FALLBACK
 
 
 def _family(weight: str) -> tuple[str, str]:
     fams = _families()
-    if i18n.is_khmer() and khmer_family() in fams:
-        if weight == "semibold" and khmer_family() == KHMER and KHMER_SEMIBOLD in fams:
-            return KHMER_SEMIBOLD, "normal"
-        return khmer_family(), ("bold" if weight in ("bold", "semibold") else "normal")
-    if "Inter" in fams:
-        return "Inter", ("bold" if weight in ("bold", "semibold") else "normal")
+    bold = "bold" if weight in ("bold", "semibold") else "normal"
+    if UI_FONT in fams:
+        if weight == "semibold" and UI_SEMIBOLD in fams:
+            return UI_SEMIBOLD, "normal"
+        return UI_FONT, bold
+    # bundled fonts missing: the best system font for the current language
+    if i18n.is_khmer() and KHMER_FALLBACK in fams:
+        return KHMER_FALLBACK, bold
     if weight == "semibold" and "Segoe UI Semibold" in fams:
         return "Segoe UI Semibold", "normal"
-    base = "Segoe UI" if "Segoe UI" in fams else "Helvetica"
-    return base, ("bold" if weight in ("bold", "semibold") else "normal")
+    return ("Segoe UI" if "Segoe UI" in fams else "Helvetica"), bold
 
 
 def font(size: int = 13, weight: str = "normal") -> ctk.CTkFont:
