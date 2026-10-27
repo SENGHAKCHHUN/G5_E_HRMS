@@ -8,6 +8,7 @@ file in the project root, e.g.
     HRMS_SMTP_PASSWORD=...         (overrides the SMTP password stored in Settings)
     HRMS_TRUSTED_PROXIES=127.0.0.1 (reverse proxies allowed to set X-Forwarded-For)
     HRMS_LOG_LEVEL=INFO
+    HRMS_DEMO_PASSWORD_CHANGE=false (let the demo accounts keep their public passwords)
 """
 import secrets
 from functools import lru_cache
@@ -44,6 +45,8 @@ class AppConfig(BaseSettings):
     # login protection
     login_max_failures: int = 5
     login_lockout_minutes: int = 15
+    # a sign-in with a demo account's public password must first choose a new password
+    demo_password_change: bool = True
 
 
 @lru_cache

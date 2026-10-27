@@ -10,10 +10,13 @@ from datetime import date, datetime, timedelta
 _TMP = tempfile.mkdtemp()
 os.environ.setdefault("HRMS_DATABASE_URL", f"sqlite:///{os.path.join(_TMP, 'test.db')}")
 os.environ.setdefault("HRMS_SECRET_KEY", "test-secret-key-that-is-long-enough-for-hs256")
+os.environ.setdefault("HRMS_DEMO_PASSWORD_CHANGE", "false")  # sign in with the demo accounts as they are
 
 from fastapi.testclient import TestClient  # noqa: E402
 
+from backend.core.database import SessionLocal  # noqa: E402
 from backend.main import app  # noqa: E402
+from backend.models import LeaveRequest  # noqa: E402
 
 OFFICE_IP = ("10.1.2.3", 50000)
 HOME_IP = ("203.0.113.5", 50000)
@@ -64,9 +67,9 @@ class ApiTests(unittest.TestCase):
         c = client()
         self.assertEqual(c.post("/auth/login", data={"username": "hr", "password": "x"}).status_code, 401)
         self.assertEqual(c.get("/employees").status_code, 401)
-        user = login(c, "a.morgan@workflow.io", "hr123")  # work email also works
+        user = login(c, "s.lim@workflow.io", "hr123")  # work email also works
         self.assertEqual(user["role"], "HR Manager")
-        self.assertEqual(c.get("/auth/me").json()["name"], "Alex Morgan")
+        self.assertEqual(c.get("/auth/me").json()["name"], "Sophea Lim")
 
     # ----------------------------------------------------------------- RBAC
     def test_employee_sees_only_own_data(self):
@@ -165,6 +168,7 @@ class ApiTests(unittest.TestCase):
     # ---------------------------------------------------------------- leave
     def test_leave_flow(self):
         start = date.today() + timedelta(days=60)
+        start += timedelta(days=(7 - start.weekday()) % 7)  # a Monday: a working day in any work week
         body = {"type": "Casual", "start_date": start.isoformat(), "end_date": start.isoformat(),
                 "reason": "Test"}
         r = self.emp.post("/leaves", json=body)
@@ -179,16 +183,110 @@ class ApiTests(unittest.TestCase):
         bal = self.emp.get("/leaves/balance").json()["Casual"]
         self.assertEqual(bal["remaining"], bal["allowance"] - bal["used"])
 
+    def test_leave_counts_working_days_only(self):
+        self.set_policy(work_week=["Mon", "Tue", "Wed", "Thu", "Fri"])  # other tests use a 7-day week
+        thursday = date(date.today().year, 12, 1)
+        thursday += timedelta(days=(3 - thursday.weekday()) % 7)
+        if thursday + timedelta(days=4) > date(date.today().year, 12, 31):
+            self.skipTest("no Thursday-Monday left in December")
+        before = self.emp.get("/leaves/balance").json()["Annual"]["used"]
+        body = {"type": "Annual", "start_date": thursday.isoformat(),
+                "end_date": (thursday + timedelta(days=4)).isoformat(), "reason": "Long weekend"}
+        r = self.emp.post("/leaves", json=body)
+        self.assertEqual((r.status_code, r.json()["days"]), (201, 3), r.text)  # Thu, Fri, Mon
+        self.hr.put(f"/leaves/{r.json()['id']}/approve", json={"note": ""})
+        self.assertEqual(self.emp.get("/leaves/balance").json()["Annual"]["used"], before + 3)
+        weekend = {**body, "start_date": (thursday + timedelta(days=9)).isoformat(),
+                   "end_date": (thursday + timedelta(days=10)).isoformat()}  # Saturday-Sunday
+        r = self.emp.post("/leaves", json=weekend)
+        self.assertEqual(r.status_code, 400)
+        self.assertIn("no working days", r.json()["detail"])
+
     # -------------------------------------------------------------- payroll
     def test_payroll_generate_and_pay(self):
         month = "2030-01"
         r = self.hr.post("/payroll/generate", params={"month": month})
         self.assertEqual(r.status_code, 200, r.text)
-        self.assertGreater(r.json()["created"], 100)
+        self.assertGreaterEqual(r.json()["created"], 7)  # everyone in the demo data
         rows = self.hr.get("/payroll", params={"month": month}).json()
         p = rows[0]
         self.assertAlmostEqual(p["net_salary"], p["base_salary"] + p["bonus"] - p["deductions"], places=2)
         self.assertEqual(self.hr.post("/payroll/pay", params={"month": month}).json()["paid"], len(rows))
+
+    def test_payroll_proration_recalculation_and_line_edit(self):
+        month = "2031-03"  # 31 days
+
+        def hire(email, hire_date, salary=3100):
+            r = self.hr.post("/employees", json={
+                "first_name": "Pay", "last_name": "Roll", "email": email, "hire_date": hire_date,
+                "position": "Accountant", "salary": salary, "department_id": 1, "status": "Active"})
+            self.assertEqual(r.status_code, 201, r.text)
+            return r.json()["id"]
+
+        joiner = hire("pay.joiner@workflow.io", "2031-03-22")
+        leaver = hire("pay.leaver@workflow.io", "2030-01-01")
+        gone = hire("pay.gone@workflow.io", "2030-01-01")
+        self.hr.put(f"/employees/{leaver}", json={"status": "Terminated", "termination_date": "2031-03-10"})
+        self.hr.put(f"/employees/{gone}", json={"status": "Terminated", "termination_date": "2031-02-28"})
+        bad = self.hr.put(f"/employees/{gone}", json={"termination_date": "2029-01-01", "status": "Terminated"})
+        self.assertEqual(bad.status_code, 400)  # before the hire date
+
+        self.assertEqual(self.hr.post("/payroll/generate", params={"month": month}).status_code, 200)
+        lines = lambda: {p["employee_id"]: p for p in self.hr.get("/payroll", params={"month": month,  # noqa: E731
+                                                                                     "limit": 500}).json()}
+        rows = lines()
+        self.assertNotIn(gone, rows)  # left before the month
+        self.assertEqual((rows[joiner]["paid_days"], rows[joiner]["base_salary"]), (10, 1000.0))
+        self.assertEqual((rows[leaver]["paid_days"], rows[leaver]["base_salary"]), (10, 1000.0))
+
+        r = self.hr.patch(f"/payroll/{rows[joiner]['id']}", json={"bonus": 200, "adjustment": -50, "note": "advance"})
+        self.assertEqual(r.status_code, 200, r.text)
+        self.assertAlmostEqual(r.json()["net_salary"], 1000 + 200 - 50 - r.json()["deductions"], places=2)
+        self.assertEqual(self.emp.patch(f"/payroll/{rows[joiner]['id']}", json={"bonus": 1}).status_code, 403)
+
+        self.hr.put(f"/employees/{joiner}", json={"salary": 6200})  # recalculated, bonus kept
+        self.assertGreater(self.hr.post("/payroll/generate", params={"month": month}).json()["calculated"], 0)
+        line = lines()[joiner]
+        self.assertEqual((line["base_salary"], line["bonus"], line["adjustment"], line["note"]),
+                         (2000.0, 200.0, -50.0, "advance"))
+        self.hr.put(f"/employees/{joiner}", json={"hire_date": "2031-04-01"})
+        self.assertEqual(self.hr.post("/payroll/generate", params={"month": month}).json()["removed"], 1)
+        self.assertNotIn(joiner, lines())
+
+        self.hr.post("/payroll/pay", params={"month": month})
+        paid = lines()[leaver]
+        self.assertEqual(self.hr.patch(f"/payroll/{paid['id']}", json={"bonus": 5}).status_code, 400)
+        self.hr.put(f"/employees/{leaver}", json={"salary": 9999})
+        self.hr.post("/payroll/generate", params={"month": month})
+        self.assertEqual(lines()[leaver]["base_salary"], paid["base_salary"])  # paid lines never change
+
+    def test_payroll_uses_attendance_and_unpaid_leave(self):
+        month = "2031-06"  # starts on a Sunday: 21 working days (Mon-Fri)
+        self.set_policy(work_week=["Mon", "Tue", "Wed", "Thu", "Fri"])  # other tests use a 7-day week
+        r = self.hr.post("/employees", json={
+            "first_name": "Att", "last_name": "Pay", "email": "att.pay@workflow.io", "hire_date": "2030-01-01",
+            "position": "Accountant", "salary": 2100, "department_id": 1, "status": "Active"})
+        emp_id = r.json()["id"]
+        for day, status, cin, cout in (("2031-06-02", "Absent", None, None), ("2031-06-03", "Half Day", "09:00", "12:00"),
+                                       ("2031-06-04", "On Time", "09:00", "20:00")):
+            body = {"employee_id": emp_id, "date": day, "status": status, "check_in": cin, "check_out": cout}
+            self.assertEqual(self.hr.post("/attendance", json=body).status_code, 201)
+        with SessionLocal() as db:  # approved Unpaid leave Thu 12 - Mon 16 June = 3 working days
+            db.add(LeaveRequest(employee_id=emp_id, type="Unpaid", start_date=date(2031, 6, 12),
+                                end_date=date(2031, 6, 16), status="Approved"))
+            db.commit()
+        self.hr.post("/payroll/generate", params={"month": month})
+        line = next(p for p in self.hr.get("/payroll", params={"month": month, "limit": 500}).json()
+                    if p["employee_id"] == emp_id)
+        daily = 2100 / 21
+        self.assertEqual(line["unpaid_days"], 4.5)
+        self.assertEqual(line["unpaid_deduction"], round(daily * 4.5, 2))
+        self.assertEqual(line["overtime_hours"], 2.0)
+        self.assertEqual(line["overtime_pay"], round(daily / 9 * 2 * 1.5, 2))
+        self.assertAlmostEqual(line["net_salary"], line["base_salary"] + line["overtime_pay"] + line["bonus"]
+                               + line["adjustment"] - line["deductions"], places=2)
+        pdf = self.hr.get(f"/payroll/{line['id']}/pdf")
+        self.assertEqual((pdf.status_code, pdf.content[:4]), (200, b"%PDF"))
 
     # ----------------------------------------------------------- employees
     def test_employee_validation(self):
@@ -196,7 +294,7 @@ class ApiTests(unittest.TestCase):
                                              "hire_date": "2026-01-01", "position": "X", "salary": -1,
                                              "department_id": 1})
         self.assertEqual(r.status_code, 422)
-        r = self.hr.post("/employees", json={"first_name": "Dup", "last_name": "Mail", "email": "s.reed@workflow.io",
+        r = self.hr.post("/employees", json={"first_name": "Dup", "last_name": "Mail", "email": "s.chea@workflow.io",
                                              "hire_date": "2026-01-01", "position": "X", "salary": 1,
                                              "department_id": 1})
         self.assertEqual(r.status_code, 409)

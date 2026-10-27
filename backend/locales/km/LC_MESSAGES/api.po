@@ -357,3 +357,36 @@ msgstr "ប្រាក់ខែ {count} ជួរសម្រាប់ខែន
 msgid "{day} is not a working day. Ask HR for a manual entry if you worked today."
 msgstr "ថ្ងៃ{day} មិនមែនជាថ្ងៃធ្វើការទេ។ បើអ្នកបានធ្វើការថ្ងៃនេះ សូមស្នើធនធានមនុស្សបញ្ចូលដោយដៃ។"
 
+msgid "A paid payroll line cannot be changed"
+msgstr "ជួរប្រាក់បៀវត្សរ៍ដែលបានបើករួច មិនអាចកែប្រែបានទេ"
+
+msgid "The last working day cannot be before the hire date"
+msgstr "ថ្ងៃធ្វើការចុងក្រោយ មិនអាចមុនថ្ងៃចូលធ្វើការបានទេ"
+
+#, python-brace-format
+msgid "Base Salary ({days} of {total} days)"
+msgstr "ប្រាក់ខែគោល ({days} ក្នុងចំណោម {total} ថ្ងៃ)"
+
+msgid "Adjustment"
+msgstr "ការកែតម្រូវ"
+
+#, python-brace-format
+msgid "Note: {note}"
+msgstr "កំណត់សម្គាល់៖ {note}"
+
+msgid "Tax brackets must look like 0:0, 1500000:5, 2000000:10"
+msgstr "កម្រិតពន្ធត្រូវមានទម្រង់ដូច 0:0, 1500000:5, 2000000:10"
+
+#, python-brace-format
+msgid "Overtime ({hours} h)"
+msgstr "ម៉ោងបន្ថែម ({hours} ម៉ោង)"
+
+msgid "Income Tax (progressive)"
+msgstr "ពន្ធលើប្រាក់បៀវត្សរ៍ (តាមកម្រិត)"
+
+#, python-brace-format
+msgid "Unpaid Days ({days})"
+msgstr "ថ្ងៃមិនបើកប្រាក់ ({days})"
+
+msgid "The selected dates contain no working days"
+msgstr "កាលបរិច្ឆេទដែលបានជ្រើស មិនមានថ្ងៃធ្វើការទេ"

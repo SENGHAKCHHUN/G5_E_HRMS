@@ -1,6 +1,8 @@
 """Convert ORM objects to the JSON shapes the desktop frontend expects."""
+import calendar
 from datetime import date, time
 
+from .core.clock import working_days
 from .models import Attendance, Department, Employee, LeaveRequest, Payroll, Position, Requisition
 
 
@@ -12,7 +14,8 @@ def employee_out(e: Employee) -> dict:
     return {
         "id": e.id, "code": e.code, "first_name": e.first_name, "last_name": e.last_name,
         "full_name": e.full_name, "email": e.email, "phone": e.phone, "gender": e.gender,
-        "hire_date": e.hire_date.isoformat(), "position": e.position, "salary": e.salary,
+        "hire_date": e.hire_date.isoformat(),
+        "termination_date": e.termination_date.isoformat() if e.termination_date else None, "position": e.position, "salary": e.salary,
         "department_id": e.department_id, "department": e.department.name if e.department else "-",
         "status": e.status, "employment": e.employment, "work_mode": e.work_mode, "shift": e.shift,
         "role": e.user.role if e.user else None,
@@ -54,12 +57,13 @@ def attendance_out(a: Attendance) -> dict:
     }
 
 
-def leave_out(lv: LeaveRequest) -> dict:
+def leave_out(lv: LeaveRequest, work_week: list[str]) -> dict:
+    """days = working days in the request (the work week in Settings)."""
     return {
         "id": lv.id, "employee_id": lv.employee_id, "type": lv.type,
         "start_date": lv.start_date.isoformat(), "end_date": lv.end_date.isoformat(),
         "reason": lv.reason, "status": lv.status, "review_note": lv.review_note,
-        "days": (lv.end_date - lv.start_date).days + 1, **_person(lv.employee),
+        "days": len(working_days(lv.start_date, lv.end_date, work_week)), **_person(lv.employee),
     }
 
 
@@ -67,7 +71,10 @@ def payroll_out(p: Payroll) -> dict:
     e = p.employee
     return {
         "id": p.id, "employee_id": p.employee_id, "month": p.month, "base_salary": p.base_salary,
-        "bonus": p.bonus, "tax": p.tax, "insurance": p.insurance, "pension": p.pension,
+        "bonus": p.bonus, "adjustment": p.adjustment or 0.0, "note": p.note or "", "paid_days": p.paid_days,
+        "month_days": calendar.monthrange(int(p.month[:4]), int(p.month[5:7]))[1],
+        "unpaid_days": p.unpaid_days or 0.0, "unpaid_deduction": p.unpaid_deduction or 0.0,
+        "overtime_hours": p.overtime_hours or 0.0, "overtime_pay": p.overtime_pay or 0.0, "tax": p.tax, "insurance": p.insurance, "pension": p.pension,
         "deductions": p.deductions, "net_salary": p.net_salary, "status": p.status,
         "email": e.email, "position": e.position, **_person(e),
     }

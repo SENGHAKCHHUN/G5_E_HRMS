@@ -9,6 +9,7 @@ import unittest
 _TMP = tempfile.mkdtemp()
 os.environ.setdefault("HRMS_DATABASE_URL", f"sqlite:///{os.path.join(_TMP, 'test.db')}")
 os.environ.setdefault("HRMS_SECRET_KEY", "test-secret-key-that-is-long-enough-for-hs256")
+os.environ.setdefault("HRMS_DEMO_PASSWORD_CHANGE", "false")  # sign in with the demo accounts as they are
 
 from fastapi.testclient import TestClient  # noqa: E402
 

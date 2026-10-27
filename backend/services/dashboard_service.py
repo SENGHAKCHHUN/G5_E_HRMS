@@ -7,12 +7,16 @@ from ..integrations import pdf
 from ..models import User
 from ..repositories import attendance_repo, department_repo, employee_repo, leave_repo, payroll_repo
 from ..serializers import attendance_out, department_out
+from . import attendance_service
 from .access import is_staff
 from .settings_service import get_settings
 
 
 def stats(db: Session) -> dict:
-    today = clock.today(get_settings(db))
+    settings = get_settings(db)
+    now = clock.now(settings)
+    attendance_service.close_days(db, settings, now)
+    today = now.date()
     emps = employee_repo.list_all(db)
     on_leave = sum(1 for e in emps if e.status == "On Leave")
     present = [a for a in attendance_repo.list_for_date(db, today) if a.check_in]

@@ -104,6 +104,8 @@ def login(db: Session, username: str, password: str, otp: str | None, ip: str) -
             raise Unauthorized("Invalid authentication code")
     if upgraded_hash:  # stored with an older algorithm (bcrypt): re-hash with Argon2
         user.password_hash = upgraded_hash
+    if config.demo_password_change and security.DEMO_PASSWORDS.get(user.username) == password:
+        user.must_change_password = True  # the demo password is public: choose a new one first
     login_attempt_repo.clear(db, name)
     audit_repo.add(db, user.username, "LOGIN", f"Successful sign-in from {ip}")
     db.commit()

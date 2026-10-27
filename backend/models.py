@@ -50,6 +50,7 @@ class Employee(Base):
     phone: Mapped[str] = mapped_column(String(40), default="")
     gender: Mapped[str] = mapped_column(String(10), default="Male")
     hire_date: Mapped[date] = mapped_column(Date)
+    termination_date: Mapped[date | None] = mapped_column(Date)  # last working day (status Terminated)
     position: Mapped[str] = mapped_column(String(100))
     salary: Mapped[int] = mapped_column(Integer)
     department_id: Mapped[int] = mapped_column(ForeignKey("departments.id"))
@@ -132,6 +133,13 @@ class Payroll(Base):
     month: Mapped[str] = mapped_column(String(7), index=True)  # YYYY-MM
     base_salary: Mapped[float] = mapped_column(Float)
     bonus: Mapped[float] = mapped_column(Float, default=0)
+    adjustment: Mapped[float] = mapped_column(Float, default=0)  # other earnings (+) or deductions (-)
+    note: Mapped[str] = mapped_column(String(200), default="")
+    paid_days: Mapped[int | None] = mapped_column(Integer)  # set when only part of the month is paid
+    unpaid_days: Mapped[float] = mapped_column(Float, default=0)  # Absent + Half Day x 0.5 + unpaid leave
+    unpaid_deduction: Mapped[float] = mapped_column(Float, default=0)
+    overtime_hours: Mapped[float] = mapped_column(Float, default=0)
+    overtime_pay: Mapped[float] = mapped_column(Float, default=0)
     tax: Mapped[float] = mapped_column(Float, default=0)
     insurance: Mapped[float] = mapped_column(Float, default=0)
     pension: Mapped[float] = mapped_column(Float, default=0)

@@ -6,7 +6,7 @@ from ..core.pagination import Page
 from ..core.security import STAFF
 from ..dependencies import get_current_user, get_db, paged, pagination, require_roles
 from ..models import User
-from ..schemas import EmailSent, PayrollOut, PayrollPaid, PayrollRun, PayrollSummary
+from ..schemas import EmailSent, PayrollLineUpdate, PayrollOut, PayrollPaid, PayrollRun, PayrollSummary
 from ..services import payroll_service
 
 router = APIRouter(prefix="/payroll", tags=["Payroll"])
@@ -33,6 +33,13 @@ def payroll_summary(month: str | None = None, employee_id: int | None = None,
 def generate_payroll(month: str, user: User = Depends(require_roles(*STAFF)), db: Session = Depends(get_db)):
     """Create missing lines and (re)calculate pending ones for the month."""
     return payroll_service.generate(db, user, month)
+
+
+@router.patch("/{payroll_id}", response_model=PayrollOut)
+def update_line(payroll_id: int, data: PayrollLineUpdate, user: User = Depends(require_roles(*STAFF)),
+                db: Session = Depends(get_db)):
+    """Set a line's bonus, adjustment (+ earning / - deduction) or note. Paid lines cannot change."""
+    return payroll_service.update_line(db, user, payroll_id, data.model_dump(exclude_unset=True))
 
 
 @router.post("/pay", response_model=PayrollPaid)

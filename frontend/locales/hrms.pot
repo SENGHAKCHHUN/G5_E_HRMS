@@ -2060,3 +2060,173 @@ msgstr ""
 msgid "{years} years"
 msgstr ""
 
+
+msgid "Closing the Day"
+msgstr ""
+
+msgid "Applied by the server once a day is over"
+msgstr ""
+
+msgid "Mark no-shows Absent"
+msgstr ""
+
+msgid "No check-in by the time check-in closes on a working day"
+msgstr ""
+
+msgid "Close forgotten check-outs"
+msgstr ""
+
+msgid "Set to Shift End when nobody checked out by the next day"
+msgstr ""
+
+msgid "Half Day Below (hours worked, 0 = off)"
+msgstr ""
+
+msgid "Late Check-out Until (next day, HH:MM)"
+msgstr ""
+
+msgid "A check-out after midnight and before this time ends the previous day's shift. Records made by these rules are marked 'auto' so HR can review them."
+msgstr ""
+
+#, python-brace-format
+msgid "{name} was added."
+msgstr ""
+
+msgid "Give these to the employee. They will be asked to choose their own password when they sign in. This password is not shown again."
+msgstr ""
+
+msgid "Login username"
+msgstr ""
+
+msgid "Initial password"
+msgstr ""
+
+msgid "Mark as Paid"
+msgstr ""
+
+msgid "Calculate Payroll"
+msgstr ""
+
+#, python-brace-format
+msgid "Calculate payroll for {month} with today's salaries, rates and employment dates? Unpaid lines are recalculated and keep their bonus and adjustment. Paid lines do not change."
+msgstr ""
+
+msgid "Calculate"
+msgstr ""
+
+#, python-brace-format
+msgid "Payroll calculated: {created} new, {updated} updated, {removed} removed"
+msgstr ""
+
+#, python-brace-format
+msgid "Nothing to pay for {month}. Calculate payroll first."
+msgstr ""
+
+#, python-brace-format
+msgid "Mark {count} calculated line(s) for {month} as paid? Paid lines can no longer be changed."
+msgstr ""
+
+msgid "Edit Bonus / Adjustment"
+msgstr ""
+
+msgid "Adjustment (+ / -)"
+msgstr ""
+
+msgid "e.g. -50"
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "e.g. advance repaid"
+msgstr ""
+
+msgid "Payroll line updated"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Paid Days"
+msgstr ""
+
+#, python-brace-format
+msgid "{days} of {total}"
+msgstr ""
+
+msgid "Adjustment"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Bonus and adjustment must be numbers."
+msgstr ""
+
+msgid "Bonus cannot be negative. Use a negative adjustment for a deduction."
+msgstr ""
+
+msgid "Last Working Day (YYYY-MM-DD, if Terminated)"
+msgstr ""
+
+msgid "empty = today"
+msgstr ""
+
+msgid "Last working day must be YYYY-MM-DD."
+msgstr ""
+
+msgid "The last working day cannot be before the hire date."
+msgstr ""
+
+#, python-brace-format
+msgid "Overtime ({hours:g} h)"
+msgstr ""
+
+msgid "Income Tax (progressive)"
+msgstr ""
+
+#, python-brace-format
+msgid "Unpaid Days ({days:g})"
+msgstr ""
+
+msgid "Progressive Tax Brackets (from:rate %, empty = flat rate above)"
+msgstr ""
+
+msgid "Example in KHR: 0:0, 1500000:5, 2000000:10, 8500000:15, 12500000:20. Each rate applies to the part of monthly pay above its amount. Check current rates with your accountant."
+msgstr ""
+
+msgid "Tax bonus and overtime"
+msgstr ""
+
+msgid "Taxed like salary (off = base salary only)"
+msgstr ""
+
+msgid "Health Insurance per Month"
+msgstr ""
+
+msgid "Health Insurance (higher salaries)"
+msgstr ""
+
+msgid "Higher Insurance from Base Salary"
+msgstr ""
+
+msgid "Attendance in Payroll"
+msgstr ""
+
+msgid "Taken from attendance and leave when payroll is calculated"
+msgstr ""
+
+msgid "Deduct unpaid days"
+msgstr ""
+
+msgid "Absent and unpaid leave = 1 day, Half Day = 0.5 day (salary / working days)"
+msgstr ""
+
+msgid "Overtime Pay Rate (x hourly rate, 0 = not paid)"
+msgstr ""
+
+msgid "Hourly rate = daily rate / shift hours (Attendance & Policies). Overtime counts after 'Overtime Counted After' and never on a Half Day."
+msgstr ""
+
+msgid "The selected dates contain no working days."
+msgstr ""

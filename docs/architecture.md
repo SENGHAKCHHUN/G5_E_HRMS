@@ -17,7 +17,8 @@ G5_E_HRMS/
 │   ├── main.py              # FastAPI app: routers, error handling, start-up
 │   ├── dependencies.py      # DB session, current user, role checks
 │   ├── models.py            # SQLAlchemy table models
-│   ├── schemas.py           # Pydantic request models (validation)
+│   ├── schemas/             # Pydantic request/response models, one file per topic (employees,
+│   │                        #   attendance, leave, payroll, settings ...), all importable from `schemas`
 │   ├── serializers.py       # ORM objects -> JSON responses
 │   ├── seed.py, seed_data.py  # demo data for an empty database
 │   ├── migrations/          # Alembic migrations
@@ -25,16 +26,21 @@ G5_E_HRMS/
 │   ├── integrations/        # email (SMTP) and PDF generation
 │   ├── locales/             # server message translations
 │   ├── routers/             # HTTP layer, one file per module
-│   ├── services/            # business rules
+│   ├── services/            # business rules (attendance: _service, _rules, _closing)
 │   └── repositories/        # database queries
 ├── frontend/
 │   ├── main.py              # entry point, starts on the login screen
-│   ├── app.py               # main window, sidebar, top bar, screen switching
+│   ├── app.py               # main window: login screen <-> signed-in shell, language rebuilds
+│   ├── shell/               # signed-in layout: nav.py (screens + roles), sidebar.py, topbar.py,
+│   │                        #   __init__.py (Shell: navigation, theme, language)
 │   ├── assets/fonts/        # HRMS Sans: Noto Sans + Noto Sans Khmer in one font (OFL)
 │   ├── core/                # API client, background tasks, app state, i18n, preferences
 │   ├── logic/               # pure, unit-tested functions (formatting, validation, calculations)
-│   ├── ui/                  # theme, reusable widgets, icons
-│   ├── views/               # one file per screen
+│   ├── ui/                  # theme.py, icons.py and widgets/ (used as `W`):
+│   │                        #   basics, inputs, layout, table, charts, dialogs
+│   ├── views/               # one file per screen (*_view.py); big screens keep their dialogs in
+│   │                        #   their own file (employee_dialogs, payslip_dialog, department_dialogs,
+│   │                        #   requisitions) and Settings has one file per section in views/settings/
 │   └── locales/             # screen translations
 ├── scripts/                 # fill_translations.py, build_fonts.py
 ├── tests/                   # backend and frontend tests

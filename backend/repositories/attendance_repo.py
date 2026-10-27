@@ -41,6 +41,18 @@ def list_for_date(db: Session, day: date) -> list[Attendance]:
     return list(db.scalars(select(Attendance).where(Attendance.date == day)))
 
 
+def between(db: Session, start: date, end: date) -> list[Attendance]:
+    """Every record from start to end (both included)."""
+    return list(db.scalars(select(Attendance).where(Attendance.date >= start, Attendance.date <= end)))
+
+
+def open_before(db: Session, day: date) -> list[Attendance]:
+    """Records before `day` with a check-in but no check-out."""
+    stmt = select(Attendance).where(Attendance.date < day, Attendance.check_in.isnot(None),
+                                    Attendance.check_out.is_(None))
+    return list(db.scalars(stmt))
+
+
 def latest_checkins(db: Session, day: date, limit: int) -> list[Attendance]:
     stmt = (select(Attendance).options(_WITH_EMPLOYEE)
             .where(Attendance.date == day, Attendance.check_in.isnot(None))

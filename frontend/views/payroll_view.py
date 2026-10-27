@@ -5,16 +5,15 @@ from tkinter import filedialog
 import customtkinter as ctk
 
 from core import tasks
-from core.api_client import ApiError, api
+from core.api_client import api
 from core.i18n import _
 from core.state import state
 from logic import labels
 from logic.formatting import month_label, recent_months
 from ui import theme as T
 from ui import widgets as W
-from ui.icons import logo
+from views.payslip_dialog import STATUS_KIND, PayslipDialogs
 
-STATUS_KIND = {"Calculated": "info", "Paid": "success", "Pending": "neutral"}
 STATUSES = ["Calculated", "Paid", "Pending"]
 SEARCH_DELAY_MS = 350
 
@@ -26,12 +25,10 @@ def _load_overview(staff: bool, month: str, employee_id: int | None) -> dict:
             "latest": next(iter(api.payroll_page(employee_id=employee_id, limit=1).rows), None)}
 
 
-def _run_batch(month: str) -> int:
-    api.generate_payroll(month)
-    return api.mark_paid(month)
+class PayrollView(PayslipDialogs, ctk.CTkFrame):
+    """Totals, filters, the payroll table, Calculate and Mark as Paid. Payslip and line edit:
+    views/payslip_dialog.py."""
 
-
-class PayrollView(ctk.CTkFrame):
     def __init__(self, master, app):
         super().__init__(master, fg_color="transparent")
         self.app = app
@@ -53,7 +50,8 @@ class PayrollView(ctk.CTkFrame):
                                             command=self._month_changed, width=170, height=38)
             self.month_menu.pack(side="left")
             header.add_action(_("Export CSV"), "secondary", "download", self.export_csv)
-            header.add_action(_("Run Payroll Batch"), "primary", "bolt", self.run_batch)
+            header.add_action(_("Mark as Paid"), "primary", "check", self.mark_paid)
+            header.add_action(_("Calculate Payroll"), "secondary", "bolt", self.calculate)
 
         self.kpis = W.transparent(self)
         self.kpis.pack(fill="x", pady=(T.GAP, 0))
@@ -204,23 +202,38 @@ class PayrollView(ctk.CTkFrame):
         self.reload()
 
     # --------------------------------------------------------------- actions
-    def run_batch(self):
-        counts = self.summary.get("by_status", {})
-        pending, calculated = counts.get("Pending", 0), counts.get("Calculated", 0)
+    def calculate(self):
+        """Step 1: create and recalculate the unpaid lines. Nothing is paid yet, so lines can be reviewed."""
         period = month_label(self.month)
-        if self.summary.get("count") and not pending and not calculated:
-            W.toast(self, _("Payroll for {month} is already fully paid").format(month=period), "info")
+        message = _("Calculate payroll for {month} with today's salaries, rates and employment dates? "
+                    "Unpaid lines are recalculated and keep their bonus and adjustment. Paid lines do not "
+                    "change.").format(month=period)
+        if not W.confirm(self, _("Calculate Payroll"), message, ok_text=_("Calculate"), kind="primary"):
             return
-        message = _("{month}\n\n• Calculate {pending} pending line(s)\n• Mark {total} line(s) as paid\n\n"
-                    "Continue?").format(month=period, pending=pending, total=pending + calculated)
-        if not W.confirm(self, _("Run Payroll Batch"), message, ok_text=_("Run Batch"), kind="primary"):
+
+        def done(res):
+            self.reload()
+            W.toast(self, _("Payroll calculated: {created} new, {updated} updated, {removed} removed").format(
+                created=res["created"], updated=res["calculated"], removed=res["removed"]))
+        tasks.run(self, api.generate_payroll, self.month, on_done=done)
+
+    def mark_paid(self):
+        """Step 2: after review, mark the calculated lines as paid. Paid lines are locked."""
+        period = month_label(self.month)
+        calculated = self.summary.get("by_status", {}).get("Calculated", 0)
+        if not calculated:
+            W.toast(self, _("Nothing to pay for {month}. Calculate payroll first.").format(month=period), "info")
+            return
+        message = _("Mark {count} calculated line(s) for {month} as paid? Paid lines can no longer be "
+                    "changed.").format(count=calculated, month=period)
+        if not W.confirm(self, _("Mark as Paid"), message, ok_text=_("Mark as Paid"), kind="primary"):
             return
 
         def done(paid):
             self.reload()
             self.app.invalidate("dashboard")
             W.toast(self, _("Payroll batch complete: {count} payslips paid").format(count=paid))
-        tasks.run(self, _run_batch, self.month, on_done=done)
+        tasks.run(self, api.mark_paid, self.month, on_done=done)
 
     def export_csv(self):
         path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV", "*.csv")],
@@ -229,88 +242,11 @@ class PayrollView(ctk.CTkFrame):
             tasks.run(self, api.payroll_page, **self._filters(), on_done=lambda page: self._write_csv(path, page.rows))
 
     def _write_csv(self, path, rows):
-        cols = ["code", "employee", "department", "month", "base_salary", "bonus", "tax", "pension",
-                "insurance", "deductions", "net_salary", "status"]
+        cols = ["code", "employee", "department", "month", "paid_days", "base_salary", "overtime_hours",
+                "overtime_pay", "bonus", "adjustment", "unpaid_days", "unpaid_deduction", "tax", "pension",
+                "insurance", "deductions", "net_salary", "status", "note"]
         with open(path, "w", newline="", encoding="utf-8-sig") as f:
             w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
             w.writeheader()
             w.writerows(rows)
         W.toast(self, _("Exported {count} payroll lines").format(count=len(rows)))
-
-    def payslip(self, r):
-        dlg = W.Modal(self, _("Monthly Payslip"), f"{r['employee']} • {month_label(r['month'])}",
-                      width=520, height=700)
-        b = dlg.body
-        s = state.settings
-        head = W.card(b, fg=T.SURFACE_ALT)
-        head.pack(fill="x", padx=8, pady=(4, 8))
-        ctk.CTkLabel(head, text="", image=logo(40)).pack(side="left", padx=14, pady=14)
-        box = W.transparent(head)
-        box.pack(side="left")
-        W.label(box, s.get("company_name", ""), size=15, weight="bold").pack(anchor="w")
-        W.label(box, s.get("domain", ""), size=11, color=T.TEXT_2).pack(anchor="w")
-        W.badge(head, labels.show(labels.PAYROLL_STATUS, r["status"]), STATUS_KIND.get(r["status"], "neutral")).pack(
-            side="right", padx=14)
-
-        info = W.transparent(b)
-        info.pack(fill="x", padx=12, pady=4)
-        info.grid_columnconfigure((0, 1), weight=1, uniform="i")
-        for i, (k, v) in enumerate([(_("Employee"), r["employee"]), (_("Employee ID"), r["code"]),
-                                    (_("Department"), r["department"]), (_("Pay Period"), month_label(r["month"]))]):
-            cell = W.transparent(info)
-            cell.grid(row=i // 2, column=i % 2, sticky="w", pady=4)
-            W.micro(cell, k).pack(anchor="w")
-            W.label(cell, v, size=13, weight="semibold").pack(anchor="w")
-
-        def section(title, items, total_label, total, color):
-            c = W.card(b)
-            c.pack(fill="x", padx=8, pady=6)
-            W.micro(c, title).pack(anchor="w", padx=14, pady=(12, 4))
-            for name, val in items:
-                row = W.transparent(c)
-                row.pack(fill="x", padx=14, pady=2)
-                W.label(row, name, size=13, color=T.TEXT_2).pack(side="left")
-                W.label(row, W.money(val), size=13, mono=True).pack(side="right")
-            W.divider(c).pack(fill="x", padx=14, pady=6)
-            row = W.transparent(c)
-            row.pack(fill="x", padx=14, pady=(0, 12))
-            W.label(row, total_label, size=13, weight="semibold").pack(side="left")
-            W.label(row, W.money(total), size=13, weight="bold", color=color).pack(side="right")
-
-        section(_("Earnings"), [(_("Base Salary"), r["base_salary"]), (_("Allowances / Bonus"), r["bonus"])],
-                _("Gross Earnings"), r["base_salary"] + r["bonus"], T.SUCCESS)
-        section(_("Deductions"), [(_("Income Tax ({rate}%)").format(rate=round(s.get("tax_rate", 0))), r["tax"]),
-                                  (_("Pension ({rate}%)").format(rate=round(s.get("pension_rate", 0))), r["pension"]),
-                                  (_("Health Insurance"), r["insurance"])],
-                _("Total Deductions"), r["deductions"], T.DANGER)
-
-        net = ctk.CTkFrame(b, fg_color=T.BADGE["teal"][0], corner_radius=T.RADIUS_CARD)
-        net.pack(fill="x", padx=8, pady=(6, 8))
-        W.label(net, _("NET PAY"), size=12, weight="semibold", color=T.BADGE["teal"][1]).pack(
-            side="left", padx=16, pady=18)
-        W.label(net, W.money(r["net_salary"]), size=26, weight="bold", color=T.BADGE["teal"][1]).pack(
-            side="right", padx=16)
-
-        def failed(error):
-            if not isinstance(error, ApiError):
-                raise error
-            W.toast(dlg, str(error), "danger", ms=6000)
-
-        def write_pdf(path, data):
-            with open(path, "wb") as fh:
-                fh.write(data)
-            W.toast(dlg, _("Payslip saved as PDF"))
-
-        def save():
-            path = filedialog.asksaveasfilename(parent=dlg, defaultextension=".pdf", filetypes=[("PDF", "*.pdf")],
-                                                initialfile=f"payslip_{r['code']}_{r['month']}.pdf")
-            if path:
-                tasks.run(dlg, api.payslip_pdf, r["id"], on_done=lambda data: write_pdf(path, data), on_error=failed)
-
-        def email():
-            tasks.run(dlg, api.email_payslip, r["id"], on_error=failed,
-                      on_done=lambda res: W.toast(dlg, _("Payslip emailed to {to}").format(to=res["to"])))
-
-        dlg.add_button(_("Save PDF"), "primary", save, "download")
-        if self.staff:
-            dlg.add_button(_("Email to Employee"), "secondary", email, "mail")

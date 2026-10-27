@@ -11,6 +11,7 @@ from unittest import mock
 _TMP = tempfile.mkdtemp()
 os.environ.setdefault("HRMS_DATABASE_URL", f"sqlite:///{os.path.join(_TMP, 'test.db')}")
 os.environ.setdefault("HRMS_SECRET_KEY", "test-secret-key-that-is-long-enough-for-hs256")
+os.environ.setdefault("HRMS_DEMO_PASSWORD_CHANGE", "false")  # sign in with the demo accounts as they are
 
 from fastapi.testclient import TestClient  # noqa: E402
 
@@ -50,7 +51,7 @@ class FeatureTests(unittest.TestCase):
     def new_employee(self, email, role="Employee"):
         r = self.admin.post("/employees", json={
             "first_name": "Temp", "last_name": "Person", "email": email, "hire_date": "2026-01-05",
-            "position": "Accountant", "salary": 4500, "department_id": 4, "status": "Active", "role": role})
+            "position": "Accountant", "salary": 4500, "department_id": 1, "status": "Active", "role": role})
         self.assertEqual(r.status_code, 201, r.text)
         return r.json()
 
@@ -86,6 +87,18 @@ class FeatureTests(unittest.TestCase):
         temp = r.json()["temporary_password"]
         c = client()
         self.assertEqual(login(c, created["username"], temp)["pending_action"], "password_change_required")
+
+    def test_demo_password_must_be_changed(self):
+        from backend.core.config import config
+        from backend.core.database import SessionLocal
+        from backend.repositories import user_repo
+        with mock.patch.object(config, "demo_password_change", True):
+            c = client()
+            self.assertEqual(login(c, "employee", "emp123")["pending_action"], "password_change_required")
+            self.assertEqual(c.get("/attendance/today").status_code, 403)  # blocked until changed
+        with SessionLocal() as db:  # undo, so the other tests can keep using the demo account
+            user_repo.get_by_username(db, "employee").must_change_password = False
+            db.commit()
 
     # ---------------------------------------------------------------- 2FA
     def test_two_factor_login(self):
@@ -177,6 +190,7 @@ class FeatureTests(unittest.TestCase):
                 self.assertEqual(len(list(msg.iter_attachments())), 1)
 
                 start = date.today() + timedelta(days=200)
+                start += timedelta(days=(7 - start.weekday()) % 7)  # a Monday: leave counts working days
                 lv = self.emp.post("/leaves", json={"type": "Casual", "start_date": start.isoformat(),
                                                     "end_date": start.isoformat()}).json()
                 r = self.hr.put(f"/leaves/{lv['id']}/approve", json={"note": "OK"})
