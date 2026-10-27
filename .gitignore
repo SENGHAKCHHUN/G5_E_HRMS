@@ -6,3 +6,6 @@ venv/
 hr_system.db
 backend/.secret_key
 .env
+
+# database copies made before resetting the demo data
+backups/

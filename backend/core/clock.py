@@ -28,3 +28,9 @@ def now(settings: dict) -> datetime:
 
 def today(settings: dict) -> date:
     return now(settings).date()
+
+
+def working_days(start: date, end: date, work_week: list[str]) -> list[date]:
+    """The days from start to end (both included) whose weekday ('Mon' ...) is in the work week."""
+    return [start + timedelta(days=i) for i in range((end - start).days + 1)
+            if (start + timedelta(days=i)).strftime("%a") in work_week]

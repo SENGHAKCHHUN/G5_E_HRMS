@@ -35,6 +35,13 @@ def approved_covering(db: Session, day: date, employee_id: int | None = None) ->
     return list(db.scalars(stmt))
 
 
+def approved_between(db: Session, start: date, end: date, leave_type: str) -> list[LeaveRequest]:
+    """Approved requests of one type that overlap start..end."""
+    stmt = select(LeaveRequest).where(LeaveRequest.status == "Approved", LeaveRequest.type == leave_type,
+                                      LeaveRequest.start_date <= end, LeaveRequest.end_date >= start)
+    return list(db.scalars(stmt))
+
+
 def first_overlapping(db: Session, employee_id: int, start: date, end: date) -> LeaveRequest | None:
     stmt = select(LeaveRequest).where(
         LeaveRequest.employee_id == employee_id, LeaveRequest.status.in_(["Pending", "Approved"]),

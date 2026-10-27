@@ -30,7 +30,7 @@ def lines_query(month: str | None = None, employee_id: int | None = None, status
 
 def totals(db: Session, month: str | None = None, employee_id: int | None = None) -> dict:
     """Sums and per-status counts for the payroll summary cards."""
-    stmt = select(func.count(), func.coalesce(func.sum(Payroll.base_salary + Payroll.bonus), 0),
+    stmt = select(func.count(), func.coalesce(func.sum(Payroll.base_salary + Payroll.bonus + Payroll.adjustment + Payroll.overtime_pay), 0),
                   func.coalesce(func.sum(Payroll.tax), 0), func.coalesce(func.sum(Payroll.net_salary), 0))
     by_status = select(Payroll.status, func.count()).group_by(Payroll.status)
     if month:
@@ -63,3 +63,7 @@ def count(db: Session, month: str | None = None, exclude_status: str | None = No
 def add(db: Session, line: Payroll) -> Payroll:
     db.add(line)
     return line
+
+
+def delete(db: Session, line: Payroll) -> None:
+    db.delete(line)

@@ -36,9 +36,21 @@ DEFAULTS = {
     # this machine + private LAN ranges = "inside the office" when the server is hosted there
     "office_networks": "127.0.0.1/32, ::1/128, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16",
     "remote_exempt": True,            # work mode "Remote" may punch from anywhere
+    # day closing rules
+    "auto_absent": True,              # no check-in by checkin_close on a working day = Absent
+    "auto_checkout": True,            # a check-out forgotten until the next day is closed at shift_end
+    "half_day_hours": 4.0,            # worked less than this = Half Day (0 = off)
+    "checkout_cutoff": "04:00",       # check-out after midnight counts for the previous day until then
     # payroll
-    "tax_rate": 11.0,
+    "tax_rate": 11.0,                 # flat income tax, used when tax_brackets is empty
+    "tax_brackets": "",               # progressive tax "from:rate, ..." on monthly taxable pay
+    "tax_bonus": True,                # bonus and overtime are taxed like salary
     "pension_rate": 2.0,
+    "insurance_amount": 85.0,         # health insurance per month
+    "insurance_high_amount": 120.0,   # ... from insurance_threshold base salary upwards
+    "insurance_threshold": 6000.0,
+    "deduct_unpaid": True,            # Absent, Half Day and unpaid leave reduce pay
+    "overtime_rate": 1.5,             # overtime pay = hours x hourly rate x this (0 = not paid)
     "pay_day": 28,
     "currency": "USD",
     # email (SMTP) for payslips and leave notifications
@@ -73,6 +85,18 @@ def read_public(db: Session) -> dict:
     return public_settings(get_settings(db))
 
 
+def parse_brackets(text: str) -> list[tuple[float, float]]:
+    """'0:0, 1500000:5' -> [(0, 0), (1500000, 5)]: the rate (%) applies to the pay above each amount."""
+    out = []
+    for part in (p.strip() for p in text.split(",") if p.strip()):
+        start, rate = part.split(":")
+        out.append((float(start), float(rate)))
+    if not out or out[0][0] != 0 or [s for s, _r in out] != sorted({s for s, _r in out}) \
+            or any(not 0 <= r <= 100 for _s, r in out):
+        raise ValueError(text)
+    return out
+
+
 def update(db: Session, actor: User, changes: dict) -> dict:
     if not changes.get("smtp_password"):
         changes.pop("smtp_password", None)  # blank = keep the stored password
@@ -83,6 +107,11 @@ def update(db: Session, actor: User, changes: dict) -> dict:
     current = get_settings(db)
     if changes.get("checkin_open", current["checkin_open"]) >= changes.get("checkin_close", current["checkin_close"]):
         raise BadRequest("Check-in must open before it closes")
+    if changes.get("tax_brackets"):
+        try:
+            parse_brackets(changes["tax_brackets"])
+        except ValueError:
+            raise BadRequest("Tax brackets must look like 0:0, 1500000:5, 2000000:10")
     for key, value in changes.items():
         if key in SECRET_KEYS:
             value = crypto.encrypt(value)  # stored encrypted, never in plain text

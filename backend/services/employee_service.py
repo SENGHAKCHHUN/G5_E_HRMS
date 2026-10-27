@@ -1,4 +1,6 @@
 """Employee management (Module 2)."""
+from datetime import date
+
 from sqlalchemy.orm import Session
 
 from ..core import security
@@ -81,6 +83,12 @@ def update(db: Session, actor: User, employee_id: int, changes: dict) -> dict:
         _ensure_department(db, changes["department_id"])
     for key, value in changes.items():
         setattr(emp, key, value)
+    if emp.status == "Terminated" and emp.termination_date is None:
+        emp.termination_date = date.today()  # payroll pays up to the last working day
+    elif emp.status != "Terminated":
+        emp.termination_date = None
+    if emp.termination_date and emp.termination_date < emp.hire_date:
+        raise BadRequest("The last working day cannot be before the hire date")
     if role and emp.user and role != emp.user.role:
         if actor.role != security.ADMIN:
             raise Forbidden("Only an Admin can change system roles")

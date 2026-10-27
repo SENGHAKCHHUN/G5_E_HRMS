@@ -5,7 +5,7 @@ Run from the project root:  python -m unittest discover tests -v
 import ast
 import os
 import unittest
-from datetime import datetime
+from datetime import date, datetime, time
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -60,9 +60,60 @@ class AttendanceRuleTests(unittest.TestCase):
 class PayrollRuleTests(unittest.TestCase):
     def test_net_salary(self):
         line = SimpleNamespace(bonus=300.0)
-        payroll_service.calculate(line, 5000, settings(tax_rate=10, pension_rate=2))
+        payroll_service.calculate(line, 5000, settings(tax_rate=10, pension_rate=2, tax_bonus=False))
         self.assertEqual((line.tax, line.pension, line.insurance), (500.0, 100.0, 85.0))
         self.assertEqual(line.net_salary, 5000 + 300 - (500 + 100 + 85))
+        line.adjustment = -50.0  # never taxed
+        payroll_service.calculate(line, 5000, settings(tax_rate=10, pension_rate=2))
+        self.assertEqual(line.tax, 530.0)  # the bonus is taxed by default
+        self.assertEqual(line.net_salary, 5000 + 300 - 50 - (530 + 100 + 85))
+
+    def test_unpaid_days_and_overtime_in_net(self):
+        line = SimpleNamespace(bonus=0.0, adjustment=0.0, unpaid_deduction=200.0, overtime_pay=60.0)
+        payroll_service.calculate(line, 2000, settings(tax_rate=10, pension_rate=2, insurance_amount=50))
+        self.assertEqual(line.tax, (2000 - 200 + 60) * 0.10)
+        self.assertEqual(line.pension, (2000 - 200) * 0.02)
+        self.assertEqual(line.deductions, 200 + 186 + 36 + 50)
+        self.assertEqual(line.net_salary, 2000 + 60 - line.deductions)
+        self.assertEqual(payroll_service.calculate(line, 7000, settings()) or line.insurance, 120.0)
+
+    def test_progressive_tax(self):
+        s = settings(tax_brackets="0:0, 1500000:5, 2000000:10, 8500000:15, 12500000:20")
+        tax = payroll_service.income_tax
+        self.assertEqual(tax(1_500_000, s), 0)
+        self.assertEqual(tax(2_000_000, s), 25_000)  # 5% of the 500,000 above 1.5 million
+        self.assertEqual(tax(3_000_000, s), 25_000 + 100_000)
+        self.assertEqual(tax(15_000_000, s), 25_000 + 650_000 + 600_000 + 500_000)
+        self.assertEqual(tax(1000, settings(tax_rate=11)), 110)
+
+    def test_attendance_pay(self):
+        emp = SimpleNamespace(hire_date=date(2020, 1, 1), termination_date=None, salary=2100)
+        rec = lambda day, status, cin=None, cout=None: SimpleNamespace(  # noqa: E731
+            date=date(2026, 6, day), status=status, check_in=cin and time.fromisoformat(cin),
+            check_out=cout and time.fromisoformat(cout))
+        records = [rec(1, "Absent"), rec(2, "Half Day", "09:00", "12:00"), rec(6, "Absent"),  # 6th: Saturday
+                   rec(3, "On Time", "09:00", "20:30"), rec(4, "Late", "10:00", "01:00")]  # 2.5 h, 7 h (overnight)
+        leave = [SimpleNamespace(start_date=date(2026, 6, 5), end_date=date(2026, 6, 8))]  # Fri-Mon: 2 working days
+        out = payroll_service.attendance_pay(emp, "2026-06", records, leave, settings())
+        daily = 2100 / 22  # June 2026 has 22 working days (Mon-Fri)
+        self.assertEqual(out["unpaid_days"], 3.5)
+        self.assertEqual(out["unpaid_deduction"], round(daily * 3.5, 2))
+        self.assertEqual(out["overtime_hours"], 9.5)
+        self.assertEqual(out["overtime_pay"], round(daily / 9 * 9.5 * 1.5, 2))
+        off = payroll_service.attendance_pay(emp, "2026-06", records, leave, settings(deduct_unpaid=False,
+                                                                                      overtime_rate=0))
+        self.assertEqual((off["unpaid_deduction"], off["overtime_pay"]), (0, 0))
+
+    def test_employed_days(self):
+        emp = lambda hired, status="Active", left=None: SimpleNamespace(  # noqa: E731
+            hire_date=date.fromisoformat(hired), status=status, termination_date=left and date.fromisoformat(left))
+        days = payroll_service.employed_days
+        self.assertEqual(days(emp("2020-01-01"), "2026-02"), (28, 28))
+        self.assertEqual(days(emp("2026-02-15"), "2026-02"), (14, 28))
+        self.assertEqual(days(emp("2026-03-01"), "2026-02"), (0, 28))  # not hired yet
+        self.assertEqual(days(emp("2020-01-01", "Terminated", "2026-02-10"), "2026-02"), (10, 28))
+        self.assertEqual(days(emp("2020-01-01", "Terminated", "2026-01-31"), "2026-02"), (0, 28))
+        self.assertEqual(days(emp("2020-01-01", "Terminated"), "2026-02"), (0, 28))  # no last day known
 
 
 class LayerTests(unittest.TestCase):

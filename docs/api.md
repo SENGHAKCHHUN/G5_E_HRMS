@@ -69,7 +69,8 @@ formats are in the interactive docs at `http://127.0.0.1:8000/docs`. `GET /` is 
 ### Payroll
 | Method | Endpoint | Description |
 |---|---|---|
-| POST | `/payroll/generate?month=` | Generate payroll for a month |
+| POST | `/payroll/generate?month=` | Create and recalculate the unpaid lines of a month |
+| PATCH | `/payroll/{id}` | Set an unpaid line's bonus, adjustment and note |
 | POST | `/payroll/pay?month=` | Mark calculated payroll as paid |
 | GET | `/payroll?month=&employee_id=&status=&search=&department_id=` | Payroll records (paged) |
 | GET | `/payroll/summary?month=&employee_id=` | Month totals |

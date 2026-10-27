@@ -14,6 +14,10 @@ HR = "HR Manager"
 EMPLOYEE = "Employee"
 STAFF = (ADMIN, HR)
 
+# demo accounts created in an empty database (seed_data.py). Their passwords are public, so signing
+# in with one always requires a new password first (unless HRMS_DEMO_PASSWORD_CHANGE=false).
+DEMO_PASSWORDS = {"admin": "admin123", "hr": "hr123", "employee": "emp123"}
+
 # New hashes use Argon2 (current OWASP recommendation); bcrypt hashes from older versions
 # still verify and are upgraded at the next successful login (see verify_and_update).
 _hasher = PasswordHash((Argon2Hasher(), BcryptHasher()))

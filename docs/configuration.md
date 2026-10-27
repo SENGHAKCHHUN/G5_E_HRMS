@@ -14,6 +14,7 @@ The backend reads `HRMS_*` environment variables, or a `.env` file in the projec
 | `HRMS_TRUSTED_PROXIES` | `[]` | Reverse proxies allowed to send `X-Forwarded-For`, e.g. `["127.0.0.1"]` |
 | `HRMS_LOG_LEVEL` | `INFO` | `DEBUG`, `INFO` or `WARNING` |
 | `HRMS_LOGIN_MAX_FAILURES` / `HRMS_LOGIN_LOCKOUT_MINUTES` | `5` / `15` | Login lockout |
+| `HRMS_DEMO_PASSWORD_CHANGE` | `true` | Signing in with a demo account's public password (`admin123` ...) asks for a new one first |
 
 The desktop app reads `HRMS_API_URL` (default `http://127.0.0.1:8000`).
 

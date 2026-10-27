@@ -222,7 +222,8 @@ class LeaveView(ctk.CTkFrame):
 
         def calc(*_args):
             v = f.values()
-            days, problem = L.validate_request(v["start_date"], v["end_date"], v["type"], {})
+            days, problem = L.validate_request(v["start_date"], v["end_date"], v["type"], {},
+                                               state.settings.get("work_week"))
             days_lbl.configure(text=problem or _("Calculated duration: {count} day(s)").format(count=days))
         for key in ("start_date", "end_date"):
             f.fields[key][1].bind("<KeyRelease>", calc)
@@ -235,7 +236,8 @@ class LeaveView(ctk.CTkFrame):
 
         def send():
             v = {**f.values(), **f2.values()}
-            _days, problem = L.validate_request(v["start_date"], v["end_date"], v["type"], balance)
+            _days, problem = L.validate_request(v["start_date"], v["end_date"], v["type"], balance,
+                                                state.settings.get("work_week"))
             if problem:
                 err.configure(text=problem)
                 return

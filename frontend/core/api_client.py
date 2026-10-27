@@ -246,9 +246,12 @@ class HttpApiClient:
     def payroll_summary(self, month: str | None = None, employee_id: int | None = None) -> Json:
         return self._get("/payroll/summary", month=month, employee_id=employee_id)
 
-    def generate_payroll(self, month: str) -> int:
-        res = self._post("/payroll/generate", month=month)
-        return res["created"] + res["calculated"]
+    def generate_payroll(self, month: str) -> Json:
+        """{created, calculated, removed}: unpaid lines are recalculated each time."""
+        return self._post("/payroll/generate", month=month)
+
+    def update_payroll_line(self, payroll_id: int, data: Json) -> Json:
+        return self._request("PATCH", f"/payroll/{payroll_id}", json=data)
 
     def mark_paid(self, month: str) -> int:
         return self._post("/payroll/pay", month=month)["paid"]

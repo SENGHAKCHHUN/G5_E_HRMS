@@ -12,6 +12,7 @@ import pytest
 _TMP = tempfile.mkdtemp()
 os.environ.setdefault("HRMS_DATABASE_URL", f"sqlite:///{os.path.join(_TMP, 'screens.db')}")
 os.environ.setdefault("HRMS_SECRET_KEY", "test-secret-key-that-is-long-enough-for-hs256")
+os.environ.setdefault("HRMS_DEMO_PASSWORD_CHANGE", "false")  # sign in with the demo accounts as they are
 
 tk = pytest.importorskip("tkinter")
 from fastapi.testclient import TestClient  # noqa: E402
@@ -129,4 +130,81 @@ def test_expired_session_returns_to_login(gui):
     window.current.navigate("employees")
     _settle(window)
     assert isinstance(window.current, LoginView)
+    assert not errors
+
+
+
+def _descendants(widget):
+    for child in widget.winfo_children():
+        yield child
+        yield from _descendants(child)
+
+
+def test_payroll_calculate_edit_then_pay(gui, monkeypatch):
+    """Calculate leaves the lines unpaid for review, a line can be edited, Mark as Paid locks them."""
+    import customtkinter as ctk
+    from core.api_client import api
+    from ui import widgets as W
+    window, errors = gui
+    window.after_login(api.login("hr", "hr123"))
+    _settle(window)
+    shell = window.current
+    shell.navigate("payroll")
+    _settle(window)
+    view = shell.pages["payroll"][1]
+    view.month = "2032-01"  # a month no other test uses
+    monkeypatch.setattr(W, "confirm", lambda *_a, **_k: True)
+
+    view.calculate()
+    _settle(window)
+    count = view.summary["count"]
+    assert count >= 7 and view.summary["by_status"] == {"Calculated": count}
+
+    line = api.payroll_page(month="2032-01", limit=1).rows[0]
+    saved = []
+    view.edit_line(line, saved.append)
+    dlg = [w for w in view.winfo_children() if isinstance(w, W.Modal)][-1]
+    bonus = next(w for w in _descendants(dlg.body) if isinstance(w, ctk.CTkEntry))
+    bonus.delete(0, "end")
+    bonus.insert(0, "123")
+    next(b for b in dlg.footer.winfo_children() if isinstance(b, ctk.CTkButton) and b.cget("text") == "Save").invoke()
+    _settle(window)
+    assert saved and saved[0]["id"] == line["id"] and saved[0]["bonus"] == 123
+    s = saved[0]  # the bonus is taxed, so the tax follows it
+    assert s["tax"] > line["tax"] or not line["base_salary"]
+    assert s["net_salary"] == round(s["base_salary"] + s["overtime_pay"] + 123 + s["adjustment"] - s["deductions"], 2)
+
+    view.mark_paid()
+    _settle(window)
+    assert view.summary["by_status"] == {"Paid": count}
+    assert not errors
+
+
+def test_employee_can_be_terminated_with_last_working_day(gui, monkeypatch):
+    import customtkinter as ctk
+    from core.api_client import api
+    from logic import labels
+    from ui import widgets as W
+    window, errors = gui
+    window.after_login(api.login("hr", "hr123"))
+    _settle(window)
+    shell = window.current
+    shell.navigate("employees")
+    _settle(window)
+    view = shell.pages["employees"][1]
+    forms, real_form = [], W.Form
+    monkeypatch.setattr(W, "Form", lambda *a, **k: forms.append(real_form(*a, **k)) or forms[-1])
+    emp = api.employees_page(limit=1).rows[0]
+    view.open_form(emp["id"])
+    _settle(window)
+    f = forms[-1]
+    f.fields["status"][1].set(labels.show(labels.EMPLOYEE_STATUS, "Terminated"))
+    f.fields["termination_date"][1].insert(0, "2031-05-31")
+    dlg = [w for w in view.winfo_children() if isinstance(w, W.Modal)][-1]
+    monkeypatch.setattr(W, "info_dialog", lambda *a, **k: None)
+    next(b for b in dlg.footer.winfo_children()
+         if isinstance(b, ctk.CTkButton) and b.cget("text") == "Save Employee").invoke()
+    _settle(window)
+    saved = api.get_employee(emp["id"])
+    assert (saved["status"], saved["termination_date"]) == ("Terminated", "2031-05-31")
     assert not errors

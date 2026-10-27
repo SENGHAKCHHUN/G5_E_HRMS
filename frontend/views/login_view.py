@@ -1,23 +1,13 @@
 """Screen 1 - Login."""
-import tkinter as tk
-
 import customtkinter as ctk
 
 from core import i18n, prefs, tasks
 from core.api_client import ApiError, api
-from core.i18n import N_, _
+from core.i18n import _
 from core.state import state
 from ui import theme as T
 from ui import widgets as W
 from ui.icons import logo
-
-# demo accounts created by the backend's seed data (role switch fills them in)
-DEMO_ACCOUNTS = {
-    "Employee": ("employee", "emp123"),
-    "HR Manager": ("hr", "hr123"),
-    "Admin": ("admin", "admin123"),
-}
-ROLE_LABELS = {"Employee": N_("Employee"), "HR Manager": N_("HR Manager"), "Admin": N_("Admin")}
 
 
 class LoginView(ctk.CTkFrame):
@@ -37,12 +27,6 @@ class LoginView(ctk.CTkFrame):
         W.label(box, _("HR Management System"), size=22, weight="bold", anchor="center").pack()
         W.label(box, _("Sign in to access your enterprise portal"), size=12, color=T.TEXT_2,
                 anchor="center").pack(pady=(2, 16))
-
-        W.label(box, _("Demo account"), size=12, weight="semibold", color=T.TEXT_2).pack(anchor="w")
-        self.role_labels = {_(ROLE_LABELS[r]): r for r in DEMO_ACCOUNTS}
-        self.role_var = tk.StringVar(value=_(ROLE_LABELS["HR Manager"]))
-        W.segmented(box, list(self.role_labels), command=lambda label: self._prefill(self.role_labels[label]),
-                    variable=self.role_var).pack(fill="x", pady=(4, 12))
 
         W.label(box, _("Username / Work Email"), size=12, weight="semibold", color=T.TEXT_2).pack(anchor="w")
         self.user = W.entry(box, _("Username or work email"), height=40)
@@ -93,7 +77,7 @@ class LoginView(ctk.CTkFrame):
             self.remember.select()
             self.after(100, self.pw.focus_set)
         else:
-            self._prefill("HR Manager")
+            self.after(100, self.user.focus_set)
         self.user.bind("<Return>", lambda _e: self.submit())
         self.pw.bind("<Return>", lambda _e: self.submit())
 
@@ -107,14 +91,6 @@ class LoginView(ctk.CTkFrame):
         if code != state.language:
             state.set_language(code)
             self.app.rebuild("dashboard")
-
-    def _prefill(self, role: str):
-        username, password = DEMO_ACCOUNTS[role]
-        self.user.delete(0, "end")
-        self.user.insert(0, username)
-        self.pw.delete(0, "end")
-        self.pw.insert(0, password)
-        self.error.configure(text="")
 
     def _toggle_pw(self):
         self.pw.configure(show="" if self.pw.cget("show") == "*" else "*")

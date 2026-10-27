@@ -142,19 +142,32 @@ def payslip_pdf(p: dict, settings: dict) -> bytes:
     info.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "MIDDLE"), ("BOTTOMPADDING", (0, 0), (-1, -1), 5)]))
     story.append(info)
 
-    gross = p["base_salary"] + p["bonus"]
+    adjustment = p.get("adjustment") or 0
+    overtime = p.get("overtime_pay") or 0
+    gross = p["base_salary"] + overtime + p["bonus"] + adjustment
+    base_label = t("Base Salary")
+    if p.get("paid_days"):  # joined or left during the month
+        base_label = t("Base Salary ({days} of {total} days)", days=p["paid_days"], total=p["month_days"])
+    earnings = [[base_label, money(p["base_salary"], cur)]]
+    if overtime:
+        earnings.append([t("Overtime ({hours} h)", hours=f"{p['overtime_hours']:g}"), money(overtime, cur)])
+    earnings.append([t("Allowances / Bonus"), money(p["bonus"], cur)])
+    if adjustment:
+        earnings.append([t("Adjustment"), money(adjustment, cur)])
+    earnings.append([t("Gross Earnings"), money(gross, cur)])
     d.heading(story, t("Earnings"))
-    story.append(d.table([t("Description"), t("Amount")],
-                         [[t("Base Salary"), money(p["base_salary"], cur)],
-                          [t("Allowances / Bonus"), money(p["bonus"], cur)],
-                          [t("Gross Earnings"), money(gross, cur)]], [130 * mm, 40 * mm]))
+    story.append(d.table([t("Description"), t("Amount")], earnings, [130 * mm, 40 * mm]))
+    tax_label = (t("Income Tax (progressive)") if settings.get("tax_brackets")
+                 else t("Income Tax ({rate}%)", rate=f"{settings.get('tax_rate', 0):g}"))
+    deductions = [[tax_label, money(p["tax"], cur)],
+                  [t("Pension ({rate}%)", rate=f"{settings.get('pension_rate', 0):g}"), money(p["pension"], cur)],
+                  [t("Health Insurance"), money(p["insurance"], cur)]]
+    if p.get("unpaid_deduction"):
+        deductions.insert(0, [t("Unpaid Days ({days})", days=f"{p['unpaid_days']:g}"),
+                              money(p["unpaid_deduction"], cur)])
+    deductions.append([t("Total Deductions"), money(p["deductions"], cur)])
     d.heading(story, t("Deductions"))
-    story.append(d.table([t("Description"), t("Amount")],
-                         [[t("Income Tax ({rate}%)", rate=f"{settings.get('tax_rate', 0):g}"), money(p["tax"], cur)],
-                          [t("Pension ({rate}%)", rate=f"{settings.get('pension_rate', 0):g}"),
-                           money(p["pension"], cur)],
-                          [t("Health Insurance"), money(p["insurance"], cur)],
-                          [t("Total Deductions"), money(p["deductions"], cur)]], [130 * mm, 40 * mm]))
+    story.append(d.table([t("Description"), t("Amount")], deductions, [130 * mm, 40 * mm]))
     story.append(Spacer(1, 6 * mm))
 
     net = Table([[d.p(t("NET PAY"), d.net_label), d.p(money(p["net_salary"], cur), d.net_value)]],
@@ -164,6 +177,9 @@ def payslip_pdf(p: dict, settings: dict) -> bytes:
                              ("TOPPADDING", (0, 0), (-1, -1), 10), ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
                              ("LEFTPADDING", (0, 0), (-1, -1), 12), ("RIGHTPADDING", (0, 0), (-1, -1), 12)]))
     story.append(net)
+    if p.get("note"):
+        story.append(Spacer(1, 4 * mm))
+        story.append(d.p(t("Note: {note}", note=p["note"]), d.sub))
     story.append(Spacer(1, 10 * mm))
     story.append(d.p(t("Generated {when} • Pay day: {day} of the month. This is a computer-generated document.",
                        when=f"{datetime.now():%Y-%m-%d %H:%M}", day=settings.get("pay_day", "-")), d.sub))

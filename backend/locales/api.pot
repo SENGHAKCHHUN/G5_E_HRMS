@@ -356,3 +356,36 @@ msgstr ""
 msgid "{day} is not a working day. Ask HR for a manual entry if you worked today."
 msgstr ""
 
+msgid "A paid payroll line cannot be changed"
+msgstr ""
+
+msgid "The last working day cannot be before the hire date"
+msgstr ""
+
+#, python-brace-format
+msgid "Base Salary ({days} of {total} days)"
+msgstr ""
+
+msgid "Adjustment"
+msgstr ""
+
+#, python-brace-format
+msgid "Note: {note}"
+msgstr ""
+
+msgid "Tax brackets must look like 0:0, 1500000:5, 2000000:10"
+msgstr ""
+
+#, python-brace-format
+msgid "Overtime ({hours} h)"
+msgstr ""
+
+msgid "Income Tax (progressive)"
+msgstr ""
+
+#, python-brace-format
+msgid "Unpaid Days ({days})"
+msgstr ""
+
+msgid "The selected dates contain no working days"
+msgstr ""

@@ -1,7 +1,8 @@
 """Fill an empty database with the demo data from seed_data.py.
 
 Runs automatically on first start. To start over, stop the server, delete
-hr_system.db and start it again.
+hr_system.db and start it again. Last month's payroll is calculated with the real
+payroll rules (attendance, leave, tax) and marked paid; this month is left for HR.
 """
 from datetime import date, datetime, time
 
@@ -9,7 +10,7 @@ from sqlalchemy import insert, select
 from sqlalchemy.orm import Session
 
 from .core.security import hash_password
-from .models import Attendance, AuditLog, Department, Employee, LeaveRequest, Payroll, Position, User
+from .models import Attendance, AuditLog, Department, Employee, LeaveRequest, Position, User
 
 
 def _time(value: str | None) -> time | None:
@@ -53,11 +54,14 @@ def seed_if_empty(db: Session) -> bool:
                             end_date=date.fromisoformat(lv["end_date"]), reason=lv["reason"],
                             status=lv["status"], review_note=lv["review_note"]))
 
-    pay_cols = {c.key for c in Payroll.__table__.columns} - {"id"}
-    db.execute(insert(Payroll), [{k: v for k, v in p.items() if k in pay_cols} for p in m.PAYROLL])
-
     for (day, hhmm), user, action, detail in m.AUDIT_LOG:
         db.add(AuditLog(timestamp=datetime.combine(day, datetime.strptime(hhmm, "%H:%M").time()),
                         username=user, action=action, detail=detail))
     db.commit()
+
+    from .services import payroll_service
+    admin = db.get(User, 1)
+    last_month = m.FIRST_DAY.strftime("%Y-%m")
+    payroll_service.generate(db, admin, last_month)
+    payroll_service.pay(db, admin, last_month)
     return True

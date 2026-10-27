@@ -67,7 +67,9 @@ uvicorn backend.main:app --reload    # Terminal 1: API at http://127.0.0.1:8000/
 python frontend/main.py              # Terminal 2: desktop app
 ```
 
-On first start the backend creates `hr_system.db` with demo data (148 employees, 6 departments).
+On first start the backend creates `hr_system.db` with a small demo company: one department
+(*Head Office*) with 7 positions and 7 employees, two months of attendance, a few leave requests and
+last month's payroll (paid).
 Delete that file to start over.
 
 ### Default Login
@@ -78,7 +80,9 @@ Delete that file to start over.
 | HR Manager | hr | hr123 |
 | Employee | employee | emp123 |
 
-> Change these passwords after the first login (user menu → *Change Password*).
+> These passwords are public, so the first sign-in with each one asks for a new password before
+> anything else opens. New employees get their own username and one-time password when they are added
+> (see [User Guide](docs/user-guide.md#accounts--security)).
 
 ---
 

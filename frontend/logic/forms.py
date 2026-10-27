@@ -26,6 +26,14 @@ def employee(values: dict, department_id: int) -> tuple[dict | None, str | None]
                                    "position", "status", "employment", "work_mode", "role")}
     data.update(salary=salary, department_id=department_id,
                 shift="Remote Shift" if values.get("work_mode") == "Remote" else "Shift A")
+    if "termination_date" in values:  # edit form only; the server fills in today when it is left empty
+        try:
+            last_day = values["termination_date"] and date.fromisoformat(values["termination_date"])
+        except ValueError:
+            return None, _("Last working day must be YYYY-MM-DD.")
+        if last_day and last_day < date.fromisoformat(values["hire_date"]):
+            return None, _("The last working day cannot be before the hire date.")
+        data["termination_date"] = last_day.isoformat() if last_day and values.get("status") == "Terminated" else None
     return data, None
 
 
@@ -81,3 +89,15 @@ def password_change(new: str, confirm: str) -> str | None:
     if new.isdigit() or new.isalpha():
         return _("Use both letters and numbers.")
     return None
+
+
+def payroll_line(values: dict) -> tuple[dict | None, str | None]:
+    """Bonus (0 or more), adjustment (+ earning / - deduction) and note of a payroll line."""
+    try:
+        bonus = float(values.get("bonus") or 0)
+        adjustment = float(values.get("adjustment") or 0)
+    except ValueError:
+        return None, _("Bonus and adjustment must be numbers.")
+    if bonus < 0:
+        return None, _("Bonus cannot be negative. Use a negative adjustment for a deduction.")
+    return {"bonus": bonus, "adjustment": adjustment, "note": values.get("note", "")[:200]}, None

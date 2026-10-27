@@ -2068,3 +2068,173 @@ msgstr "ច្បាប់{type} • {days} ថ្ងៃ"
 msgid "{years} years"
 msgstr "{years} ឆ្នាំ"
 
+
+msgid "Closing the Day"
+msgstr "ការបិទថ្ងៃ"
+
+msgid "Applied by the server once a day is over"
+msgstr "អនុវត្តដោយម៉ាស៊ីនមេ ពេលថ្ងៃនីមួយៗចប់"
+
+msgid "Mark no-shows Absent"
+msgstr "កត់អវត្តមាន អ្នកមិនមកធ្វើការ"
+
+msgid "No check-in by the time check-in closes on a working day"
+msgstr "មិនបានចុះឈ្មោះចូល មុនម៉ោងបិទចុះឈ្មោះចូល នៅថ្ងៃធ្វើការ"
+
+msgid "Close forgotten check-outs"
+msgstr "បិទការចុះឈ្មោះចេញ ដែលភ្លេច"
+
+msgid "Set to Shift End when nobody checked out by the next day"
+msgstr "កំណត់ជាម៉ោងបញ្ចប់វេន បើមិនបានចុះឈ្មោះចេញ រហូតដល់ថ្ងៃបន្ទាប់"
+
+msgid "Half Day Below (hours worked, 0 = off)"
+msgstr "កន្លះថ្ងៃ ពេលធ្វើការតិចជាង (ម៉ោង, 0 = បិទ)"
+
+msgid "Late Check-out Until (next day, HH:MM)"
+msgstr "ចុះឈ្មោះចេញយឺតបានរហូតដល់ (ថ្ងៃបន្ទាប់, HH:MM)"
+
+msgid "A check-out after midnight and before this time ends the previous day's shift. Records made by these rules are marked 'auto' so HR can review them."
+msgstr "ការចុះឈ្មោះចេញក្រោយពាក់កណ្ដាលអធ្រាត្រ និងមុនម៉ោងនេះ បញ្ចប់វេនរបស់ថ្ងៃមុន។ កំណត់ត្រាដែលបង្កើតដោយច្បាប់ទាំងនេះ ត្រូវបានសម្គាល់ថា 'auto' ដើម្បីឲ្យធនធានមនុស្សពិនិត្យ។"
+
+#, python-brace-format
+msgid "{name} was added."
+msgstr "បានបន្ថែម {name}។"
+
+msgid "Give these to the employee. They will be asked to choose their own password when they sign in. This password is not shown again."
+msgstr "ផ្ដល់ព័ត៌មាននេះឲ្យបុគ្គលិក។ ពួកគេនឹងត្រូវជ្រើសរើសពាក្យសម្ងាត់ផ្ទាល់ខ្លួន ពេលចូលប្រើ។ ពាក្យសម្ងាត់នេះនឹងមិនបង្ហាញម្ដងទៀតទេ។"
+
+msgid "Login username"
+msgstr "ឈ្មោះអ្នកប្រើសម្រាប់ចូល"
+
+msgid "Initial password"
+msgstr "ពាក្យសម្ងាត់ដំបូង"
+
+msgid "Mark as Paid"
+msgstr "សម្គាល់ថាបានបើក"
+
+msgid "Calculate Payroll"
+msgstr "គណនាប្រាក់បៀវត្សរ៍"
+
+#, python-brace-format
+msgid "Calculate payroll for {month} with today's salaries, rates and employment dates? Unpaid lines are recalculated and keep their bonus and adjustment. Paid lines do not change."
+msgstr "គណនាប្រាក់បៀវត្សរ៍សម្រាប់ {month} តាមប្រាក់ខែ អត្រា និងកាលបរិច្ឆេទការងារបច្ចុប្បន្ន? ជួរដែលមិនទាន់បើក នឹងត្រូវគណនាឡើងវិញ ហើយរក្សាប្រាក់រង្វាន់ និងការកែតម្រូវ។ ជួរដែលបានបើករួច មិនផ្លាស់ប្ដូរទេ។"
+
+msgid "Calculate"
+msgstr "គណនា"
+
+#, python-brace-format
+msgid "Payroll calculated: {created} new, {updated} updated, {removed} removed"
+msgstr "បានគណនាប្រាក់បៀវត្សរ៍៖ ថ្មី {created} កែប្រែ {updated} លុប {removed}"
+
+#, python-brace-format
+msgid "Nothing to pay for {month}. Calculate payroll first."
+msgstr "គ្មានអ្វីត្រូវបើកសម្រាប់ {month} ទេ។ សូមគណនាប្រាក់បៀវត្សរ៍ជាមុនសិន។"
+
+#, python-brace-format
+msgid "Mark {count} calculated line(s) for {month} as paid? Paid lines can no longer be changed."
+msgstr "សម្គាល់ជួរដែលបានគណនា {count} សម្រាប់ {month} ថាបានបើក? ជួរដែលបានបើករួច មិនអាចកែប្រែបានទៀតទេ។"
+
+msgid "Edit Bonus / Adjustment"
+msgstr "កែប្រាក់រង្វាន់ / ការកែតម្រូវ"
+
+msgid "Adjustment (+ / -)"
+msgstr "ការកែតម្រូវ (+ / -)"
+
+msgid "e.g. -50"
+msgstr "ឧ. -50"
+
+msgid "Note"
+msgstr "កំណត់សម្គាល់"
+
+msgid "e.g. advance repaid"
+msgstr "ឧ. សងប្រាក់ខ្ចីមុន"
+
+msgid "Payroll line updated"
+msgstr "បានកែប្រែជួរប្រាក់បៀវត្សរ៍"
+
+msgid "Save"
+msgstr "រក្សាទុក"
+
+msgid "Paid Days"
+msgstr "ចំនួនថ្ងៃដែលបានបើក"
+
+#, python-brace-format
+msgid "{days} of {total}"
+msgstr "{days} ក្នុងចំណោម {total}"
+
+msgid "Adjustment"
+msgstr "ការកែតម្រូវ"
+
+msgid "Edit"
+msgstr "កែ"
+
+msgid "Bonus and adjustment must be numbers."
+msgstr "ប្រាក់រង្វាន់ និងការកែតម្រូវ ត្រូវតែជាលេខ។"
+
+msgid "Bonus cannot be negative. Use a negative adjustment for a deduction."
+msgstr "ប្រាក់រង្វាន់មិនអាចអវិជ្ជមានបានទេ។ សូមប្រើការកែតម្រូវអវិជ្ជមាន សម្រាប់ការកាត់។"
+
+msgid "Last Working Day (YYYY-MM-DD, if Terminated)"
+msgstr "ថ្ងៃធ្វើការចុងក្រោយ (YYYY-MM-DD ប្រសិនបើបញ្ឈប់)"
+
+msgid "empty = today"
+msgstr "ទទេ = ថ្ងៃនេះ"
+
+msgid "Last working day must be YYYY-MM-DD."
+msgstr "ថ្ងៃធ្វើការចុងក្រោយ ត្រូវតែជា YYYY-MM-DD។"
+
+msgid "The last working day cannot be before the hire date."
+msgstr "ថ្ងៃធ្វើការចុងក្រោយ មិនអាចមុនថ្ងៃចូលធ្វើការបានទេ។"
+
+#, python-brace-format
+msgid "Overtime ({hours:g} h)"
+msgstr "ម៉ោងបន្ថែម ({hours:g} ម៉ោង)"
+
+msgid "Income Tax (progressive)"
+msgstr "ពន្ធលើប្រាក់បៀវត្សរ៍ (តាមកម្រិត)"
+
+#, python-brace-format
+msgid "Unpaid Days ({days:g})"
+msgstr "ថ្ងៃមិនបើកប្រាក់ ({days:g})"
+
+msgid "Progressive Tax Brackets (from:rate %, empty = flat rate above)"
+msgstr "កម្រិតពន្ធ (ចាប់ពី:អត្រា % ទទេ = អត្រាថេរខាងលើ)"
+
+msgid "Example in KHR: 0:0, 1500000:5, 2000000:10, 8500000:15, 12500000:20. Each rate applies to the part of monthly pay above its amount. Check current rates with your accountant."
+msgstr "ឧទាហរណ៍ជារៀល៖ 0:0, 1500000:5, 2000000:10, 8500000:15, 12500000:20។ អត្រានីមួយៗអនុវត្តលើផ្នែកនៃប្រាក់ខែប្រចាំខែ ដែលលើសចំនួននោះ។ សូមផ្ទៀងផ្ទាត់អត្រាបច្ចុប្បន្នជាមួយគណនេយ្យករ។"
+
+msgid "Tax bonus and overtime"
+msgstr "យកពន្ធលើប្រាក់រង្វាន់ និងម៉ោងបន្ថែម"
+
+msgid "Taxed like salary (off = base salary only)"
+msgstr "យកពន្ធដូចប្រាក់ខែ (បិទ = តែប្រាក់ខែគោល)"
+
+msgid "Health Insurance per Month"
+msgstr "ធានារ៉ាប់រងសុខភាពប្រចាំខែ"
+
+msgid "Health Insurance (higher salaries)"
+msgstr "ធានារ៉ាប់រងសុខភាព (ប្រាក់ខែខ្ពស់)"
+
+msgid "Higher Insurance from Base Salary"
+msgstr "ធានារ៉ាប់រងខ្ពស់ ចាប់ពីប្រាក់ខែគោល"
+
+msgid "Attendance in Payroll"
+msgstr "វត្តមានក្នុងប្រាក់បៀវត្សរ៍"
+
+msgid "Taken from attendance and leave when payroll is calculated"
+msgstr "យកពីវត្តមាន និងច្បាប់ឈប់ ពេលគណនាប្រាក់បៀវត្សរ៍"
+
+msgid "Deduct unpaid days"
+msgstr "កាត់ថ្ងៃមិនបើកប្រាក់"
+
+msgid "Absent and unpaid leave = 1 day, Half Day = 0.5 day (salary / working days)"
+msgstr "អវត្តមាន និងច្បាប់ឈប់គ្មានប្រាក់ = 1 ថ្ងៃ កន្លះថ្ងៃ = 0.5 ថ្ងៃ (ប្រាក់ខែ / ថ្ងៃធ្វើការ)"
+
+msgid "Overtime Pay Rate (x hourly rate, 0 = not paid)"
+msgstr "អត្រាប្រាក់ម៉ោងបន្ថែម (x អត្រាម៉ោង, 0 = មិនបើក)"
+
+msgid "Hourly rate = daily rate / shift hours (Attendance & Policies). Overtime counts after 'Overtime Counted After' and never on a Half Day."
+msgstr "អត្រាម៉ោង = អត្រាថ្ងៃ / ម៉ោងវេន (វត្តមាន និងគោលការណ៍)។ ម៉ោងបន្ថែមរាប់ក្រោយ 'រាប់ម៉ោងបន្ថែមក្រោយ' ហើយមិនរាប់នៅថ្ងៃកន្លះថ្ងៃទេ។"
+
+msgid "The selected dates contain no working days."
+msgstr "កាលបរិច្ឆេទដែលបានជ្រើស មិនមានថ្ងៃធ្វើការទេ។"

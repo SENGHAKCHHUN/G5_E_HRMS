@@ -5,6 +5,7 @@ from functools import partial
 
 from sqlalchemy.orm import Session
 
+from ..core.clock import working_days
 from ..core.database import SessionLocal
 from ..core.errors import BadRequest, Conflict, Forbidden, NotFound
 from ..core.i18n import N_
@@ -26,10 +27,12 @@ ALREADY_REVIEWED = {"Approved": N_("This request is already approved"),
 
 
 def balance_for(db: Session, employee_id: int) -> dict:
+    """Allowances are in working days: weekends (days outside the work week) are not used up."""
     year = date.today().year
+    work_week = get_settings(db)["work_week"]
     out = {}
     for leave_type, allowance in ALLOWANCE.items():
-        used = sum((lv.end_date - lv.start_date).days + 1
+        used = sum(len(working_days(lv.start_date, lv.end_date, work_week))
                    for lv in leave_repo.approved_of_type(db, employee_id, leave_type) if lv.start_date.year == year)
         out[leave_type] = {"allowance": allowance, "used": used, "remaining": max(0, allowance - used)}
     return out
@@ -39,7 +42,8 @@ def list_for(db: Session, user: User, employee_id: int | None, page: Page = ALL,
              status: str | None = None) -> tuple[list[dict], int]:
     """Staff see all requests; employees only their own."""
     rows, total = paginate(db, leave_repo.requests_query(scope_employee(user, employee_id), status), page)
-    return [leave_out(lv) for lv in rows], total
+    work_week = get_settings(db)["work_week"]
+    return [leave_out(lv, work_week) for lv in rows], total
 
 
 def balance(db: Session, user: User, employee_id: int | None) -> dict:
@@ -54,7 +58,10 @@ def submit(db: Session, user: User, employee_id: int | None, leave_type: str, st
     ensure_self_or_staff(user, employee_id)
     if employee_id is None or employee_repo.get(db, employee_id) is None:
         raise BadRequest("Unknown employee")
-    days = (end - start).days + 1
+    work_week = get_settings(db)["work_week"]
+    days = len(working_days(start, end, work_week))
+    if days == 0:
+        raise BadRequest("The selected dates contain no working days")
     bal = balance_for(db, employee_id).get(leave_type)
     if bal and days > bal["remaining"]:
         raise BadRequest("Only {remaining} {leave_type} day(s) remaining", remaining=bal["remaining"],
@@ -66,7 +73,7 @@ def submit(db: Session, user: User, employee_id: int | None, leave_type: str, st
                                          end_date=end, reason=reason))
     db.commit()
     db.refresh(lv)
-    return leave_out(lv)
+    return leave_out(lv, work_week)
 
 
 def send_decision_email(settings: dict, to: str, name: str, lv: dict, reviewer: str) -> None:
@@ -101,8 +108,8 @@ def review(db: Session, reviewer: User, leave_id: int, status: str, note: str) -
                    f"Leave LV-{lv.id} {status.lower()}")
     db.commit()
     db.refresh(lv)
-    out = leave_out(lv)
     settings = get_settings(db)
+    out = leave_out(lv, settings["work_week"])
     if not (settings["email_notifications"] and mailer.is_configured(settings)):
         return out, None
     job = partial(send_decision_email, settings, lv.employee.email, lv.employee.first_name, dict(out),

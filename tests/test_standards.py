@@ -14,6 +14,7 @@ from unittest import mock
 _TMP = tempfile.mkdtemp()
 os.environ.setdefault("HRMS_DATABASE_URL", f"sqlite:///{os.path.join(_TMP, 'test.db')}")
 os.environ.setdefault("HRMS_SECRET_KEY", "test-secret-key-that-is-long-enough-for-hs256")
+os.environ.setdefault("HRMS_DEMO_PASSWORD_CHANGE", "false")  # sign in with the demo accounts as they are
 
 import bcrypt  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
@@ -53,17 +54,17 @@ class StandardsTests(unittest.TestCase):
     def new_user(self, email):
         r = self.admin.post("/employees", json={
             "first_name": "Std", "last_name": "Test", "email": email, "hire_date": "2026-01-05",
-            "position": "Accountant", "salary": 4500, "department_id": 4, "status": "Active"})
+            "position": "Accountant", "salary": 4500, "department_id": 1, "status": "Active"})
         self.assertEqual(r.status_code, 201, r.text)
         return r.json()
 
     # ----------------------------------------------------------- pagination
     def test_pagination(self):
-        r = self.hr.get("/employees", params={"limit": 10, "offset": 5})
-        self.assertEqual(len(r.json()), 10)
+        r = self.hr.get("/employees", params={"limit": 3, "offset": 2})
+        self.assertEqual(len(r.json()), 3)
         total = int(r.headers["X-Total-Count"])
-        self.assertGreaterEqual(total, 148)
-        self.assertEqual(r.json()[0]["id"], self.hr.get("/employees").json()[5]["id"])
+        self.assertGreaterEqual(total, 7)  # the demo company has 7 employees
+        self.assertEqual(r.json()[0]["id"], self.hr.get("/employees").json()[2]["id"])
         self.assertEqual(len(self.hr.get("/employees").json()), total)  # no limit = everything
         self.assertEqual(self.hr.get("/employees", params={"limit": 0}).status_code, 422)
         audit = self.admin.get("/settings/audit", params={"limit": 3})

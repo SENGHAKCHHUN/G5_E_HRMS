@@ -64,6 +64,10 @@ def test_worked_and_overtime_seconds():
     open_today = {"date": "2026-10-05", "check_in": "09:00:00", "check_out": None}
     assert A.worked_seconds(open_today, datetime(2026, 10, 5, 10, 0)) == 3600
     assert A.worked_seconds({**open_today, "date": "2026-10-04"}, datetime(2026, 10, 5, 10, 0)) == 0
+    overnight = {"date": "2026-10-05", "check_in": "17:00:00", "check_out": "01:30:00", "status": "On Time"}
+    assert A.worked_seconds(overnight) == 8.5 * 3600
+    assert A.overtime_seconds(overnight, "18:00") == 7.5 * 3600
+    assert A.in_progress({**overnight, "check_out": None}, date(2026, 10, 6))
 
 
 def test_status_label_and_punctuality():
@@ -82,6 +86,9 @@ def test_leave_validation():
     assert days == 3 and "2" in error
     assert L.validate_request("2026-10-08", "2026-10-06", "Sick", {})[1]
     assert L.validate_request("bad", "2026-10-06", "Sick", {})[1]
+    assert L.validate_request("2026-10-08", "2026-10-12", "Annual", {}) == (3, None)  # Thu-Mon: 3 working days
+    assert L.validate_request("2026-10-10", "2026-10-11", "Annual", {})[1]  # Sat-Sun only
+    assert L.validate_request("2026-10-10", "2026-10-11", "Annual", {}, ["Sat", "Sun"]) == (2, None)
 
 
 def test_employee_form():
