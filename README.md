@@ -22,29 +22,29 @@ Admins also have a **Settings** screen for company rules, user accounts, email, 
 
 ### Role Permissions
 
-| Module | Admin | HR Manager | Employee |
-|---|:---:|:---:|:---:|
-| Dashboard | ✅ | ✅ | Personal overview |
-| Employees | ✅ | ✅ | Own profile only |
-| Departments, Positions & Requisitions | ✅ | ✅ | ❌ |
-| Attendance | ✅ | ✅ | Own records only |
-| Leave | ✅ | ✅ (approve/reject) | Own requests only |
-| Payroll | ✅ | ✅ | Own payslips only |
-| Settings & User accounts | ✅ | ❌ | ❌ |
+| Module                                | Admin |     HR Manager     |     Employee     |
+| ------------------------------------- | :---: | :-----------------: | :---------------: |
+| Dashboard                             |  ✅  |         ✅         | Personal overview |
+| Employees                             |  ✅  |         ✅         | Own profile only |
+| Departments, Positions & Requisitions |  ✅  |         ✅         |        ❌        |
+| Attendance                            |  ✅  |         ✅         | Own records only |
+| Leave                                 |  ✅  | ✅ (approve/reject) | Own requests only |
+| Payroll                               |  ✅  |         ✅         | Own payslips only |
+| Settings & User accounts              |  ✅  |         ❌         |        ❌        |
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | CustomTkinter, ttk.Treeview, Matplotlib, requests |
-| Backend | FastAPI, Uvicorn, Pydantic |
-| Database | SQLAlchemy 2.0, Alembic, SQLite |
-| Security | PyJWT, Argon2 (pwdlib), TOTP 2FA |
-| Documents | ReportLab, uharfbuzz (Khmer shaping) |
-| Translations | gettext + Babel |
-| Tests / lint | pytest, ruff |
+| Layer        | Technology                                        |
+| ------------ | ------------------------------------------------- |
+| Frontend     | CustomTkinter, ttk.Treeview, Matplotlib, requests |
+| Backend      | FastAPI, Uvicorn, Pydantic                        |
+| Database     | SQLAlchemy 2.0, Alembic, SQLite                   |
+| Security     | PyJWT, Argon2 (pwdlib), TOTP 2FA                  |
+| Documents    | ReportLab, uharfbuzz (Khmer shaping)              |
+| Translations | gettext + Babel                                   |
+| Tests / lint | pytest, ruff                                      |
 
 ---
 
@@ -74,11 +74,11 @@ Delete that file to start over.
 
 ### Default Login
 
-| Role | Username | Password |
-|---|---|---|
-| Admin | admin | admin123 |
-| HR Manager | hr | hr123 |
-| Employee | employee | emp123 |
+| Role       | Username | Password |
+| ---------- | -------- | -------- |
+| Admin      | admin    | admin123 |
+| HR Manager | hr       | hr123    |
+| Employee   | employee | emp123   |
 
 > These passwords are public, so the first sign-in with each one asks for a new password before
 > anything else opens. New employees get their own username and one-time password when they are added
@@ -88,13 +88,13 @@ Delete that file to start over.
 
 ## Documentation
 
-| Document | Contents |
-|---|---|
-| [Architecture](docs/architecture.md) | Project structure, backend layers, frontend design, database tables |
-| [User Guide](docs/user-guide.md) | Check-in rules, accounts & security, PDFs, email, backups |
-| [Configuration & Deployment](docs/configuration.md) | Environment variables, other databases, HTTPS, network setup |
-| [Development](docs/development.md) | Tests, linting, database migrations, translations |
-| [API Reference](docs/api.md) | All REST endpoints |
+| Document                                               | Contents                                                            |
+| ------------------------------------------------------ | ------------------------------------------------------------------- |
+| [Architecture](docs/architecture.md)                    | Project structure, backend layers, frontend design, database tables |
+| [User Guide](docs/user-guide.md)                        | Check-in rules, accounts & security, PDFs, email, backups           |
+| [Configuration &amp; Deployment](docs/configuration.md) | Environment variables, other databases, HTTPS, network setup        |
+| [Development](docs/development.md)                      | Tests, linting, database migrations, translations                   |
+| [API Reference](docs/api.md)                            | All REST endpoints                                                  |
 
 ---
 
